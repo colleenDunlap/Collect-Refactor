@@ -8,18 +8,98 @@
 
 
 
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/IndoorOutdoor"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="40dp" />
+        <TableLayout
+            android:id="@+id/HeaderHLCTable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="8dp"
+            android:gravity="top"
+            android:shrinkColumns="*"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/Hour"
+                android:text="@string/hour"
+                style="@style/HourStyle"/>
 
 
+            <TextView
+                android:id="@+id/Gambiae"
+                style="@style/CellStyle1"
+                android:text="Gambiae"
+                android:tag="GAMBIAE"/>
+
+            <TextView
+                android:id="@+id/Funestus"
+                style="@style/CellStyle1"
+                android:text="Funestus"
+                android:tag="FUNESTUS"/>
+
+            <TextView
+                android:id="@+id/Coustani"
+                style="@style/CellStyle1"
+                android:text="Coustani"
+                android:tag="COUSTANI"/>
+
+            <TextView
+                android:id="@+id/Mansonia"
+                style="@style/CellStyle1"
+                android:text="Mansonia"
+                android:tag="MANSONIA"/>
+
+            <TextView
+                android:id="@+id/Aedes"
+                style="@style/CellStyle1"
+                android:text="Aedes"
+                android:tag="AEDES"/>
+
+            <TextView
+                android:id="@+id/Coquilettidia"
+                style="@style/CellStyle1"
+                android:text="Coquilettidia"
+                android:tag="COQUILETTIDIA"/>
+
+            <TextView
+                android:id="@+id/Other"
+                style="@style/CellStyle1"
+                android:text="Other"
+                android:tag="OTHER"/>
+
+        </TableRow>
+        </TableLayout>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
             <TableLayout
-                android:id="@+id/tableLayout"
-                android:shrinkColumns="*"
+                android:id="@+id/mainHLCTable"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
@@ -29,6 +109,7 @@
                 android:layout_marginStart="17dp"
                 android:layout_marginTop="8dp"
                 android:gravity="top"
+                android:shrinkColumns="*"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,95 +121,54 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/Hour"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@+id/Hour" />
-
-                    <TextView
-                        android:id="@+id/Gambiae"
-                        style="@style/CellStyle1"
-                        android:text="Gambiae" />
-
-                    <TextView
-                        android:id="@+id/Funestus"
-                        style="@style/CellStyle1"
-                        android:text="Funestus" />
-
-                    <TextView
-                        android:id="@+id/Coustani"
-                        style="@style/CellStyle1"
-                        android:text="Coustani" />
-
-                    <TextView
-                        android:id="@+id/Mansonia"
-                        style="@style/CellStyle1"
-                        android:text="Mansonia" />
-
-                    <TextView
-                        android:id="@+id/Aedes"
-                        style="@style/CellStyle1"
-                        android:text="Aedes" />
-
-                    <TextView
-                        android:id="@+id/Coquilettidia"
-                        style="@style/CellStyle1"
-                        android:text="Coquilettidia" />
-
-                    <TextView
-                        android:id="@+id/Other"
-                        style="@style/CellStyle1"
-                        android:text="Other" />
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
                         android:id="@+id/H_18_19_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="18-19:00" />
+                        android:text="18-19:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_18_19_00_Gambiae"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_18_19_00_Funestus"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_18_19_00_Coustani"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_18_19_00_Mansonia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/H_18_19_00_Aedes"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_18_19_00_Coquilettidia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_18_19_00_Other"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -138,46 +178,53 @@
 
                     <TextView
                         android:id="@+id/H_19_20_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="19-20:00" />
+                        android:text="19-20:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_19_20_00_Gambiae"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_19_20_00_Funestus"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_19_20_00_Coustani"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_19_20_00_Mansonia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/H_19_20_00_Aedes"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_19_20_00_Coquilettidia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_19_20_00_Other"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -187,46 +234,53 @@
 
                     <TextView
                         android:id="@+id/H_20_21_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="20-21:00" />
+                        android:text="20-21:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_20_21_00_Gambiae"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_20_21_00_Funestus"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_20_21_00_Coustani"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_20_21_00_Mansonia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/H_20_21_00_Aedes"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_20_21_00_Coquilettidia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_20_21_00_Other"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -236,46 +290,53 @@
 
                     <TextView
                         android:id="@+id/H_21_22_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="21-22:00" />
+                        android:text="21-22:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_21_22_00_Gambiae"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_21_22_00_Funestus"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_21_22_00_Coustani"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_21_22_00_Mansonia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/H_21_22_00_Aedes"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_21_22_00_Coquilettidia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_21_22_00_Other"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -285,46 +346,53 @@
 
                     <TextView
                         android:id="@+id/H_22_23_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="22-23:00" />
+                        android:text="22-23:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_22_23_00_Gambiae"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_22_23_00_Funestus"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_22_23_00_Coustani"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_22_23_00_Mansonia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/H_22_23_00_Aedes"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_22_23_00_Coquilettidia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_22_23_00_Other"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -334,46 +402,53 @@
 
                     <TextView
                         android:id="@+id/H_23_24_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="23-24:00" />
+                        android:text="23-24:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_23_24_00_Gambiae"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_23_24_00_Funestus"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_23_24_00_Coustani"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_23_24_00_Mansonia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA" />
 
                     <EditText
                         android:id="@+id/H_23_24_00_Aedes"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_23_24_00_Coquilettidia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_23_24_00_Other"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -383,46 +458,53 @@
 
                     <TextView
                         android:id="@+id/H_24_01_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="24-01:00" />
+                        android:text="24-01:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_24_01_00_Gambiae"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_24_01_00_Funestus"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_24_01_00_Coustani"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_24_01_00_Mansonia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/H_24_01_00_Aedes"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_24_01_00_Coquilettidia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_24_01_00_Other"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -432,46 +514,53 @@
 
                     <TextView
                         android:id="@+id/H_01_02_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="01-02:00" />
+                        android:text="01-02:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_01_02_00_Gambiae"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_01_02_00_Funestus"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_01_02_00_Coustani"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_01_02_00_Mansonia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/H_01_02_00_Aedes"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_01_02_00_Coquilettidia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_01_02_00_Other"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -481,46 +570,53 @@
 
                     <TextView
                         android:id="@+id/H_02_03_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="02-03:00" />
+                        android:text="02-03:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_02_03_00_Gambiae"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_02_03_00_Funestus"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_02_03_00_Coustani"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_02_03_00_Mansonia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/H_02_03_00_Aedes"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_02_03_00_Coquilettidia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_02_03_00_Other"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -530,46 +626,53 @@
 
                     <TextView
                         android:id="@+id/H_03_04_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="03-04:00" />
+                        android:text="03-04:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_03_04_00_Gambiae"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_03_04_00_Funestus"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_03_04_00_Coustani"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_03_04_00_Mansonia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/H_03_04_00_Aedes"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_03_04_00_Coquilettidia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_03_04_00_Other"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -579,46 +682,53 @@
 
                     <TextView
                         android:id="@+id/H_04_05_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="04-05:00" />
+                        android:text="04-05:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_04_05_00_Gambiae"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_04_05_00_Funestus"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_04_05_00_Coustani"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_04_05_00_Mansonia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/H_04_05_00_Aedes"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_04_05_00_Coquilettidia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_04_05_00_Other"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -628,46 +738,53 @@
 
                     <TextView
                         android:id="@+id/H_05_06_00"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="05-06:00" />
+                        android:text="05-06:00"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/H_05_06_00_Gambiae"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/H_05_06_00_Funestus"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/H_05_06_00_Coustani"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/H_05_06_00_Mansonia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/H_05_06_00_Aedes"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/H_05_06_00_Coquilettidia"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/H_05_06_00_Other"
                         style="@style/CellStyle1"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
 
@@ -677,59 +794,68 @@
 
                     <TextView
                         android:id="@+id/TOTAL"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:ems="4"
                         android:gravity="center"
-                        android:text="@+id/TOTAL" />
+                        android:text="@string/total"
+                        android:tag="HOUR"
+                        style="@style/HourStyle"/>
 
                     <EditText
                         android:id="@+id/TOTAL_Gambiae"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="GAMBIAE"/>
 
                     <EditText
                         android:id="@+id/TOTAL_Funestus"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="FUNESTUS"/>
 
                     <EditText
                         android:id="@+id/TOTAL_Coustani"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COUSTANI"/>
 
                     <EditText
                         android:id="@+id/TOTAL_Mansonia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="MANSONIA"/>
 
                     <EditText
                         android:id="@+id/TOTAL_Aedes"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="AEDES"/>
 
                     <EditText
                         android:id="@+id/TOTAL_Coquilettidia"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="COQUILETTIDIA"/>
 
                     <EditText
                         android:id="@+id/TOTAL_Other"
                         style="@style/CellStyle2"
-                        android:inputType="number" />
+                        android:inputType="number"
+                        android:tag="OTHER"/>
 
                 </TableRow>
             </TableLayout>
-            <Button
-                android:id="@+id/collectData"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@+id/collectData"
-                android:onClick="collectHLCData"
-                tools:layout_editor_absoluteX="25dp"
-                tools:layout_editor_absoluteY="511dp" />
-        </LinearLayout>
-    </ScrollView>
+
+        <Button
+            android:id="@+id/collectDataButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="collectGoToNextPage"
+            android:text="@+id/collectData"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="511dp" />
+    </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
 
 

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HumanLandingCatch">
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="locale|orientation|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,8 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main"
+            android:name=".HumanLandingCatch"
+            android:label="HumanLandingCatch"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HumanLandingCatchIntro"
+            android:label="@string/title_activity_human_landing_catch_intro"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

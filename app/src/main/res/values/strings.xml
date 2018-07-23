@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">EntomologyDataCollect</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_human_landing_catch_intro">HumanLandingCatchIntro</string>
 </resources>

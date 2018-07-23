@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text = "Language"
-            android:autoSizeTextType="uniform"
+            android:textSize="30dp"
             android:autoSizeMaxTextSize="300dp"/>
 
         <RadioGroup
@@ -27,32 +27,35 @@
 
 
             <RadioButton
-                android:id="@+id/radioButton"
-                android:autoSizeTextType="uniform"
+                android:id="@+id/englishRadio"
+                android:textSize="28dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="englishSelected"
                 android:text="English" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
-                android:autoSizeTextType="uniform"
+                android:id="@+id/kiswahiliRadio"
+                android:textSize="28dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:onClick="swahiliSelected"
                 android:layout_weight="1"
                 android:text="Kiswahili" />
         </RadioGroup>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/newFormButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/fill_out_form"
+            android:onClick="fillOutFormButtonClick"/>
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/uploadFormButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:text="@string/upload_form" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
