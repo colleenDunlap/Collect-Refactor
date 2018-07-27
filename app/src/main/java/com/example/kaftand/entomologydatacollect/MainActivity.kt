@@ -13,6 +13,14 @@ import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import java.util.*
+import android.content.DialogInterface
+import android.content.DialogInterface.BUTTON_NEUTRAL
+import android.support.v7.app.AlertDialog
+import android.net.NetworkInfo
+import android.net.ConnectivityManager
+
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,6 +50,16 @@ class MainActivity : AppCompatActivity() {
 
     fun fillOutFormButtonClick(view: View) {
         startActivity( Intent(this, HumanLandingCatchIntro::class.java))
+    }
+
+    fun uploadFormButtonClick(view: View) {
+        if (this.checkForConnection())
+        {
+            startActivity( Intent(this, UploadFile::class.java))
+        } else {
+            this.alertNoInternet()
+        }
+
     }
 
     @TargetApi(Build.VERSION_CODES.N)
@@ -79,6 +97,23 @@ class MainActivity : AppCompatActivity() {
 
         newFormButton.setText(resources.getString(R.string.fill_out_form))
         uploadFormButton.setText(resources.getString(R.string.upload_form))
+    }
+
+    private fun checkForConnection(): Boolean
+    {
+        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworkInfo = connectivityManager.activeNetworkInfo
+        return ((activeNetworkInfo != null) && (activeNetworkInfo.isConnected))
+    }
+
+    private fun alertNoInternet()
+    {
+        val alertDialog = AlertDialog.Builder(this@MainActivity).create()
+        alertDialog.setTitle(getString(R.string.alert))
+        alertDialog.setMessage(getString(R.string.no_internet))
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                DialogInterface.OnClickListener { dialog, which -> dialog.dismiss() })
+        alertDialog.show()
     }
 
 }

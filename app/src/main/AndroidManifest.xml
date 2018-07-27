@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kaftand.entomologydatacollect">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,11 +23,14 @@
         <activity
             android:name=".HumanLandingCatch"
             android:label="HumanLandingCatch"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HumanLandingCatchIntro"
             android:label="@string/title_activity_human_landing_catch_intro"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".UploadFile"></activity>
     </application>
 
 </manifest>

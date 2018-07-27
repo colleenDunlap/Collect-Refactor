@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UploadFile">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TableLayout
+            android:id="@+id/FileNameTable"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TableRow>
+                <TextView
+                    android:id="@+id/uploadedHeader"
+                    android:text="@string/sent" />
+                <TextView
+                    android:id="@+id/formTypeHeader"
+                    android:text="@string/form_type"
+                    android:height="60dp"
+                    android:width="80dp"
+                    android:padding="10dp"/>
+                <TextView
+                    android:id="@+id/projectCodeHeader"
+                    android:text="@string/project_code"
+                    android:height="60dp"
+                    android:width="80dp"
+                    android:padding="10dp"/>
+                <TextView
+                    android:id="@+id/dateModifiedHeader"
+                    android:text="@string/date_modified"
+                    android:height="60dp"
+                    android:width="140dp"
+                    android:padding="10dp"/>
+            </TableRow>
+        </TableLayout>
+    </ScrollView>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/upload"
+        android:onClick="uploadForms"/>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,11 +1,17 @@
 package com.example.kaftand.entomologydatacollect
 
+import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import com.google.gson.Gson
+import android.content.Context.MODE_PRIVATE
+import android.util.Log
+import kotlinx.android.synthetic.main.activity_human_landing_catch.*
+import java.io.OutputStreamWriter
 
 
 class HumanLandingCatch : AppCompatActivity() {
@@ -15,7 +21,6 @@ class HumanLandingCatch : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_human_landing_catch)
-        this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
         var tvInOut : TextView
         var buttonNextOrFinish : Button
         tvInOut = findViewById(R.id.IndoorOutdoor) as TextView
@@ -53,19 +58,39 @@ class HumanLandingCatch : AppCompatActivity() {
             var bundle: Bundle = Bundle()
             bundle.putParcelable("MetaBundle", this.hLCMeta)
             intent.putExtra("HLCMeta", bundle)
+            finish()
             startActivity(intent)
         } else {
             var intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            finish()
             startActivity(intent)
         }
     }
 
     fun writeData2Json(data: ArrayList<HLCDataEntry>)
     {
-        println("write json")
+        val gson = Gson()
+        val jsonString: String = gson.toJson(data)
+        val fsu = FileStoreUtil()
+        val filename : String =
+                fsu.CreateHLCFilename("UNSENT", this.hLCMeta.PROJECT_CODE,
+                this.hLCMeta.DATE, this.hLCMeta.CLUSTER_NUMBER.toString(),
+                this.hLCMeta.HOUSE_NUMBER.toString(), this.hLCMeta.IN_OR_OUT)
+        writeToFile(jsonString, filename, getApplicationContext())
+        println(this.getFilesDir().getAbsolutePath().toString())
     }
 
+    fun writeToFile(data: String, filename: String, context: Context) {
+        try {
+            val outputStreamWriter = OutputStreamWriter(context.openFileOutput(filename, Context.MODE_PRIVATE))
+            outputStreamWriter.write(data)
+            outputStreamWriter.close()
+        } catch (e: Exception) {
+            Log.e("Exception", "File write failed: " + e.toString())
+        }
+
+    }
     fun collectHLCData() : ArrayList<HLCDataEntry>
     {
         val nRows = 13
@@ -138,6 +163,11 @@ class HumanLandingCatch : AppCompatActivity() {
             }
             HLCDataArray.add(thisHLC)
         }
+        if (missingData)
+        {
+            throw(error("Missing Data"))
+        }
+
         return HLCDataArray
     }
 

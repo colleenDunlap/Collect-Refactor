@@ -17,4 +17,15 @@
     <string name="missing_data">Missing Data</string>
     <string name="next">NEXT</string>
     <string name="finish">FINISH</string>
+    <string name="sent">SENT</string>
+    <string name="unsent">UNSENT</string>
+    <string name="form_type">FORM TYPE</string>
+    <string name="date_modified">DATE MODIFIED</string>
+    <string name="upload">UPLOAD</string>
+    <string name="no_internet">No internet connection available.
+        Try again when you are connected to the internet</string>
+    <string name="alert">ALERT!</string>
+    <string name="app_name">Entomology Data Collect</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_human_landing_catch_intro">HumanLandingCatchIntro</string>
 </resources>
