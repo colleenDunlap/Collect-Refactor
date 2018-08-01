@@ -1,0 +1,140 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:2:1-33:12
+MERGED from [com.android.support:design:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/7645d8ff52ff6c0ec494efb528165791/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/34de3c909b61a1b239ea8339a340d780/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/a3f5c9f6efff959196e4ccee44727391/AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/cf6fd65a69257f48c1e2cacec0b037e4/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/0d889dbdd0b3a3ad91e7193ad78acbe7/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/3c12af423eac1638ee155b105f9191dc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/cf052811bb50992b51e6c2d0ab30c936/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/da8622cb0f4b3285b7d2cb4b819cfe43/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/0182dfff09cfa30dedb072bf1c62eb5b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/afce0034671047b11160d91cb9b9fad8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/b307fcff1ac593a4a559e4c1222f1489/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/7178b2e52cce921effb096beed2943bb/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/41c94edb24435588ce60e970e59158be/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/78af6a496e9a464e244cd2300b9f7695/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d6c5e893aff0652ba94ec73965667268/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/8cfdc4642354ea75ecc9fc78765d0b33/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/7569aaa9dde316f9aa44933a8164cf41/AndroidManifest.xml:17:1-22:12
+INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:2:1-33:12
+	package
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:3:5-56
+		INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:2:1-33:12
+		INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:2:1-33:12
+		INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:5:5-31:19
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/a3f5c9f6efff959196e4ccee44727391/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/a3f5c9f6efff959196e4ccee44727391/AndroidManifest.xml:9:5-20
+	android:supportsRtl
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:11:9-40
+activity#com.example.kaftand.entomologydatacollect.MainActivity
+ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:12:9-20:20
+	android:configChanges
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:14:13-70
+	android:name
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:13:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:15:13-19:29
+action#android.intent.action.MAIN
+ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:16:17-69
+	android:name
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:16:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:18:17-77
+	android:name
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:18:27-74
+activity#com.example.kaftand.entomologydatacollect.HumanLandingCatch
+ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:21:9-26:59
+	android:screenOrientation
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:23:13-50
+	android:label
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:25:13-46
+	android:launchMode
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:24:13-48
+	android:theme
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:26:13-56
+	android:name
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:22:13-46
+activity#com.example.kaftand.entomologydatacollect.HumanLandingCatchIntro
+ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:27:9-30:68
+	android:label
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:29:13-77
+	android:theme
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:30:13-56
+	android:name
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:28:13-51
+uses-sdk
+INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+MERGED from [com.android.support:design:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/7645d8ff52ff6c0ec494efb528165791/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/7645d8ff52ff6c0ec494efb528165791/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/34de3c909b61a1b239ea8339a340d780/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/34de3c909b61a1b239ea8339a340d780/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/a3f5c9f6efff959196e4ccee44727391/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.1.2] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.1.2.aar/a3f5c9f6efff959196e4ccee44727391/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/cf6fd65a69257f48c1e2cacec0b037e4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-v4-27.1.1.aar/cf6fd65a69257f48c1e2cacec0b037e4/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/0d889dbdd0b3a3ad91e7193ad78acbe7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-fragment-27.1.1.aar/0d889dbdd0b3a3ad91e7193ad78acbe7/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/3c12af423eac1638ee155b105f9191dc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/3c12af423eac1638ee155b105f9191dc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/cf052811bb50992b51e6c2d0ab30c936/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.1.1.aar/cf052811bb50992b51e6c2d0ab30c936/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/da8622cb0f4b3285b7d2cb4b819cfe43/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.1.1.aar/da8622cb0f4b3285b7d2cb4b819cfe43/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/0182dfff09cfa30dedb072bf1c62eb5b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/0182dfff09cfa30dedb072bf1c62eb5b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/afce0034671047b11160d91cb9b9fad8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/afce0034671047b11160d91cb9b9fad8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/b307fcff1ac593a4a559e4c1222f1489/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/transition-27.1.1.aar/b307fcff1ac593a4a559e4c1222f1489/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/7178b2e52cce921effb096beed2943bb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.1.1.aar/7178b2e52cce921effb096beed2943bb/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/41c94edb24435588ce60e970e59158be/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/41c94edb24435588ce60e970e59158be/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/78af6a496e9a464e244cd2300b9f7695/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.0.aar/78af6a496e9a464e244cd2300b9f7695/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d6c5e893aff0652ba94ec73965667268/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.0.aar/d6c5e893aff0652ba94ec73965667268/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/8cfdc4642354ea75ecc9fc78765d0b33/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/8cfdc4642354ea75ecc9fc78765d0b33/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/7569aaa9dde316f9aa44933a8164cf41/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] /Users/kaftand/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/7569aaa9dde316f9aa44933a8164cf41/AndroidManifest.xml:20:5-44
+INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml

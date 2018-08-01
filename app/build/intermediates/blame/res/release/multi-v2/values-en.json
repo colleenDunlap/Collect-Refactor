@@ -1,0 +1,26 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-en/values-en.xml",
+            "map": [
+                {
+                    "source": "/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/values-en/strings.xml",
+                    "from": {
+                        "startLines": "19,13,10,4,18,2,12,6,16,17,7,11,8,21,20,3,5,9,14,15",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "930,584,418,133,888,55,530,241,796,850,284,476,329,1052,991,93,189,374,642,718",
+                        "endColumns": "60,57,57,55,41,37,53,42,53,37,44,53,44,91,60,39,51,43,75,77",
+                        "endOffsets": "986,637,471,184,925,88,579,279,845,883,324,525,369,1139,1047,128,236,413,713,791"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,116,174,232,288,330,368,422,465,519,557,602,656,701,793,854,894,946,990,1066",
+                        "endColumns": "60,57,57,55,41,37,53,42,53,37,44,53,44,91,60,39,51,43,75,77",
+                        "endOffsets": "111,169,227,283,325,363,417,460,514,552,597,651,696,788,849,889,941,985,1061,1139"
+                    }
+                }
+            ]
+        }
+    ]
+}
