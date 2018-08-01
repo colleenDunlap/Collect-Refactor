@@ -1,22 +1,3 @@
 <resources>
-    <string name="hour">Time</string>
-    <string name="total">Total</string>
-    <string name="fill_out_form">Fill Out Form</string>
-    <string name="upload_form">Upload Form</string>
-    <string name="indoor">indoors</string>
-    <string name="outdoor">outdoors</string>
-    <string name="tap_to_enter">tap</string>
-    <string name="village">VILLAGE</string>
-    <string name="day_month_year">DAY.MONTH.YEAR</string>
-    <string name="project_code">PROJECT CODE</string>
-    <string name="house_number">HOUSE NUMBER</string>
-    <string name="cluster_number">CLUSTER NUMBER</string>
-    <string name="volunteer_number_inside">VOLUNTEER NUMBER INSIDE</string>
-    <string name="volunteer_number_outside">VOLUNTEER NUMBER OUTSIDE</string>
-    <string name="missing_data">Missing Data</string>
-    <string name="next">NEXT</string>
-    <string name="finish">FINISH</string>
-    <string name="app_name">EntomologyDataCollect</string>
-    <string name="title_activity_main">MainActivity</string>
-    <string name="title_activity_human_landing_catch_intro">HumanLandingCatchIntro</string>
+
 </resources>

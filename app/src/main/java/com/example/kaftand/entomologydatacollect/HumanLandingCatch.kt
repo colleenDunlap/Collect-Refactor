@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_human_landing_catch.*
 import java.io.OutputStreamWriter
 
 
-class HumanLandingCatch : AppCompatActivity() {
+class HumanLandingCatch : LanguagePreservingActivity() {
 
     var hLCMeta: HLCMetaData = HLCMetaData()
 

@@ -25,11 +25,11 @@ import com.android.volley.AuthFailureError
 
 
 
-class UploadFile : AppCompatActivity() {
+class UploadFile : LanguagePreservingActivity() {
 
     var unsentFilesWithMeta: ArrayList<SavedFileInfo> = ArrayList()
     var sentFilesWithMeta: ArrayList<SavedFileInfo> = ArrayList()
-    val IP_PORT: String = "http://192.168.9.87:8080"
+    val IP_PORT: String = "https://ihientodatacollection.appspot.com"//"http://192.168.9.87:8080"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload_file)

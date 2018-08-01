@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-class HumanLandingCatchIntro : AppCompatActivity() {
+class HumanLandingCatchIntro : LanguagePreservingActivity() {
     var originalDrawable: Drawable? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
