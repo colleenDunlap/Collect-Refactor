@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.content_main.*
 import java.util.*
 import android.preference.PreferenceManager
 import android.content.SharedPreferences
-
+import android.content.res.Configuration
 
 
 open class LanguagePreservingActivity : AppCompatActivity() {
@@ -22,6 +22,15 @@ open class LanguagePreservingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        var lang = preferences.getString("lang", "")
+        if (!lang!!.equals("", ignoreCase = true)) {
+            this.setLocale(this, lang)
+        }
+    }
+
+    override fun onConfigurationChanged(newConfig: Configuration?) {
+        super.onConfigurationChanged(newConfig)
         val preferences = PreferenceManager.getDefaultSharedPreferences(this)
         var lang = preferences.getString("lang", "")
         if (!lang!!.equals("", ignoreCase = true)) {
