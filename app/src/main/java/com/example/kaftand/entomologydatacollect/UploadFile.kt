@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.R.attr.path
 import android.util.Log
+import android.util.TypedValue
+import android.view.Gravity
+import android.view.Gravity.CENTER
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
@@ -21,11 +24,10 @@ import com.android.volley.toolbox.StringRequest
 import java.io.UnsupportedEncodingException
 import com.android.volley.VolleyLog
 import com.android.volley.AuthFailureError
+import kotlin.math.roundToInt
 
 
-
-
-class UploadFile : LanguagePreservingActivity() {
+open class UploadFile : LanguagePreservingActivity() {
 
     var unsentFilesWithMeta: ArrayList<SavedFileInfo> = ArrayList()
     var sentFilesWithMeta: ArrayList<SavedFileInfo> = ArrayList()
@@ -65,16 +67,19 @@ class UploadFile : LanguagePreservingActivity() {
     {
         val ll = findViewById(R.id.FileNameTable) as TableLayout
         val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
-        val cellWidth = 40
-        val dateCellWidth = 80
-        val cellHeight = 50
+
+        val cellWidth = TableLayout.LayoutParams.WRAP_CONTENT //TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20F, getResources().getDisplayMetrics()).roundToInt();
+        val dateCellWidth = TableLayout.LayoutParams.WRAP_CONTENT//TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20F, getResources().getDisplayMetrics()).roundToInt();
+        val cellHeight = TableLayout.LayoutParams.WRAP_CONTENT
         for (iUnsentFile in unsentFilesWithMeta) {
 
             val row = TableRow(this)
             val lp = TableRow.LayoutParams(
-                    TableRow.LayoutParams.WRAP_CONTENT)
+                    TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT)
             row.setLayoutParams(lp)
-
+            row.setOnClickListener{
+                this.fileClicked()
+            }
             var sentView = ImageView(this)
             sentView.setImageResource(R.drawable.ic_close_black_24dp);
             var formTypeView = TextView(this)
@@ -98,9 +103,12 @@ class UploadFile : LanguagePreservingActivity() {
 
             val row = TableRow(this)
             val lp = TableRow.LayoutParams(
-                    TableRow.LayoutParams.WRAP_CONTENT)
+                    TableRow.LayoutParams.MATCH_PARENT, TableRow.LayoutParams.MATCH_PARENT)
             row.setLayoutParams(lp)
 
+            row.setOnClickListener{
+                this.fileClicked()
+            }
             var sentView = ImageView(this)
             sentView.setImageResource(R.drawable.ic_check_black_24dp);
             var formTypeView = TextView(this)
@@ -122,11 +130,11 @@ class UploadFile : LanguagePreservingActivity() {
 
     }
 
-    fun formatCell(view: View, rowParams: ViewGroup.LayoutParams, height: Int, width: Int)
+    fun formatCell(view: View, rowParams: TableRow.LayoutParams, height: Int, width: Int)
     {
-
-        rowParams.height = height
         rowParams.width = width
+        rowParams.height = height
+        rowParams.leftMargin = 10
         view.layoutParams = rowParams
     }
 
@@ -138,6 +146,11 @@ class UploadFile : LanguagePreservingActivity() {
             iUploaded
             uploadEachForm(iUnsentFilesWithMeta)
         }
+    }
+
+    fun fileClicked()
+    {
+        Log.i("file clicked","CLICK")
     }
 
     fun uploadEachForm(iUnsentFilesWithMeta: SavedFileInfo)
@@ -184,4 +197,6 @@ class UploadFile : LanguagePreservingActivity() {
         requestQueue.add(stringRequest);
 
     }
+
+
 }

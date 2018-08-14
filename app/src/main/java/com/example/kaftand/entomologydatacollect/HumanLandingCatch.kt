@@ -2,21 +2,19 @@ package com.example.kaftand.entomologydatacollect
 
 import android.content.Context
 import android.content.Intent
-import android.content.pm.ActivityInfo
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.google.gson.Gson
-import android.content.Context.MODE_PRIVATE
 import android.util.Log
-import kotlinx.android.synthetic.main.activity_human_landing_catch.*
 import java.io.OutputStreamWriter
+import kotlin.properties.Delegates
 
 
 class HumanLandingCatch : LanguagePreservingActivity() {
 
     var hLCMeta: HLCMetaData = HLCMetaData()
+    var DataTableView: TableEntryView by Delegates.notNull()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +34,17 @@ class HumanLandingCatch : LanguagePreservingActivity() {
         {
             tvInOut.setText(getString(R.string.outdoor).toUpperCase())
             buttonNextOrFinish.setText(getString(R.string.finish))
+        }
+        var dataTable = HLCDataTable(this.hLCMeta, 13, this)
+        this.DataTableView = TableEntryView(this, dataTable)
+        var dataView : LinearLayout = findViewById(R.id.TableContainer)
+        dataView.addView(this.DataTableView)
+        this.DataTableView.addView(this.DataTableView.createHeaderRow())
+        val dataBundle = intent.getBundleExtra("HLCSaveData")
+        if (dataBundle != null)
+        {
+            val data  = bundle.getSerializable("data") as ArrayList<HLCDataEntry>
+            this.populateData(data)
         }
 
     }
@@ -171,5 +180,28 @@ class HumanLandingCatch : LanguagePreservingActivity() {
         return HLCDataArray
     }
 
+    fun populateData(HLCDataArray : ArrayList<HLCDataEntry>) {
+        for (iEntry : Int in 0..HLCDataArray.size)
+        {
+            var HLCRow = HLCDataArray.get(iEntry);
+            var thisRowHour = "H_" + HLCRow.HOUR?.replace("-","_")?.replace(":","_");
+            val gambiaeID = resources.getIdentifier(thisRowHour + "_GAMBIAE", "id", packageName)
+            findViewById<EditText>(gambiaeID).setText(HLCRow.GAMBIAE.toString())
+            val funestusID = resources.getIdentifier(thisRowHour + "_FUNESTUS", "id", packageName)
+            findViewById<EditText>(funestusID).setText(HLCRow.FUNESTUS.toString())
+            val coustaniID = resources.getIdentifier(thisRowHour + "_COUSTANI", "id", packageName)
+            findViewById<EditText>(coustaniID).setText(HLCRow.COUSTANI.toString())
+            val mansoniaID = resources.getIdentifier(thisRowHour + "_MANSONIA", "id", packageName)
+            findViewById<EditText>(mansoniaID).setText(HLCRow.MANSONIA.toString())
+            val aedesID = resources.getIdentifier(thisRowHour + "_AEDES", "id", packageName)
+            findViewById<EditText>(aedesID).setText(HLCRow.AEDES.toString())
+            val coqID = resources.getIdentifier(thisRowHour + "_COQUILETTIDIA", "id", packageName)
+            findViewById<EditText>(coqID).setText(HLCRow.COQUILETTIDIA.toString())
+            val otherID = resources.getIdentifier(thisRowHour + "_OTHER", "id", packageName)
+            findViewById<EditText>(otherID).setText(HLCRow.OTHER.toString())
+
+
+        }
+    }
 
 }

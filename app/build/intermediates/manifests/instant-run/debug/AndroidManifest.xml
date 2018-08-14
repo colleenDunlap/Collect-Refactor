@@ -50,6 +50,10 @@
             android:name="com.example.kaftand.entomologydatacollect.UploadFile"
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.example.kaftand.entomologydatacollect.DataEditMenu"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"

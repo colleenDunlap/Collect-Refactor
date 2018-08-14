@@ -173,24 +173,23 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 137 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 139 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Tue Jul 24 11:33:10 EAT 2018      </nav>
+Check performed at Thu Aug 02 14:38:19 EAT 2018      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
-      <a class="mdl-navigation__link" href="#SimpleDateFormat"><i class="material-icons warning-icon">warning</i>Implied locale in date format (1)</a>
+      <a class="mdl-navigation__link" href="#SimpleDateFormat"><i class="material-icons warning-icon">warning</i>Implied locale in date format (2)</a>
       <a class="mdl-navigation__link" href="#UnusedAttribute"><i class="material-icons warning-icon">warning</i>Attribute unused on older versions (1)</a>
       <a class="mdl-navigation__link" href="#SpUsage"><i class="material-icons warning-icon">warning</i>Using <code>dp</code> instead of <code>sp</code> for text sizes (5)</a>
       <a class="mdl-navigation__link" href="#AllowBackup"><i class="material-icons warning-icon">warning</i>AllowBackup/FullBackupContent Problems (1)</a>
       <a class="mdl-navigation__link" href="#InefficientWeight"><i class="material-icons warning-icon">warning</i>Inefficient layout weight (1)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (3)</a>
-      <a class="mdl-navigation__link" href="#UselessLeaf"><i class="material-icons warning-icon">warning</i>Useless leaf layout (1)</a>
-      <a class="mdl-navigation__link" href="#UselessParent"><i class="material-icons warning-icon">warning</i>Useless parent layout (1)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (4)</a>
+      <a class="mdl-navigation__link" href="#UselessParent"><i class="material-icons warning-icon">warning</i>Useless parent layout (2)</a>
       <a class="mdl-navigation__link" href="#TooManyViews"><i class="material-icons warning-icon">warning</i>Layout has too many views (1)</a>
       <a class="mdl-navigation__link" href="#GoogleAppIndexingWarning"><i class="material-icons warning-icon">warning</i>Missing support for Firebase App Indexing (1)</a>
       <a class="mdl-navigation__link" href="#LabelFor"><i class="material-icons warning-icon">warning</i>Missing accessibility label (97)</a>
@@ -211,7 +210,7 @@ Check performed at Tue Jul 24 11:33:10 EAT 2018      </nav>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
 <tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#SimpleDateFormat">SimpleDateFormat</a>: Implied locale in date format</td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -230,13 +229,10 @@ Check performed at Tue Jul 24 11:33:10 EAT 2018      </nav>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#InefficientWeight">InefficientWeight</a>: Inefficient layout weight</td></tr>
 <tr>
-<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#UselessLeaf">UselessLeaf</a>: Useless leaf layout</td></tr>
-<tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UselessParent">UselessParent</a>: Useless parent layout</td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
@@ -279,14 +275,23 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/example/kaftand/entomologydatacollect/HumanLandingCatchIntro.kt">../../src/main/java/com/example/kaftand/entomologydatacollect/HumanLandingCatchIntro.kt</a>:29</span>: <span class="message">To get local formatting use <code>getDateInstance()</code>, <code>getDateTimeInstance()</code>, or <code>getTimeInstance()</code>, or use <code>new SimpleDateFormat(String template, Locale locale)</code> with for example <code>Locale.US</code> for ASCII dates.</span><br /><pre class="errorlines">
-<span class="lineno">  26 </span>  setSupportActionBar(toolbar)
-<span class="lineno">  27 </span>  <span class="comment">// taken from https://stackoverflow.com/questions/45842167/how-to-use-datepickerdialog-in-kotlin</span>
-<span class="lineno">  28 </span>  <span class="keyword">val</span> textView: TextView = findViewById(R.id.DateEdit)
-<span class="caretline"><span class="lineno">  29 </span>  textView.text = <span class="warning">SimpleDateFormat(<span class="string">"dd.MM.yyyy"</span>)</span>.format(System.currentTimeMillis())&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  30 </span>
-<span class="lineno">  31 </span>  <span class="keyword">var</span> cal = Calendar.getInstance()
+<span class="location"><a href="../../src/main/java/com/example/kaftand/entomologydatacollect/HumanLandingCatchIntro.kt">../../src/main/java/com/example/kaftand/entomologydatacollect/HumanLandingCatchIntro.kt</a>:25</span>: <span class="message">To get local formatting use <code>getDateInstance()</code>, <code>getDateTimeInstance()</code>, or <code>getTimeInstance()</code>, or use <code>new SimpleDateFormat(String template, Locale locale)</code> with for example <code>Locale.US</code> for ASCII dates.</span><br /><pre class="errorlines">
+<span class="lineno">  22 </span>  setSupportActionBar(toolbar)
+<span class="lineno">  23 </span>  <span class="comment">// taken from https://stackoverflow.com/questions/45842167/how-to-use-datepickerdialog-in-kotlin</span>
+<span class="lineno">  24 </span>  <span class="keyword">val</span> textView: TextView = findViewById(R.id.DateEdit)
+<span class="caretline"><span class="lineno">  25 </span>  textView.text = <span class="warning">SimpleDateFormat(<span class="string">"dd.MM.yyyy"</span>)</span>.format(System.currentTimeMillis())&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  26 </span>
+<span class="lineno">  27 </span>  <span class="keyword">var</span> cal = Calendar.getInstance()
 </pre>
+
+<span class="location"><a href="../../src/main/java/com/example/kaftand/entomologydatacollect/UploadFile.kt">../../src/main/java/com/example/kaftand/entomologydatacollect/UploadFile.kt</a>:67</span>: <span class="message">To get local formatting use <code>getDateInstance()</code>, <code>getDateTimeInstance()</code>, or <code>getTimeInstance()</code>, or use <code>new SimpleDateFormat(String template, Locale locale)</code> with for example <code>Locale.US</code> for ASCII dates.</span><br /><pre class="errorlines">
+<span class="lineno">  64 </span>    <span class="keyword">fun</span> addTableRows()
+<span class="lineno">  65 </span>    {
+<span class="lineno">  66 </span>        <span class="keyword">val</span> ll = findViewById(R.id.FileNameTable) <span class="keyword">as</span> TableLayout
+<span class="caretline"><span class="lineno">  67 </span>        <span class="keyword">val</span> formatter = <span class="warning">SimpleDateFormat(<span class="string">"dd.MM.yyyy HH:mm:ss"</span>)</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  68 </span>        <span class="keyword">val</span> cellWidth = <span class="number">40</span>
+<span class="lineno">  69 </span>        <span class="keyword">val</span> dateCellWidth = <span class="number">80</span>
+<span class="lineno">  70 </span>        <span class="keyword">val</span> cellHeight = <span class="number">50</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationSimpleDateFormat" style="display: none;">
@@ -389,7 +394,7 @@ Dismiss</button>            </div>
 <span class="lineno">  52 </span>                    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"wrap_content"</span>
 <span class="lineno">  53 </span>                    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
 <span class="caretline"><span class="lineno">  54 </span>                    <span class="warning"><span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"30dp"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  55 </span>                    <span class="prefix">android:</span><span class="attribute">gravity</span>=<span class="value">"right"</span>
+<span class="lineno">  55 </span>                    <span class="prefix">android:</span><span class="attribute">gravity</span>=<span class="value">"left"</span>
 <span class="lineno">  56 </span>                    <span class="prefix">android:</span><span class="attribute">ems</span>=<span class="value">"10"</span> />
 <span class="lineno">  57 </span>            <span class="tag">&lt;/TableRow></span></pre>
 
@@ -461,14 +466,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:5</span>: <span class="message">On SDK version 23 and up, your app data will be automatically backed up and restored on app install. Consider adding the attribute <code>android:fullBackupContent</code> to specify an <code>@xml</code> resource which configures which files to backup. More info: <a href="https://developer.android.com/training/backup/autosyncapi.html">https://developer.android.com/training/backup/autosyncapi.html</a></span><br /><pre class="errorlines">
-<span class="lineno">  2 </span><span class="tag">&lt;manifest</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
-<span class="lineno">  3 </span>    <span class="attribute">package</span>=<span class="value">"com.example.kaftand.entomologydatacollect"</span>>
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:7</span>: <span class="message">On SDK version 23 and up, your app data will be automatically backed up and restored on app install. Consider adding the attribute <code>android:fullBackupContent</code> to specify an <code>@xml</code> resource which configures which files to backup. More info: <a href="https://developer.android.com/training/backup/autosyncapi.html">https://developer.android.com/training/backup/autosyncapi.html</a></span><br /><pre class="errorlines">
 <span class="lineno">  4 </span>
-<span class="caretline"><span class="lineno">  5 </span>    <span class="warning"><span class="tag">&lt;application</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno">  6 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">allowBackup</span>=<span class="value">"true"</span>
-<span class="lineno">  7 </span>        <span class="prefix">android:</span><span class="attribute">icon</span>=<span class="value">"@mipmap/ic_launcher"</span>
-<span class="lineno">  8 </span>        <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span></pre>
+<span class="lineno">  5 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.INTERNET"</span>/>
+<span class="lineno">  6 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.ACCESS_NETWORK_STATE"</span> />
+<span class="caretline"><span class="lineno">  7 </span>    <span class="warning"><span class="tag">&lt;application</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno">  8 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">allowBackup</span>=<span class="value">"true"</span>
+<span class="lineno">  9 </span>        <span class="prefix">android:</span><span class="attribute">icon</span>=<span class="value">"@mipmap/ic_launcher"</span>
+<span class="lineno"> 10 </span>        <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationAllowBackup" style="display: none;">
@@ -579,13 +584,14 @@ Dismiss</button>            </div>
 <span class="lineno"> 3 </span><span class="tag">&lt;/resources></span>
 </pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:20</span>: <span class="message">The resource <code>R.string.title_activity_main</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 17 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"next"</span>>NEXT<span class="tag">&lt;/string></span>
-<span class="lineno"> 18 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"finish"</span>>FINISH<span class="tag">&lt;/string></span>
-<span class="lineno"> 19 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>EntomologyDataCollect<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 20 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"title_activity_main"</span></span>>MainActivity<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 21 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_human_landing_catch_intro"</span>>HumanLandingCatchIntro<span class="tag">&lt;/string></span>
-<span class="lineno"> 22 </span><span class="tag">&lt;/resources></span>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:21</span>: <span class="message">The resource <code>R.string.unsent</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 18 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"next"</span>>NEXT<span class="tag">&lt;/string></span>
+<span class="lineno"> 19 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"finish"</span>>FINISH<span class="tag">&lt;/string></span>
+<span class="lineno"> 20 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"sent"</span>>SENT<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 21 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"unsent"</span></span>>UNSENT<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 22 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"form_type"</span>>FORM TYPE<span class="tag">&lt;/string></span>
+<span class="lineno"> 23 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"date_modified"</span>>DATE MODIFIED<span class="tag">&lt;/string></span>
+<span class="lineno"> 24 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"no_internet"</span>>No internet connection available.
 </pre>
 
 <ul></ul><button id="Location3DivLink" onclick="reveal('Location3Div');" />+ 2 Additional Locations...</button>
@@ -593,6 +599,22 @@ Dismiss</button>            </div>
 Additional locations: <ul>
 <li> <span class="location"><a href="../../src/main/res/values-en/strings.xml">../../src/main/res/values-en/strings.xml</a>:21</span>
 <li> <span class="location"><a href="../../src/main/res/values-sw/strings.xml">../../src/main/res/values-sw/strings.xml</a>:21</span>
+</ul>
+</div><br/><br/>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:29</span>: <span class="message">The resource <code>R.string.title_activity_main</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 26 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"alert"</span>>ALERT!<span class="tag">&lt;/string></span>
+<span class="lineno"> 27 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"upload"</span>>UPLOAD<span class="tag">&lt;/string></span>
+<span class="lineno"> 28 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>Entomology Data Collect<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 29 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"title_activity_main"</span></span>>MainActivity<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 30 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"title_activity_human_landing_catch_intro"</span>>HumanLandingCatchIntro<span class="tag">&lt;/string></span>
+<span class="lineno"> 31 </span>
+</pre>
+
+<ul></ul><button id="Location4DivLink" onclick="reveal('Location4Div');" />+ 2 Additional Locations...</button>
+<div id="Location4Div" style="display: none">
+Additional locations: <ul>
+<li> <span class="location"><a href="../../src/main/res/values-en/strings.xml">../../src/main/res/values-en/strings.xml</a>:29</span>
+<li> <span class="location"><a href="../../src/main/res/values-sw/strings.xml">../../src/main/res/values-sw/strings.xml</a>:28</span>
 </ul>
 </div><br/><br/>
 </div>
@@ -622,51 +644,6 @@ To suppress this error, use the issue id "UnusedResources" as explained in the <
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="UnusedResourcesCardLink" onclick="hideid('UnusedResourcesCard');">
 Dismiss</button>            </div>
             </div>
-          </section><a name="UselessLeaf"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UselessLeafCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Useless leaf layout</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:846</span>: <span class="message">This <code>TableRow</code> view is useless (no children, no <code>background</code>, no <code>id</code>, no <code>style</code>)</span><br /><pre class="errorlines">
-<span class="lineno"> 843 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"OTHER"</span>/>
-<span class="lineno"> 844 </span>
-<span class="lineno"> 845 </span>                <span class="tag">&lt;/TableRow></span>
-<span class="caretline"><span class="lineno"> 846 </span>                <span class="warning"><span class="tag">&lt;TableRow>&lt;/TableRow></span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 847 </span>            <span class="tag">&lt;/TableLayout></span>
-<span class="lineno"> 848 </span>
-<span class="lineno"> 849 </span>        <span class="tag">&lt;Button</span></pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationUselessLeaf" style="display: none;">
-A layout that has no children or no background can often be removed (since it is invisible) for a flatter and more efficient layout hierarchy.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
-To suppress this error, use the issue id "UselessLeaf" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">UselessLeaf</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Performance</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 2/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationUselessLeafLink" onclick="reveal('explanationUselessLeaf');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="UselessLeafCardLink" onclick="hideid('UselessLeafCard');">
-Dismiss</button>            </div>
-            </div>
           </section><a name="UselessParent"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UselessParentCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
@@ -684,6 +661,15 @@ Dismiss</button>            </div>
 </span><span class="lineno">  41 </span><span class="attribute">            </span><span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
 <span class="lineno">  42 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"match_parent"</span>>
 </pre>
+
+<span class="location"><a href="../../src/main/res/layout/activity_upload_file.xml">../../src/main/res/layout/activity_upload_file.xml</a>:21</span>: <span class="message">This <code>TableRow</code> layout or its <code>TableLayout</code> parent is useless</span><br /><pre class="errorlines">
+<span class="lineno"> 18 </span>            <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
+<span class="lineno"> 19 </span>            <span class="prefix">android:</span><span class="attribute">orientation</span>=<span class="value">"vertical"</span>>
+<span class="lineno"> 20 </span>
+<span class="caretline"><span class="lineno"> 21 </span>            <span class="warning"><span class="tag">&lt;TableRow></span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 22 </span>                <span class="tag">&lt;TextView</span><span class="attribute">
+</span><span class="lineno"> 23 </span><span class="attribute">                    </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/uploadedHeader"</span>
+<span class="lineno"> 24 </span>                    <span class="prefix">android:</span><span class="attribute">layout_weight</span>=<span class="value">"0.1"</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationUselessParent" style="display: none;">
@@ -768,14 +754,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:5</span>: <span class="message">App is not indexable by Google Search; consider adding at least one Activity with an ACTION-VIEW intent filter. See issue explanation for more details.</span><br /><pre class="errorlines">
-<span class="lineno">  2 </span><span class="tag">&lt;manifest</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>
-<span class="lineno">  3 </span>    <span class="attribute">package</span>=<span class="value">"com.example.kaftand.entomologydatacollect"</span>>
+<span class="location"><a href="../../src/main/AndroidManifest.xml">../../src/main/AndroidManifest.xml</a>:7</span>: <span class="message">App is not indexable by Google Search; consider adding at least one Activity with an ACTION-VIEW intent filter. See issue explanation for more details.</span><br /><pre class="errorlines">
 <span class="lineno">  4 </span>
-<span class="caretline"><span class="lineno">  5 </span>    <span class="warning"><span class="tag">&lt;application</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno">  6 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">allowBackup</span>=<span class="value">"true"</span>
-<span class="lineno">  7 </span>        <span class="prefix">android:</span><span class="attribute">icon</span>=<span class="value">"@mipmap/ic_launcher"</span>
-<span class="lineno">  8 </span>        <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span></pre>
+<span class="lineno">  5 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.INTERNET"</span>/>
+<span class="lineno">  6 </span>    <span class="tag">&lt;uses-permission</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">name</span>=<span class="value">"android.permission.ACCESS_NETWORK_STATE"</span> />
+<span class="caretline"><span class="lineno">  7 </span>    <span class="warning"><span class="tag">&lt;application</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno">  8 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">allowBackup</span>=<span class="value">"true"</span>
+<span class="lineno">  9 </span>        <span class="prefix">android:</span><span class="attribute">icon</span>=<span class="value">"@mipmap/ic_launcher"</span>
+<span class="lineno"> 10 </span>        <span class="prefix">android:</span><span class="attribute">label</span>=<span class="value">"@string/app_name"</span></pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationGoogleAppIndexingWarning" style="display: none;">
@@ -821,7 +807,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 129 </span>                        <span class="attribute">style</span>=<span class="value">"@style/HourStyle"</span>/>
 <span class="lineno"> 130 </span>
 <span class="caretline"><span class="lineno"> 131 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 132 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_Gambiae"</span>
+</span><span class="lineno"> 132 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_GAMBIAE"</span>
 <span class="lineno"> 133 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 134 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -830,7 +816,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 135 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"GAMBIAE"</span>/>
 <span class="lineno"> 136 </span>
 <span class="caretline"><span class="lineno"> 137 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 138 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_Funestus"</span>
+</span><span class="lineno"> 138 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_FUNESTUS"</span>
 <span class="lineno"> 139 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 140 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -839,7 +825,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 141 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"FUNESTUS"</span>/>
 <span class="lineno"> 142 </span>
 <span class="caretline"><span class="lineno"> 143 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 144 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_Coustani"</span>
+</span><span class="lineno"> 144 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_COUSTANI"</span>
 <span class="lineno"> 145 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 146 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -848,7 +834,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 147 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COUSTANI"</span>/>
 <span class="lineno"> 148 </span>
 <span class="caretline"><span class="lineno"> 149 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 150 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_Mansonia"</span>
+</span><span class="lineno"> 150 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_MANSONIA"</span>
 <span class="lineno"> 151 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 152 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -857,7 +843,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 153 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"MANSONIA"</span>/>
 <span class="lineno"> 154 </span>
 <span class="caretline"><span class="lineno"> 155 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 156 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_Aedes"</span>
+</span><span class="lineno"> 156 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_AEDES"</span>
 <span class="lineno"> 157 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 158 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -868,7 +854,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 159 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"AEDES"</span>/>
 <span class="lineno"> 160 </span>
 <span class="caretline"><span class="lineno"> 161 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 162 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_Coquilettidia"</span>
+</span><span class="lineno"> 162 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_COQUILETTIDIA"</span>
 <span class="lineno"> 163 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 164 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -877,7 +863,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 165 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COQUILETTIDIA"</span>/>
 <span class="lineno"> 166 </span>
 <span class="caretline"><span class="lineno"> 167 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 168 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_Other"</span>
+</span><span class="lineno"> 168 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_18_19_00_OTHER"</span>
 <span class="lineno"> 169 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 170 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -886,7 +872,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 185 </span>                        <span class="attribute">style</span>=<span class="value">"@style/HourStyle"</span>/>
 <span class="lineno"> 186 </span>
 <span class="caretline"><span class="lineno"> 187 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 188 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_Gambiae"</span>
+</span><span class="lineno"> 188 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_GAMBIAE"</span>
 <span class="lineno"> 189 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 190 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -895,7 +881,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 191 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"GAMBIAE"</span>/>
 <span class="lineno"> 192 </span>
 <span class="caretline"><span class="lineno"> 193 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 194 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_Funestus"</span>
+</span><span class="lineno"> 194 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_FUNESTUS"</span>
 <span class="lineno"> 195 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 196 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -904,7 +890,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 197 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"FUNESTUS"</span>/>
 <span class="lineno"> 198 </span>
 <span class="caretline"><span class="lineno"> 199 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 200 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_Coustani"</span>
+</span><span class="lineno"> 200 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_COUSTANI"</span>
 <span class="lineno"> 201 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 202 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -913,7 +899,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 203 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COUSTANI"</span>/>
 <span class="lineno"> 204 </span>
 <span class="caretline"><span class="lineno"> 205 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 206 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_Mansonia"</span>
+</span><span class="lineno"> 206 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_MANSONIA"</span>
 <span class="lineno"> 207 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 208 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -922,7 +908,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 209 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"MANSONIA"</span>/>
 <span class="lineno"> 210 </span>
 <span class="caretline"><span class="lineno"> 211 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 212 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_Aedes"</span>
+</span><span class="lineno"> 212 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_AEDES"</span>
 <span class="lineno"> 213 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 214 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -931,7 +917,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 215 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"AEDES"</span>/>
 <span class="lineno"> 216 </span>
 <span class="caretline"><span class="lineno"> 217 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 218 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_Coquilettidia"</span>
+</span><span class="lineno"> 218 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_COQUILETTIDIA"</span>
 <span class="lineno"> 219 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 220 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -940,7 +926,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 221 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COQUILETTIDIA"</span>/>
 <span class="lineno"> 222 </span>
 <span class="caretline"><span class="lineno"> 223 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 224 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_Other"</span>
+</span><span class="lineno"> 224 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_19_20_00_OTHER"</span>
 <span class="lineno"> 225 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 226 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -949,7 +935,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 241 </span>                        <span class="attribute">style</span>=<span class="value">"@style/HourStyle"</span>/>
 <span class="lineno"> 242 </span>
 <span class="caretline"><span class="lineno"> 243 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 244 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_Gambiae"</span>
+</span><span class="lineno"> 244 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_GAMBIAE"</span>
 <span class="lineno"> 245 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 246 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -958,7 +944,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 247 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"GAMBIAE"</span>/>
 <span class="lineno"> 248 </span>
 <span class="caretline"><span class="lineno"> 249 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 250 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_Funestus"</span>
+</span><span class="lineno"> 250 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_FUNESTUS"</span>
 <span class="lineno"> 251 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 252 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -967,7 +953,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 253 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"FUNESTUS"</span>/>
 <span class="lineno"> 254 </span>
 <span class="caretline"><span class="lineno"> 255 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 256 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_Coustani"</span>
+</span><span class="lineno"> 256 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_COUSTANI"</span>
 <span class="lineno"> 257 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 258 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -976,7 +962,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 259 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COUSTANI"</span>/>
 <span class="lineno"> 260 </span>
 <span class="caretline"><span class="lineno"> 261 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 262 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_Mansonia"</span>
+</span><span class="lineno"> 262 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_MANSONIA"</span>
 <span class="lineno"> 263 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 264 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -985,7 +971,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 265 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"MANSONIA"</span>/>
 <span class="lineno"> 266 </span>
 <span class="caretline"><span class="lineno"> 267 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 268 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_Aedes"</span>
+</span><span class="lineno"> 268 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_AEDES"</span>
 <span class="lineno"> 269 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 270 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -994,7 +980,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 271 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"AEDES"</span>/>
 <span class="lineno"> 272 </span>
 <span class="caretline"><span class="lineno"> 273 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 274 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_Coquilettidia"</span>
+</span><span class="lineno"> 274 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_COQUILETTIDIA"</span>
 <span class="lineno"> 275 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 276 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1003,7 +989,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 277 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COQUILETTIDIA"</span>/>
 <span class="lineno"> 278 </span>
 <span class="caretline"><span class="lineno"> 279 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 280 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_Other"</span>
+</span><span class="lineno"> 280 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_20_21_00_OTHER"</span>
 <span class="lineno"> 281 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 282 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1012,7 +998,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 297 </span>                        <span class="attribute">style</span>=<span class="value">"@style/HourStyle"</span>/>
 <span class="lineno"> 298 </span>
 <span class="caretline"><span class="lineno"> 299 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 300 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_Gambiae"</span>
+</span><span class="lineno"> 300 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_GAMBIAE"</span>
 <span class="lineno"> 301 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 302 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1021,7 +1007,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 303 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"GAMBIAE"</span>/>
 <span class="lineno"> 304 </span>
 <span class="caretline"><span class="lineno"> 305 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 306 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_Funestus"</span>
+</span><span class="lineno"> 306 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_FUNESTUS"</span>
 <span class="lineno"> 307 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 308 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1030,7 +1016,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 309 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"FUNESTUS"</span>/>
 <span class="lineno"> 310 </span>
 <span class="caretline"><span class="lineno"> 311 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 312 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_Coustani"</span>
+</span><span class="lineno"> 312 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_COUSTANI"</span>
 <span class="lineno"> 313 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 314 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1039,7 +1025,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 315 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COUSTANI"</span>/>
 <span class="lineno"> 316 </span>
 <span class="caretline"><span class="lineno"> 317 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 318 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_Mansonia"</span>
+</span><span class="lineno"> 318 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_MANSONIA"</span>
 <span class="lineno"> 319 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 320 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1048,7 +1034,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 321 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"MANSONIA"</span>/>
 <span class="lineno"> 322 </span>
 <span class="caretline"><span class="lineno"> 323 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 324 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_Aedes"</span>
+</span><span class="lineno"> 324 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_AEDES"</span>
 <span class="lineno"> 325 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 326 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1057,7 +1043,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 327 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"AEDES"</span>/>
 <span class="lineno"> 328 </span>
 <span class="caretline"><span class="lineno"> 329 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 330 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_Coquilettidia"</span>
+</span><span class="lineno"> 330 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_COQUILETTIDIA"</span>
 <span class="lineno"> 331 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 332 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1066,7 +1052,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 333 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COQUILETTIDIA"</span>/>
 <span class="lineno"> 334 </span>
 <span class="caretline"><span class="lineno"> 335 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 336 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_Other"</span>
+</span><span class="lineno"> 336 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_21_22_00_OTHER"</span>
 <span class="lineno"> 337 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 338 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1075,7 +1061,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 353 </span>                        <span class="attribute">style</span>=<span class="value">"@style/HourStyle"</span>/>
 <span class="lineno"> 354 </span>
 <span class="caretline"><span class="lineno"> 355 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 356 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_Gambiae"</span>
+</span><span class="lineno"> 356 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_GAMBIAE"</span>
 <span class="lineno"> 357 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 358 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1084,7 +1070,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 359 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"GAMBIAE"</span>/>
 <span class="lineno"> 360 </span>
 <span class="caretline"><span class="lineno"> 361 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 362 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_Funestus"</span>
+</span><span class="lineno"> 362 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_FUNESTUS"</span>
 <span class="lineno"> 363 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 364 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1093,7 +1079,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 365 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"FUNESTUS"</span>/>
 <span class="lineno"> 366 </span>
 <span class="caretline"><span class="lineno"> 367 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 368 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_Coustani"</span>
+</span><span class="lineno"> 368 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_COUSTANI"</span>
 <span class="lineno"> 369 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 370 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1102,7 +1088,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 371 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COUSTANI"</span>/>
 <span class="lineno"> 372 </span>
 <span class="caretline"><span class="lineno"> 373 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 374 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_Mansonia"</span>
+</span><span class="lineno"> 374 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_MANSONIA"</span>
 <span class="lineno"> 375 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 376 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1111,7 +1097,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 377 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"MANSONIA"</span>/>
 <span class="lineno"> 378 </span>
 <span class="caretline"><span class="lineno"> 379 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 380 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_Aedes"</span>
+</span><span class="lineno"> 380 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_AEDES"</span>
 <span class="lineno"> 381 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 382 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1120,7 +1106,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 383 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"AEDES"</span>/>
 <span class="lineno"> 384 </span>
 <span class="caretline"><span class="lineno"> 385 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 386 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_Coquilettidia"</span>
+</span><span class="lineno"> 386 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_COQUILETTIDIA"</span>
 <span class="lineno"> 387 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 388 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1129,7 +1115,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 389 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COQUILETTIDIA"</span>/>
 <span class="lineno"> 390 </span>
 <span class="caretline"><span class="lineno"> 391 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 392 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_Other"</span>
+</span><span class="lineno"> 392 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_22_23_00_OTHER"</span>
 <span class="lineno"> 393 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 394 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1138,7 +1124,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 409 </span>                        <span class="attribute">style</span>=<span class="value">"@style/HourStyle"</span>/>
 <span class="lineno"> 410 </span>
 <span class="caretline"><span class="lineno"> 411 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 412 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_Gambiae"</span>
+</span><span class="lineno"> 412 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_GAMBIAE"</span>
 <span class="lineno"> 413 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 414 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1147,7 +1133,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 415 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"GAMBIAE"</span>/>
 <span class="lineno"> 416 </span>
 <span class="caretline"><span class="lineno"> 417 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 418 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_Funestus"</span>
+</span><span class="lineno"> 418 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_FUNESTUS"</span>
 <span class="lineno"> 419 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 420 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1156,7 +1142,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 421 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"FUNESTUS"</span>/>
 <span class="lineno"> 422 </span>
 <span class="caretline"><span class="lineno"> 423 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 424 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_Coustani"</span>
+</span><span class="lineno"> 424 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_COUSTANI"</span>
 <span class="lineno"> 425 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 426 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1165,7 +1151,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 427 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COUSTANI"</span>/>
 <span class="lineno"> 428 </span>
 <span class="caretline"><span class="lineno"> 429 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 430 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_Mansonia"</span>
+</span><span class="lineno"> 430 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_MANSONIA"</span>
 <span class="lineno"> 431 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 432 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1174,7 +1160,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 433 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"MANSONIA"</span> />
 <span class="lineno"> 434 </span>
 <span class="caretline"><span class="lineno"> 435 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 436 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_Aedes"</span>
+</span><span class="lineno"> 436 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_AEDES"</span>
 <span class="lineno"> 437 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 438 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1183,7 +1169,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 439 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"AEDES"</span>/>
 <span class="lineno"> 440 </span>
 <span class="caretline"><span class="lineno"> 441 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 442 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_Coquilettidia"</span>
+</span><span class="lineno"> 442 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_COQUILETTIDIA"</span>
 <span class="lineno"> 443 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 444 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1192,7 +1178,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 445 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COQUILETTIDIA"</span>/>
 <span class="lineno"> 446 </span>
 <span class="caretline"><span class="lineno"> 447 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 448 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_Other"</span>
+</span><span class="lineno"> 448 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_23_24_00_OTHER"</span>
 <span class="lineno"> 449 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 450 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1201,7 +1187,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 465 </span>                        <span class="attribute">style</span>=<span class="value">"@style/HourStyle"</span>/>
 <span class="lineno"> 466 </span>
 <span class="caretline"><span class="lineno"> 467 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 468 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_Gambiae"</span>
+</span><span class="lineno"> 468 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_GAMBIAE"</span>
 <span class="lineno"> 469 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 470 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1210,7 +1196,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 471 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"GAMBIAE"</span>/>
 <span class="lineno"> 472 </span>
 <span class="caretline"><span class="lineno"> 473 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 474 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_Funestus"</span>
+</span><span class="lineno"> 474 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_FUNESTUS"</span>
 <span class="lineno"> 475 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 476 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1219,7 +1205,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 477 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"FUNESTUS"</span>/>
 <span class="lineno"> 478 </span>
 <span class="caretline"><span class="lineno"> 479 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 480 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_Coustani"</span>
+</span><span class="lineno"> 480 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_COUSTANI"</span>
 <span class="lineno"> 481 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 482 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1228,7 +1214,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 483 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COUSTANI"</span>/>
 <span class="lineno"> 484 </span>
 <span class="caretline"><span class="lineno"> 485 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 486 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_Mansonia"</span>
+</span><span class="lineno"> 486 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_MANSONIA"</span>
 <span class="lineno"> 487 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 488 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1237,7 +1223,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 489 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"MANSONIA"</span>/>
 <span class="lineno"> 490 </span>
 <span class="caretline"><span class="lineno"> 491 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 492 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_Aedes"</span>
+</span><span class="lineno"> 492 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_AEDES"</span>
 <span class="lineno"> 493 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 494 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1246,7 +1232,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 495 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"AEDES"</span>/>
 <span class="lineno"> 496 </span>
 <span class="caretline"><span class="lineno"> 497 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 498 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_Coquilettidia"</span>
+</span><span class="lineno"> 498 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_COQUILETTIDIA"</span>
 <span class="lineno"> 499 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 500 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1255,7 +1241,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 501 </span>                        <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COQUILETTIDIA"</span>/>
 <span class="lineno"> 502 </span>
 <span class="caretline"><span class="lineno"> 503 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 504 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_Other"</span>
+</span><span class="lineno"> 504 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_24_01_00_OTHER"</span>
 <span class="lineno"> 505 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle2"</span>
 <span class="lineno"> 506 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1264,7 +1250,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 521 </span>                        <span class="attribute">style</span>=<span class="value">"@style/HourStyle"</span>/>
 <span class="lineno"> 522 </span>
 <span class="caretline"><span class="lineno"> 523 </span>                    <span class="warning"><span class="tag">&lt;EditText</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
-</span><span class="lineno"> 524 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_01_02_00_Gambiae"</span>
+</span><span class="lineno"> 524 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/H_01_02_00_GAMBIAE"</span>
 <span class="lineno"> 525 </span>                        <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
 <span class="lineno"> 526 </span>                        <span class="prefix">android:</span><span class="attribute">inputType</span>=<span class="value">"number"</span></pre>
 
@@ -1311,67 +1297,67 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:53</span>: <span class="message">Hardcoded string "Gambiae", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:53</span>: <span class="message">Hardcoded string "GAMBIAE", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  50 </span>            <span class="tag">&lt;TextView</span><span class="attribute">
-</span><span class="lineno">  51 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/Gambiae"</span>
+</span><span class="lineno">  51 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/GAMBIAE"</span>
 <span class="lineno">  52 </span>                <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
-<span class="caretline"><span class="lineno">  53 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Gambiae"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno">  53 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"GAMBIAE"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  54 </span>                <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"GAMBIAE"</span>/>
 <span class="lineno">  55 </span>
 <span class="lineno">  56 </span>            <span class="tag">&lt;TextView</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:59</span>: <span class="message">Hardcoded string "Funestus", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:59</span>: <span class="message">Hardcoded string "FUNESTUS", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  56 </span>            <span class="tag">&lt;TextView</span><span class="attribute">
-</span><span class="lineno">  57 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/Funestus"</span>
+</span><span class="lineno">  57 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/FUNESTUS"</span>
 <span class="lineno">  58 </span>                <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
-<span class="caretline"><span class="lineno">  59 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Funestus"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno">  59 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"FUNESTUS"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  60 </span>                <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"FUNESTUS"</span>/>
 <span class="lineno">  61 </span>
 <span class="lineno">  62 </span>            <span class="tag">&lt;TextView</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:65</span>: <span class="message">Hardcoded string "Coustani", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:65</span>: <span class="message">Hardcoded string "COUSTANI", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  62 </span>            <span class="tag">&lt;TextView</span><span class="attribute">
-</span><span class="lineno">  63 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/Coustani"</span>
+</span><span class="lineno">  63 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/COUSTANI"</span>
 <span class="lineno">  64 </span>                <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
-<span class="caretline"><span class="lineno">  65 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Coustani"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno">  65 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"COUSTANI"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  66 </span>                <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COUSTANI"</span>/>
 <span class="lineno">  67 </span>
 <span class="lineno">  68 </span>            <span class="tag">&lt;TextView</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:71</span>: <span class="message">Hardcoded string "Mansonia", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:71</span>: <span class="message">Hardcoded string "MANSONIA", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  68 </span>            <span class="tag">&lt;TextView</span><span class="attribute">
-</span><span class="lineno">  69 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/Mansonia"</span>
+</span><span class="lineno">  69 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/MANSONIA"</span>
 <span class="lineno">  70 </span>                <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
-<span class="caretline"><span class="lineno">  71 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Mansonia"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno">  71 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"MANSONIA"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  72 </span>                <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"MANSONIA"</span>/>
 <span class="lineno">  73 </span>
 <span class="lineno">  74 </span>            <span class="tag">&lt;TextView</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:77</span>: <span class="message">Hardcoded string "Aedes", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:77</span>: <span class="message">Hardcoded string "AEDES", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  74 </span>            <span class="tag">&lt;TextView</span><span class="attribute">
-</span><span class="lineno">  75 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/Aedes"</span>
+</span><span class="lineno">  75 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/AEDES"</span>
 <span class="lineno">  76 </span>                <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
-<span class="caretline"><span class="lineno">  77 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Aedes"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno">  77 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"AEDES"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  78 </span>                <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"AEDES"</span>/>
 <span class="lineno">  79 </span>
 <span class="lineno">  80 </span>            <span class="tag">&lt;TextView</span></pre>
 
 <button class="mdl-button mdl-js-button mdl-button--primary" id="HardcodedTextDivLink" onclick="reveal('HardcodedTextDiv');" />+ 18 More Occurrences...</button>
 <div id="HardcodedTextDiv" style="display: none">
-<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:83</span>: <span class="message">Hardcoded string "Coquilettidia", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:83</span>: <span class="message">Hardcoded string "COQUILETTIDIA", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  80 </span>            <span class="tag">&lt;TextView</span><span class="attribute">
-</span><span class="lineno">  81 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/Coquilettidia"</span>
+</span><span class="lineno">  81 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/COQUILETTIDIA"</span>
 <span class="lineno">  82 </span>                <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
-<span class="caretline"><span class="lineno">  83 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Coquilettidia"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno">  83 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"COQUILETTIDIA"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  84 </span>                <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"COQUILETTIDIA"</span>/>
 <span class="lineno">  85 </span>
 <span class="lineno">  86 </span>            <span class="tag">&lt;TextView</span></pre>
 
-<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:89</span>: <span class="message">Hardcoded string "Other", should use <code>@string</code> resource</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/layout/activity_human_landing_catch.xml">../../src/main/res/layout/activity_human_landing_catch.xml</a>:89</span>: <span class="message">Hardcoded string "OTHER", should use <code>@string</code> resource</span><br /><pre class="errorlines">
 <span class="lineno">  86 </span>            <span class="tag">&lt;TextView</span><span class="attribute">
-</span><span class="lineno">  87 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/Other"</span>
+</span><span class="lineno">  87 </span><span class="attribute">                </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/OTHER"</span>
 <span class="lineno">  88 </span>                <span class="attribute">style</span>=<span class="value">"@style/CellStyle1"</span>
-<span class="caretline"><span class="lineno">  89 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"Other"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno">  89 </span>                <span class="warning"><span class="prefix">android:</span><span class="attribute">text</span>=<span class="value">"OTHER"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  90 </span>                <span class="prefix">android:</span><span class="attribute">tag</span>=<span class="value">"OTHER"</span>/>
 <span class="lineno">  91 </span>
 <span class="lineno">  92 </span>        <span class="tag">&lt;/TableRow></span></pre>
@@ -1564,11 +1550,11 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../src/main/res/layout/content_human_landing_catch_intro.xml">../../src/main/res/layout/content_human_landing_catch_intro.xml</a>:55</span>: <span class="message">Use "<code>end</code>" instead of "<code>right</code>" to ensure correct behavior in right-to-left locales</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/layout/content_human_landing_catch_intro.xml">../../src/main/res/layout/content_human_landing_catch_intro.xml</a>:55</span>: <span class="message">Use "<code>start</code>" instead of "<code>left</code>" to ensure correct behavior in right-to-left locales</span><br /><pre class="errorlines">
 <span class="lineno">  52 </span>                    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"wrap_content"</span>
 <span class="lineno">  53 </span>                    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
 <span class="lineno">  54 </span>                    <span class="prefix">android:</span><span class="attribute">textSize</span>=<span class="value">"30dp"</span>
-<span class="caretline"><span class="lineno">  55 </span>                    <span class="prefix">android:</span><span class="attribute">gravity</span>=<span class="value">"</span><span class="warning"><span class="value">right</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno">  55 </span>                    <span class="prefix">android:</span><span class="attribute">gravity</span>=<span class="value">"</span><span class="warning"><span class="value">left</span></span><span class="value">"</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  56 </span>                    <span class="prefix">android:</span><span class="attribute">ems</span>=<span class="value">"10"</span> />
 <span class="lineno">  57 </span>            <span class="tag">&lt;/TableRow></span>
 </pre>

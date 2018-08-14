@@ -14,18 +14,23 @@ import android.content.DialogInterface
 import android.content.res.Configuration
 import android.support.v7.app.AlertDialog
 import android.net.ConnectivityManager
-
-
+import android.preference.PreferenceManager
 
 
 class MainActivity : LanguagePreservingActivity() {
-
     var HLC : HumanLandingCatch? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        englishRadio.setChecked(true)
+        val lang = this.getSavedLang(this)
+        if (lang.equals("en"))
+        {
+            englishRadio.isChecked = true
+        } else if (lang.equals("sw"))
+        {
+            kiswahiliRadio.isChecked = true
+        }
     }
 
 
@@ -49,8 +54,12 @@ class MainActivity : LanguagePreservingActivity() {
         } else {
             this.alertNoInternet()
         }
-
     }
+
+    fun editFormButtonClick (view: View) {
+        startActivity(Intent(this, DataEditMenu::class.java))
+    }
+
 
     @TargetApi(Build.VERSION_CODES.N)
     private fun updateResources(context: Context, language: String): Context {

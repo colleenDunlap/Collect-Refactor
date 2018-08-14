@@ -4,7 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import java.sql.Date
 
-class HLCMetaData() : Parcelable {
+class HLCMetaData() : MetaDataInterface {
     public var VILLAGE: String? = null
     public var DATE: String? = null
     public var PROJECT_CODE: String? = null
@@ -51,6 +51,25 @@ class HLCMetaData() : Parcelable {
         override fun newArray(size: Int): Array<HLCMetaData?> {
             return arrayOfNulls(size)
         }
+    }
+
+    override fun stringifyInfo() : ArrayList<String>
+    {
+        var infoArray : ArrayList<String> = ArrayList<String>()
+        if (this.IN_OR_OUT == "in")
+        {
+            infoArray.add("${R.string.indoor}")
+        } else {
+            infoArray.add("${R.string.outdoor}")
+        }
+        infoArray.add("${R.string.village} ${this.VILLAGE}")
+        infoArray.add("${R.string.day_month_year} ${this.DATE}")
+        infoArray.add("${R.string.project_code} ${this.PROJECT_CODE}")
+        infoArray.add("${R.string.house_number} ${this.HOUSE_NUMBER}")
+        infoArray.add("${R.string.cluster_number} ${this.CLUSTER_NUMBER}")
+        infoArray.add("${R.string.volunteer_number_inside} ${this.VOLUNTEER_NUMBER_IN}")
+        infoArray.add("${R.string.volunteer_number_outside} ${this.VOLUNTEER_NUMBER_OUT}")
+        return infoArray
     }
 
 

@@ -58,5 +58,12 @@
             android:layout_height="wrap_content"
             android:onClick="uploadFormButtonClick"
             android:text="@string/upload_form" />
+
+        <Button
+            android:id="@+id/editFormButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="editFormButtonClick"
+            android:text="@string/edit_form" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -1,4 +1,13 @@
-#Wed Aug 01 17:08:02 EAT 2018
-base.0=/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/transforms/dexMerger/debug/169
+#Tue Aug 14 11:23:45 EAT 2018
+path.3=classes.dex
+path.2=classes.dex
+path.1=classes.dex
 path.0=classes.dex
+renamed.3=classes4.dex
+renamed.2=classes3.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
+base.3=/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/transforms/dexMerger/debug/200
+base.2=/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/transforms/dexMerger/debug/198
+base.1=/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/transforms/dexMerger/debug/201
+base.0=/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/transforms/dexMerger/debug/199

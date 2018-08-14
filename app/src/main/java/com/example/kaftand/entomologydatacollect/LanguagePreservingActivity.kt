@@ -2,18 +2,12 @@ package com.example.kaftand.entomologydatacollect
 
 import android.annotation.TargetApi
 import android.content.Context
-import android.content.DialogInterface
-import android.content.Intent
-import android.net.ConnectivityManager
 import android.os.Build
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import android.view.View
 import kotlinx.android.synthetic.main.content_main.*
 import java.util.*
 import android.preference.PreferenceManager
-import android.content.SharedPreferences
 import android.content.res.Configuration
 
 
@@ -22,20 +16,33 @@ open class LanguagePreservingActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        val lang = this.getSavedLang(this)
+        this.setLocale(this, lang)
+
+    }
+
+    override fun attachBaseContext(newBase: Context) {
+        // .. create or get your new Locale object here.
+        var lang = getSavedLang(newBase)
+        val newLocale: Locale = Locale(lang)
+        val context = ContextWrapper.wrap(newBase, newLocale)
+        super.attachBaseContext(context)
+    }
+
+    fun getSavedLang(context: Context) : String {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(context)
         var lang = preferences.getString("lang", "")
-        if (!lang!!.equals("", ignoreCase = true)) {
-            this.setLocale(this, lang)
+        if (lang!!.equals("", ignoreCase = true)) {
+
+            lang = "en"
         }
+        return lang
     }
 
     override fun onConfigurationChanged(newConfig: Configuration?) {
         super.onConfigurationChanged(newConfig)
-        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
-        var lang = preferences.getString("lang", "")
-        if (!lang!!.equals("", ignoreCase = true)) {
-            this.setLocale(this, lang)
-        }
+        val lang = getSavedLang(this)
+        this.setLocale(this, lang)
     }
 
     fun saveLocale(lang : String) {
@@ -61,7 +68,6 @@ open class LanguagePreservingActivity : AppCompatActivity() {
         val configuration = baseContext.getResources().getConfiguration()
         configuration.setLocale(locale)
         configuration.setLayoutDirection(locale)
-
         return baseContext.createConfigurationContext(configuration)
     }
 

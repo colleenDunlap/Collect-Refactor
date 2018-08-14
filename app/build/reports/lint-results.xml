@@ -15,7 +15,25 @@
         errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/java/com/example/kaftand/entomologydatacollect/HumanLandingCatchIntro.kt"
-            line="29"
+            line="25"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="SimpleDateFormat"
+        severity="Warning"
+        message="To get local formatting use `getDateInstance()`, `getDateTimeInstance()`, or `getTimeInstance()`, or use `new SimpleDateFormat(String template, Locale locale)` with for example `Locale.US` for ASCII dates."
+        category="Correctness"
+        priority="6"
+        summary="Implied locale in date format"
+        explanation="Almost all callers should use `getDateInstance()`, `getDateTimeInstance()`, or `getTimeInstance()` to get a ready-made instance of SimpleDateFormat suitable for the user&apos;s locale. The main reason you&apos;d create an instance this class directly is because you need to format/parse a specific machine-readable format, in which case you almost certainly want to explicitly ask for US to ensure that you get ASCII digits (rather than, say, Arabic digits).&#xA;&#xA;Therefore, you should either use the form of the SimpleDateFormat constructor where you pass in an explicit locale, such as Locale.US, or use one of the get instance methods, or suppress this error if really know what you are doing."
+        url="http://developer.android.com/reference/java/text/SimpleDateFormat.html"
+        urls="http://developer.android.com/reference/java/text/SimpleDateFormat.html"
+        errorLine1="        val formatter = SimpleDateFormat(&quot;dd.MM.yyyy HH:mm:ss&quot;);"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/java/com/example/kaftand/entomologydatacollect/UploadFile.kt"
+            line="67"
             column="25"/>
     </issue>
 
@@ -146,7 +164,7 @@
         quickfix="studio">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml"
-            line="5"
+            line="7"
             column="5"/>
     </issue>
 
@@ -204,17 +222,17 @@
     <issue
         id="UnusedResources"
         severity="Warning"
-        message="The resource `R.string.title_activity_main` appears to be unused"
+        message="The resource `R.string.unsent` appears to be unused"
         category="Performance"
         priority="3"
         summary="Unused resources"
         explanation="Unused resources make applications larger and slow down builds."
-        errorLine1="    &lt;string name=&quot;title_activity_main&quot;>MainActivity&lt;/string>"
-        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~"
+        errorLine1="    &lt;string name=&quot;unsent&quot;>UNSENT&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~"
         quickfix="studio">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/values/strings.xml"
-            line="20"
+            line="21"
             column="13"/>
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/values-en/strings.xml"
@@ -227,20 +245,28 @@
     </issue>
 
     <issue
-        id="UselessLeaf"
+        id="UnusedResources"
         severity="Warning"
-        message="This `TableRow` view is useless (no children, no `background`, no `id`, no `style`)"
+        message="The resource `R.string.title_activity_main` appears to be unused"
         category="Performance"
-        priority="2"
-        summary="Useless leaf layout"
-        explanation="A layout that has no children or no background can often be removed (since it is invisible) for a flatter and more efficient layout hierarchy."
-        errorLine1="                &lt;TableRow>&lt;/TableRow>"
-        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="    &lt;string name=&quot;title_activity_main&quot;>MainActivity&lt;/string>"
+        errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~"
         quickfix="studio">
         <location
-            file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/layout/activity_human_landing_catch.xml"
-            line="846"
-            column="17"/>
+            file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/values/strings.xml"
+            line="29"
+            column="13"/>
+        <location
+            file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/values-en/strings.xml"
+            line="29"
+            column="13"/>
+        <location
+            file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/values-sw/strings.xml"
+            line="28"
+            column="13"/>
     </issue>
 
     <issue
@@ -257,6 +283,22 @@
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/layout/activity_human_landing_catch.xml"
             line="40"
             column="9"/>
+    </issue>
+
+    <issue
+        id="UselessParent"
+        severity="Warning"
+        message="This `TableRow` layout or its `TableLayout` parent is useless"
+        category="Performance"
+        priority="2"
+        summary="Useless parent layout"
+        explanation="A layout with children that has no siblings, is not a scrollview or a root layout, and does not have a background, can be removed and have its children moved directly into the parent for a flatter and more efficient layout hierarchy."
+        errorLine1="            &lt;TableRow>"
+        errorLine2="            ^">
+        <location
+            file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/layout/activity_upload_file.xml"
+            line="21"
+            column="13"/>
     </issue>
 
     <issue
@@ -290,7 +332,7 @@
         quickfix="studio">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml"
-            line="5"
+            line="7"
             column="5"/>
     </issue>
 
@@ -1946,12 +1988,12 @@
     <issue
         id="HardcodedText"
         severity="Warning"
-        message="Hardcoded string &quot;Gambiae&quot;, should use `@string` resource"
+        message="Hardcoded string &quot;GAMBIAE&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;Gambiae&quot;"
+        errorLine1="                android:text=&quot;GAMBIAE&quot;"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/layout/activity_human_landing_catch.xml"
@@ -1962,12 +2004,12 @@
     <issue
         id="HardcodedText"
         severity="Warning"
-        message="Hardcoded string &quot;Funestus&quot;, should use `@string` resource"
+        message="Hardcoded string &quot;FUNESTUS&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;Funestus&quot;"
+        errorLine1="                android:text=&quot;FUNESTUS&quot;"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/layout/activity_human_landing_catch.xml"
@@ -1978,12 +2020,12 @@
     <issue
         id="HardcodedText"
         severity="Warning"
-        message="Hardcoded string &quot;Coustani&quot;, should use `@string` resource"
+        message="Hardcoded string &quot;COUSTANI&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;Coustani&quot;"
+        errorLine1="                android:text=&quot;COUSTANI&quot;"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/layout/activity_human_landing_catch.xml"
@@ -1994,12 +2036,12 @@
     <issue
         id="HardcodedText"
         severity="Warning"
-        message="Hardcoded string &quot;Mansonia&quot;, should use `@string` resource"
+        message="Hardcoded string &quot;MANSONIA&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;Mansonia&quot;"
+        errorLine1="                android:text=&quot;MANSONIA&quot;"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/layout/activity_human_landing_catch.xml"
@@ -2010,12 +2052,12 @@
     <issue
         id="HardcodedText"
         severity="Warning"
-        message="Hardcoded string &quot;Aedes&quot;, should use `@string` resource"
+        message="Hardcoded string &quot;AEDES&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;Aedes&quot;"
+        errorLine1="                android:text=&quot;AEDES&quot;"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/layout/activity_human_landing_catch.xml"
@@ -2026,12 +2068,12 @@
     <issue
         id="HardcodedText"
         severity="Warning"
-        message="Hardcoded string &quot;Coquilettidia&quot;, should use `@string` resource"
+        message="Hardcoded string &quot;COQUILETTIDIA&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;Coquilettidia&quot;"
+        errorLine1="                android:text=&quot;COQUILETTIDIA&quot;"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/layout/activity_human_landing_catch.xml"
@@ -2042,12 +2084,12 @@
     <issue
         id="HardcodedText"
         severity="Warning"
-        message="Hardcoded string &quot;Other&quot;, should use `@string` resource"
+        message="Hardcoded string &quot;OTHER&quot;, should use `@string` resource"
         category="Internationalization"
         priority="5"
         summary="Hardcoded text"
         explanation="Hardcoding text attributes directly in layout files is bad for several reasons:&#xA;&#xA;* When creating configuration variations (for example for landscape or portrait)you have to repeat the actual text (and keep it up to date when making changes)&#xA;&#xA;* The application cannot be translated to other languages by just adding new translations for existing string resources.&#xA;&#xA;There are quickfixes to automatically extract this hardcoded string into a resource lookup."
-        errorLine1="                android:text=&quot;Other&quot;"
+        errorLine1="                android:text=&quot;OTHER&quot;"
         errorLine2="                ~~~~~~~~~~~~~~~~~~~~">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/layout/activity_human_landing_catch.xml"
@@ -2314,13 +2356,13 @@
     <issue
         id="RtlHardcoded"
         severity="Warning"
-        message="Use &quot;`end`&quot; instead of &quot;`right`&quot; to ensure correct behavior in right-to-left locales"
+        message="Use &quot;`start`&quot; instead of &quot;`left`&quot; to ensure correct behavior in right-to-left locales"
         category="Internationalization:Bidirectional Text"
         priority="5"
         summary="Using left/right instead of start/end attributes"
         explanation="Using `Gravity#LEFT` and `Gravity#RIGHT` can lead to problems when a layout is rendered in locales where text flows from right to left. Use `Gravity#START` and `Gravity#END` instead. Similarly, in XML `gravity` and `layout_gravity` attributes, use `start` rather than `left`.&#xA;&#xA;For XML attributes such as paddingLeft and `layout_marginLeft`, use `paddingStart` and `layout_marginStart`. **NOTE**: If your `minSdkVersion` is less than 17, you should add **both** the older left/right attributes **as well as** the new start/right attributes. On older platforms, where RTL is not supported and the start/right attributes are unknown and therefore ignored, you need the older left/right attributes. There is a separate lint check which catches that type of error.&#xA;&#xA;(Note: For `Gravity#LEFT` and `Gravity#START`, you can use these constants even when targeting older platforms, because the `start` bitmask is a superset of the `left` bitmask. Therefore, you can use `gravity=&quot;start&quot;` rather than `gravity=&quot;left|start&quot;`.)"
-        errorLine1="                    android:gravity=&quot;right&quot;"
-        errorLine2="                                     ~~~~~"
+        errorLine1="                    android:gravity=&quot;left&quot;"
+        errorLine2="                                     ~~~~"
         quickfix="studio">
         <location
             file="/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/res/layout/content_human_landing_catch_intro.xml"

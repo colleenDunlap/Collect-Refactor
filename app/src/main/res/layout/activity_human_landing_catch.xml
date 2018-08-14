@@ -10,6 +10,7 @@
 
 
     <LinearLayout
+        android:id="@+id/TableContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -48,43 +49,43 @@
 
 
             <TextView
-                android:id="@+id/Gambiae"
+                android:id="@+id/GAMBIAE"
                 style="@style/CellStyle1"
                 android:text="Gambiae"
                 android:tag="GAMBIAE"/>
 
             <TextView
-                android:id="@+id/Funestus"
+                android:id="@+id/FUNESTUS"
                 style="@style/CellStyle1"
                 android:text="Funestus"
                 android:tag="FUNESTUS"/>
 
             <TextView
-                android:id="@+id/Coustani"
+                android:id="@+id/COUSTANI"
                 style="@style/CellStyle1"
                 android:text="Coustani"
                 android:tag="COUSTANI"/>
 
             <TextView
-                android:id="@+id/Mansonia"
+                android:id="@+id/MANSONIA"
                 style="@style/CellStyle1"
                 android:text="Mansonia"
                 android:tag="MANSONIA"/>
 
             <TextView
-                android:id="@+id/Aedes"
+                android:id="@+id/AEDES"
                 style="@style/CellStyle1"
                 android:text="Aedes"
                 android:tag="AEDES"/>
 
             <TextView
-                android:id="@+id/Coquilettidia"
+                android:id="@+id/COQUILETTIDIA"
                 style="@style/CellStyle1"
                 android:text="Coquilettidia"
                 android:tag="COQUILETTIDIA"/>
 
             <TextView
-                android:id="@+id/Other"
+                android:id="@+id/OTHER"
                 style="@style/CellStyle1"
                 android:text="Other"
                 android:tag="OTHER"/>
@@ -129,43 +130,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_18_19_00_Gambiae"
+                        android:id="@+id/H_18_19_00_GAMBIAE"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_18_19_00_Funestus"
+                        android:id="@+id/H_18_19_00_FUNESTUS"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_18_19_00_Coustani"
+                        android:id="@+id/H_18_19_00_COUSTANI"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_18_19_00_Mansonia"
+                        android:id="@+id/H_18_19_00_MANSONIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/H_18_19_00_Aedes"
+                        android:id="@+id/H_18_19_00_AEDES"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_18_19_00_Coquilettidia"
+                        android:id="@+id/H_18_19_00_COQUILETTIDIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_18_19_00_Other"
+                        android:id="@+id/H_18_19_00_OTHER"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -185,43 +186,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_19_20_00_Gambiae"
+                        android:id="@+id/H_19_20_00_GAMBIAE"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_19_20_00_Funestus"
+                        android:id="@+id/H_19_20_00_FUNESTUS"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_19_20_00_Coustani"
+                        android:id="@+id/H_19_20_00_COUSTANI"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_19_20_00_Mansonia"
+                        android:id="@+id/H_19_20_00_MANSONIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/H_19_20_00_Aedes"
+                        android:id="@+id/H_19_20_00_AEDES"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_19_20_00_Coquilettidia"
+                        android:id="@+id/H_19_20_00_COQUILETTIDIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_19_20_00_Other"
+                        android:id="@+id/H_19_20_00_OTHER"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -241,43 +242,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_20_21_00_Gambiae"
+                        android:id="@+id/H_20_21_00_GAMBIAE"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_20_21_00_Funestus"
+                        android:id="@+id/H_20_21_00_FUNESTUS"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_20_21_00_Coustani"
+                        android:id="@+id/H_20_21_00_COUSTANI"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_20_21_00_Mansonia"
+                        android:id="@+id/H_20_21_00_MANSONIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/H_20_21_00_Aedes"
+                        android:id="@+id/H_20_21_00_AEDES"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_20_21_00_Coquilettidia"
+                        android:id="@+id/H_20_21_00_COQUILETTIDIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_20_21_00_Other"
+                        android:id="@+id/H_20_21_00_OTHER"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -297,43 +298,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_21_22_00_Gambiae"
+                        android:id="@+id/H_21_22_00_GAMBIAE"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_21_22_00_Funestus"
+                        android:id="@+id/H_21_22_00_FUNESTUS"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_21_22_00_Coustani"
+                        android:id="@+id/H_21_22_00_COUSTANI"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_21_22_00_Mansonia"
+                        android:id="@+id/H_21_22_00_MANSONIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/H_21_22_00_Aedes"
+                        android:id="@+id/H_21_22_00_AEDES"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_21_22_00_Coquilettidia"
+                        android:id="@+id/H_21_22_00_COQUILETTIDIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_21_22_00_Other"
+                        android:id="@+id/H_21_22_00_OTHER"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -353,43 +354,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_22_23_00_Gambiae"
+                        android:id="@+id/H_22_23_00_GAMBIAE"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_22_23_00_Funestus"
+                        android:id="@+id/H_22_23_00_FUNESTUS"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_22_23_00_Coustani"
+                        android:id="@+id/H_22_23_00_COUSTANI"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_22_23_00_Mansonia"
+                        android:id="@+id/H_22_23_00_MANSONIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/H_22_23_00_Aedes"
+                        android:id="@+id/H_22_23_00_AEDES"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_22_23_00_Coquilettidia"
+                        android:id="@+id/H_22_23_00_COQUILETTIDIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_22_23_00_Other"
+                        android:id="@+id/H_22_23_00_OTHER"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -409,43 +410,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_23_24_00_Gambiae"
+                        android:id="@+id/H_23_24_00_GAMBIAE"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_23_24_00_Funestus"
+                        android:id="@+id/H_23_24_00_FUNESTUS"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_23_24_00_Coustani"
+                        android:id="@+id/H_23_24_00_COUSTANI"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_23_24_00_Mansonia"
+                        android:id="@+id/H_23_24_00_MANSONIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="MANSONIA" />
 
                     <EditText
-                        android:id="@+id/H_23_24_00_Aedes"
+                        android:id="@+id/H_23_24_00_AEDES"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_23_24_00_Coquilettidia"
+                        android:id="@+id/H_23_24_00_COQUILETTIDIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_23_24_00_Other"
+                        android:id="@+id/H_23_24_00_OTHER"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -465,43 +466,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_24_01_00_Gambiae"
+                        android:id="@+id/H_24_01_00_GAMBIAE"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_24_01_00_Funestus"
+                        android:id="@+id/H_24_01_00_FUNESTUS"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_24_01_00_Coustani"
+                        android:id="@+id/H_24_01_00_COUSTANI"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_24_01_00_Mansonia"
+                        android:id="@+id/H_24_01_00_MANSONIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/H_24_01_00_Aedes"
+                        android:id="@+id/H_24_01_00_AEDES"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_24_01_00_Coquilettidia"
+                        android:id="@+id/H_24_01_00_COQUILETTIDIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_24_01_00_Other"
+                        android:id="@+id/H_24_01_00_OTHER"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -521,43 +522,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_01_02_00_Gambiae"
+                        android:id="@+id/H_01_02_00_GAMBIAE"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_01_02_00_Funestus"
+                        android:id="@+id/H_01_02_00_FUNESTUS"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_01_02_00_Coustani"
+                        android:id="@+id/H_01_02_00_COUSTANI"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_01_02_00_Mansonia"
+                        android:id="@+id/H_01_02_00_MANSONIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/H_01_02_00_Aedes"
+                        android:id="@+id/H_01_02_00_AEDES"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_01_02_00_Coquilettidia"
+                        android:id="@+id/H_01_02_00_COQUILETTIDIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_01_02_00_Other"
+                        android:id="@+id/H_01_02_00_OTHER"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -577,43 +578,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_02_03_00_Gambiae"
+                        android:id="@+id/H_02_03_00_GAMBIAE"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_02_03_00_Funestus"
+                        android:id="@+id/H_02_03_00_FUNESTUS"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_02_03_00_Coustani"
+                        android:id="@+id/H_02_03_00_COUSTANI"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_02_03_00_Mansonia"
+                        android:id="@+id/H_02_03_00_MANSONIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/H_02_03_00_Aedes"
+                        android:id="@+id/H_02_03_00_AEDES"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_02_03_00_Coquilettidia"
+                        android:id="@+id/H_02_03_00_COQUILETTIDIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_02_03_00_Other"
+                        android:id="@+id/H_02_03_00_OTHER"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -633,43 +634,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_03_04_00_Gambiae"
+                        android:id="@+id/H_03_04_00_GAMBIAE"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_03_04_00_Funestus"
+                        android:id="@+id/H_03_04_00_FUNESTUS"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_03_04_00_Coustani"
+                        android:id="@+id/H_03_04_00_COUSTANI"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_03_04_00_Mansonia"
+                        android:id="@+id/H_03_04_00_MANSONIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/H_03_04_00_Aedes"
+                        android:id="@+id/H_03_04_00_AEDES"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_03_04_00_Coquilettidia"
+                        android:id="@+id/H_03_04_00_COQUILETTIDIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_03_04_00_Other"
+                        android:id="@+id/H_03_04_00_OTHER"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -689,43 +690,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_04_05_00_Gambiae"
+                        android:id="@+id/H_04_05_00_GAMBIAE"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_04_05_00_Funestus"
+                        android:id="@+id/H_04_05_00_FUNESTUS"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_04_05_00_Coustani"
+                        android:id="@+id/H_04_05_00_COUSTANI"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_04_05_00_Mansonia"
+                        android:id="@+id/H_04_05_00_MANSONIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/H_04_05_00_Aedes"
+                        android:id="@+id/H_04_05_00_AEDES"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_04_05_00_Coquilettidia"
+                        android:id="@+id/H_04_05_00_COQUILETTIDIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_04_05_00_Other"
+                        android:id="@+id/H_04_05_00_OTHER"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -745,43 +746,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/H_05_06_00_Gambiae"
+                        android:id="@+id/H_05_06_00_GAMBIAE"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/H_05_06_00_Funestus"
+                        android:id="@+id/H_05_06_00_FUNESTUS"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/H_05_06_00_Coustani"
+                        android:id="@+id/H_05_06_00_COUSTANI"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/H_05_06_00_Mansonia"
+                        android:id="@+id/H_05_06_00_MANSONIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/H_05_06_00_Aedes"
+                        android:id="@+id/H_05_06_00_AEDES"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/H_05_06_00_Coquilettidia"
+                        android:id="@+id/H_05_06_00_COQUILETTIDIA"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/H_05_06_00_Other"
+                        android:id="@+id/H_05_06_00_OTHER"
                         style="@style/CellStyle1"
                         android:inputType="number"
                         android:tag="OTHER"/>
@@ -801,43 +802,43 @@
                         style="@style/HourStyle"/>
 
                     <EditText
-                        android:id="@+id/TOTAL_Gambiae"
+                        android:id="@+id/TOTAL_GAMBIAE"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="GAMBIAE"/>
 
                     <EditText
-                        android:id="@+id/TOTAL_Funestus"
+                        android:id="@+id/TOTAL_FUNESTUS"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="FUNESTUS"/>
 
                     <EditText
-                        android:id="@+id/TOTAL_Coustani"
+                        android:id="@+id/TOTAL_COUSTANI"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COUSTANI"/>
 
                     <EditText
-                        android:id="@+id/TOTAL_Mansonia"
+                        android:id="@+id/TOTAL_MANSONIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="MANSONIA"/>
 
                     <EditText
-                        android:id="@+id/TOTAL_Aedes"
+                        android:id="@+id/TOTAL_AEDES"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="AEDES"/>
 
                     <EditText
-                        android:id="@+id/TOTAL_Coquilettidia"
+                        android:id="@+id/TOTAL_COQUILETTIDIA"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="COQUILETTIDIA"/>
 
                     <EditText
-                        android:id="@+id/TOTAL_Other"
+                        android:id="@+id/TOTAL_OTHER"
                         style="@style/CellStyle2"
                         android:inputType="number"
                         android:tag="OTHER"/>

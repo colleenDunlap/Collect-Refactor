@@ -4,7 +4,7 @@
             "outputFile": "/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
             "map": [
                 {
-                    "source": "/Users/kaftand/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/34de3c909b61a1b239ea8339a340d780/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "source": "/Users/kaftand/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/5a2d9fbb53773c724f6ae075a9789d38/res/values-hdpi-v4/values-hdpi-v4.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

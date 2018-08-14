@@ -4,7 +4,7 @@
             "outputFile": "/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-mr/values-mr.xml",
             "map": [
                 {
-                    "source": "/Users/kaftand/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/34de3c909b61a1b239ea8339a340d780/res/values-mr/values-mr.xml",
+                    "source": "/Users/kaftand/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/5a2d9fbb53773c724f6ae075a9789d38/res/values-mr/values-mr.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/41c94edb24435588ce60e970e59158be/res/values-mr/values-mr.xml",
+                    "source": "/Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/cea67021a8f42ba5bedaa1ddaf29265b/res/values-mr/values-mr.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

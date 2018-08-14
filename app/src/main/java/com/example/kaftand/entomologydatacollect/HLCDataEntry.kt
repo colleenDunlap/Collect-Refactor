@@ -1,8 +1,9 @@
 package com.example.kaftand.entomologydatacollect
 
+import java.io.Serializable
 import java.sql.Date
 
-class HLCDataEntry (metaData: HLCMetaData) {
+class HLCDataEntry (metaData: HLCMetaData) : Serializable {
     public var VILLAGE: String? = null
     public var PROJECT_CODE: String? = null
     public var DATE: String? = null
