@@ -1,12 +1,14 @@
 package com.example.kaftand.entomologydatacollect
 
 import android.content.Context
+import android.text.InputType
 import android.view.View
 import android.widget.EditText
 import android.widget.TableRow
 import android.widget.TextView
 import com.example.kaftand.entomologydatacollect.R
 import kotlin.properties.Delegates
+import kotlin.reflect.KProperty
 
 class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int, override var context: Context) : TabularData {
     override var dataArray  = ArrayList<Any>()
@@ -42,43 +44,55 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int, 
     override fun createRow(iRow : Int, context: Context) : TableRow {
         var row = TableRow(context)
         var thisRow = this.dataArray.get(iRow) as HLCDataEntry
-        var hourView = TextView(context)
+        var hourView = AssociativeTextView(context, HLCDataEntry::HOUR)
         hourView.setText(thisRow.HOUR)
         hourView.tag = "HOUR"
         row.addView(hourView)
         var gambiaeView = EditText(context)
+        gambiaeView.inputType = InputType.TYPE_CLASS_NUMBER
         gambiaeView.setText(thisRow.GAMBIAE.toString())
         gambiaeView.tag = "GAMBIAE"
         row.addView(gambiaeView)
         var culexView = EditText(context)
+        culexView.inputType = InputType.TYPE_CLASS_NUMBER
         culexView.setText(thisRow.CULEX.toString())
         culexView.tag = "CULEX"
         row.addView(culexView)
         var funestusView = EditText(context)
+        funestusView.inputType = InputType.TYPE_CLASS_NUMBER
         funestusView.setText(thisRow.FUNESTUS.toString())
         funestusView.tag = "FUNESTUS"
         row.addView(funestusView)
         var coustaniView = EditText(context)
+        coustaniView.inputType = InputType.TYPE_CLASS_NUMBER
         coustaniView.setText(thisRow.COUSTANI.toString())
         coustaniView.tag = "COUSTANI"
         row.addView(coustaniView)
         var mansoniaView = EditText(context)
+        mansoniaView.inputType = InputType.TYPE_CLASS_NUMBER
         mansoniaView.setText(thisRow.MANSONIA.toString())
         mansoniaView.tag = "MANSONIA"
         row.addView(mansoniaView)
         var aedesView = EditText(context)
+        aedesView.inputType = InputType.TYPE_CLASS_NUMBER
         aedesView.setText(thisRow.AEDES.toString())
         aedesView.tag = "AEDES"
         row.addView(aedesView)
         var coquilettidiaView = EditText(context)
+        coquilettidiaView.inputType = InputType.TYPE_CLASS_NUMBER
         coquilettidiaView.setText(thisRow.COQUILETTIDIA.toString())
         coquilettidiaView.tag = "COQUILETTIDIA"
         row.addView(coquilettidiaView)
         var otherView = EditText(context)
+        otherView.inputType = InputType.TYPE_CLASS_NUMBER
         otherView.setText(thisRow.OTHER.toString())
         otherView.tag = "OTHER"
         row.addView(otherView)
         return row
+    }
+
+    fun getPropertyRowMap() : Array<KProperty<*>> {
+        return arrayOf(HLCDataEntry::HOUR, HLCDataEntry::GAMBIAE, HLCDataEntry::CULEX, HLCDataEntry::FUNESTUS)
     }
 
     override fun updateRowOfData(iRow : Int, row: TableRow, missingDataError : String) : Boolean {

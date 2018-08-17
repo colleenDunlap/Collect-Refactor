@@ -37,9 +37,14 @@ class HumanLandingCatch : LanguagePreservingActivity() {
         }
         var dataTable = HLCDataTable(this.hLCMeta, 13, this)
         this.DataTableView = TableEntryView(this, dataTable)
-        var dataView : LinearLayout = findViewById(R.id.TableContainer)
-        dataView.addView(this.DataTableView)
-        this.DataTableView.addView(this.DataTableView.createHeaderRow())
+        var lp = TableLayout.LayoutParams()
+        lp.width = TableLayout.LayoutParams.MATCH_PARENT
+        lp.height = TableLayout.LayoutParams.WRAP_CONTENT
+        this.DataTableView.layoutParams = lp
+        var dataView : LinearLayout = findViewById(R.id.MainTableContainer)
+        var headerTableContainer : LinearLayout = findViewById(R.id.TableHeaderContainer)
+        dataView.addView(this.DataTableView,0)
+        headerTableContainer.addView(this.DataTableView.createHeaderTable(), 1)
         val dataBundle = intent.getBundleExtra("HLCSaveData")
         if (dataBundle != null)
         {
