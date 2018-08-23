@@ -6,12 +6,12 @@ import android.widget.TableRow
 
 interface TabularData {
     val metaData : MetaDataInterface
-    var dataArray : ArrayList<Any>
-    var context : Context
+    var dataArray : ArrayList<DataEntryInterface>
     val nRows: Int
 
     fun getColNames() : ArrayList<String>
     fun createRow(iRow : Int, context: Context) : TableRow
-    fun data2Json() : String
-    fun updateRowOfData(iRow : Int, row: TableRow, missingDataError : String) : Boolean
+    fun buildInfoRow (context: Context) : TableRow
+    fun buildInfoHeader(context: Context) : TableRow
+    fun checkMissingData(iRow : Int, row: TableRow, missingDataError : String) : Boolean
 }

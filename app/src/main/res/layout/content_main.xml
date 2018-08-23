@@ -45,6 +45,13 @@
                 android:text="Kiswahili" />
         </RadioGroup>
 
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            style="@android:style/Widget.Holo.Light.Spinner"/>
+
         <Button
             android:id="@+id/newFormButton"
             android:layout_width="match_parent"
@@ -65,5 +72,8 @@
             android:layout_height="wrap_content"
             android:onClick="editFormButtonClick"
             android:text="@string/edit_form" />
+
+
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

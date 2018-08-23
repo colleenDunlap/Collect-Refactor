@@ -24,6 +24,7 @@ import com.android.volley.toolbox.StringRequest
 import java.io.UnsupportedEncodingException
 import com.android.volley.VolleyLog
 import com.android.volley.AuthFailureError
+import com.google.gson.Gson
 import kotlin.math.roundToInt
 
 
@@ -195,7 +196,6 @@ open class UploadFile : LanguagePreservingActivity() {
             }
         }
         requestQueue.add(stringRequest);
-
     }
 
 

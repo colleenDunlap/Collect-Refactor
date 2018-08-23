@@ -1,7 +1,9 @@
 package com.example.kaftand.entomologydatacollect
 
+import android.app.Application
 import android.os.Parcel
 import android.os.Parcelable
+import android.widget.TableRow
 import java.sql.Date
 
 class HLCMetaData() : MetaDataInterface {
@@ -53,7 +55,7 @@ class HLCMetaData() : MetaDataInterface {
         }
     }
 
-    override fun stringifyInfo() : ArrayList<String>
+    fun stringifyInfo() : ArrayList<String>
     {
         var infoArray : ArrayList<String> = ArrayList<String>()
         if (this.IN_OR_OUT == "in")
@@ -71,6 +73,7 @@ class HLCMetaData() : MetaDataInterface {
         infoArray.add("${R.string.volunteer_number_outside} ${this.VOLUNTEER_NUMBER_OUT}")
         return infoArray
     }
+
 
 
 }

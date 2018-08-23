@@ -35,7 +35,13 @@ class HumanLandingCatch : LanguagePreservingActivity() {
             tvInOut.setText(getString(R.string.outdoor).toUpperCase())
             buttonNextOrFinish.setText(getString(R.string.finish))
         }
-        var dataTable = HLCDataTable(this.hLCMeta, 13, this)
+        var dataTableJson = bundle.getString("DataBundle")
+        var dataTable = HLCDataTable(this.hLCMeta, 13)
+        if(dataTableJson != null) {
+            val gson = Gson()
+            dataTable = gson.fromJson<HLCDataTable>(dataTableJson, HLCDataTable::class.java!!)
+        }
+
         this.DataTableView = TableEntryView(this, dataTable)
         var lp = TableLayout.LayoutParams()
         lp.width = TableLayout.LayoutParams.MATCH_PARENT
@@ -57,13 +63,11 @@ class HumanLandingCatch : LanguagePreservingActivity() {
 
     fun collectGoToNextPage(view: View) {
         try {
-            var HLCDataArray = collectHLCData()
-            this.writeData2Json(HLCDataArray)
+            var dataTable = this.DataTableView.tableData as HLCDataTable
+            this.writeData2Json(dataTable)
         } catch(e : Exception) {
             return
         }
-
-
 
         if (this.hLCMeta.IN_OR_OUT == "in")
         {
@@ -82,7 +86,7 @@ class HumanLandingCatch : LanguagePreservingActivity() {
         }
     }
 
-    fun writeData2Json(data: ArrayList<HLCDataEntry>)
+    fun writeData2Json(data: HLCDataTable)
     {
         val gson = Gson()
         val jsonString: String = gson.toJson(data)
@@ -104,85 +108,6 @@ class HumanLandingCatch : LanguagePreservingActivity() {
             Log.e("Exception", "File write failed: " + e.toString())
         }
 
-    }
-    fun collectHLCData() : ArrayList<HLCDataEntry>
-    {
-        val nRows = 13
-        val nCols = 8
-        var missingData = false
-        var HLCDataArray = ArrayList<HLCDataEntry>()
-        var table = findViewById<TableLayout>(R.id.mainHLCTable)
-        for (iRow  : Int in 0..(nRows-1))
-        {
-            var thisHLC = HLCDataEntry(this.hLCMeta)
-            var thisTableRow = table.getChildAt(iRow) as TableRow
-            for(iCol : Int in 0..(nCols-1))
-            {
-                var thisTableCell = thisTableRow.getChildAt(iCol)
-                var thisTableCellTag = thisTableCell.getTag().toString()
-                if (thisTableCellTag == "HOUR") {
-                    thisHLC.HOUR = (thisTableRow.getChildAt(iCol) as TextView).getText().toString()
-                } else if (thisTableCellTag == "GAMBIAE") {
-                    thisHLC.GAMBIAE = (thisTableRow.getChildAt(iCol) as EditText).getText().toString().toIntOrNull()
-                    if (thisHLC.GAMBIAE == null)
-                    {
-                        (thisTableRow.getChildAt(iCol) as EditText).setError(getString(R.string.missing_data))
-                        missingData = true
-                    }
-                } else if (thisTableCellTag == "FUNESTUS") {
-                    thisHLC.FUNESTUS = (thisTableRow.getChildAt(iCol) as EditText).getText().toString().toIntOrNull()
-                    if (thisHLC.FUNESTUS == null)
-                    {
-                        (thisTableRow.getChildAt(iCol) as EditText).setError(getString(R.string.missing_data))
-                        missingData = true
-                    }
-                } else if (thisTableCellTag == "COUSTANI") {
-                    thisHLC.COUSTANI = (thisTableRow.getChildAt(iCol) as EditText).getText().toString().toIntOrNull()
-                    if (thisHLC.COUSTANI == null)
-                    {
-                        (thisTableRow.getChildAt(iCol) as EditText).setError(getString(R.string.missing_data))
-                        missingData = true
-                    }
-                } else if (thisTableCellTag == "MANSONIA") {
-                    thisHLC.MANSONIA = (thisTableRow.getChildAt(iCol) as EditText).getText().toString().toIntOrNull()
-                    if (thisHLC.MANSONIA == null)
-                    {
-                        (thisTableRow.getChildAt(iCol) as EditText).setError(getString(R.string.missing_data))
-                        missingData = true
-                    }
-                } else if (thisTableCellTag == "AEDES") {
-                    thisHLC.AEDES = (thisTableRow.getChildAt(iCol) as EditText).getText().toString().toIntOrNull()
-                    if (thisHLC.AEDES == null)
-                    {
-                        (thisTableRow.getChildAt(iCol) as EditText).setError(getString(R.string.missing_data))
-                        missingData = true
-                    }
-                } else if (thisTableCellTag == "COQUILETTIDIA") {
-                    thisHLC.COQUILETTIDIA = (thisTableRow.getChildAt(iCol) as EditText).getText().toString().toIntOrNull()
-                    if (thisHLC.COQUILETTIDIA == null)
-                    {
-                        (thisTableRow.getChildAt(iCol) as EditText).setError(getString(R.string.missing_data))
-                        missingData = true
-                    }
-                } else if (thisTableCellTag == "OTHER") {
-                    thisHLC.OTHER = (thisTableRow.getChildAt(iCol) as EditText).getText().toString().toIntOrNull()
-                    if (thisHLC.OTHER == null)
-                    {
-                        (thisTableRow.getChildAt(iCol) as EditText).setError(getString(R.string.missing_data))
-                        missingData = true
-                    }
-                } else {
-                    throw error("Incorrect Tag supplied")
-                }
-            }
-            HLCDataArray.add(thisHLC)
-        }
-        if (missingData)
-        {
-            throw(error("Missing Data"))
-        }
-
-        return HLCDataArray
     }
 
     fun populateData(HLCDataArray : ArrayList<HLCDataEntry>) {

@@ -11,10 +11,12 @@ import android.view.Gravity
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.widget.*
+import com.google.gson.Gson
 import java.lang.Math.min
 import java.lang.Math.round
 
 class TableEntryView(context : Context,var tableData : TabularData) : TableLayout(context) {
+
 
     init {
         this.createTable()
@@ -65,6 +67,7 @@ class TableEntryView(context : Context,var tableData : TabularData) : TableLayou
             var thisWidth = colWidths[iChild]
             cellLp.width = round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, thisWidth, resources.displayMetrics));
             cell.imeOptions = EditorInfo.IME_FLAG_NO_EXTRACT_UI
+            cell.setSelectAllOnFocus(true)
             cell.gravity = Gravity.CENTER
             if (isHeader) {
                 minTextSize = min(getTextSize(cell, thisWidth), minTextSize)
@@ -102,6 +105,20 @@ class TableEntryView(context : Context,var tableData : TabularData) : TableLayou
         val width = bounds.width().toFloat() * getResources().getDisplayMetrics().scaledDensity
         return (0.8*(cellSize*originalTextSize)/width).toFloat()
     }
+
+    fun collectData(dataArray : Array<Any>) {
+        var nRows = this.childCount
+        for (iRow in 0 until nRows)
+        {
+            var thisRow : TableRow = this.getChildAt(iRow) as TableRow
+            var nCells = thisRow.childCount
+            for (iCell in 0 until nCells)
+            {
+            }
+        }
+    }
+
+
 
 
 

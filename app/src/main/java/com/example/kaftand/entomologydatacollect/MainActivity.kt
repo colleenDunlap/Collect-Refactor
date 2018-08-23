@@ -15,6 +15,10 @@ import android.content.res.Configuration
 import android.support.v7.app.AlertDialog
 import android.net.ConnectivityManager
 import android.preference.PreferenceManager
+import android.widget.ArrayAdapter
+import android.widget.Spinner
+import com.example.kaftand.entomologydatacollect.R.id.englishRadio
+import com.example.kaftand.entomologydatacollect.R.id.kiswahiliRadio
 
 
 class MainActivity : LanguagePreservingActivity() {
@@ -31,6 +35,12 @@ class MainActivity : LanguagePreservingActivity() {
         {
             kiswahiliRadio.isChecked = true
         }
+
+        val spinner = findViewById(R.id.spinner2) as Spinner
+        val adapter = ArrayAdapter.createFromResource(this,
+                R.array.form_type_drop_down, android.R.layout.simple_spinner_item)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner.setAdapter(adapter)
     }
 
 

@@ -2,16 +2,17 @@ package com.example.kaftand.entomologydatacollect
 
 import android.content.Context
 import android.text.InputType
-import android.view.View
 import android.widget.EditText
 import android.widget.TableRow
 import android.widget.TextView
-import com.example.kaftand.entomologydatacollect.R
 import kotlin.properties.Delegates
-import kotlin.reflect.KProperty
+import android.text.Editable
+import android.text.TextWatcher
+import com.google.gson.Gson
 
-class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int, override var context: Context) : TabularData {
-    override var dataArray  = ArrayList<Any>()
+
+class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) : TabularData {
+    override var dataArray  = ArrayList<DataEntryInterface>()
     var hourArray: Array<String> by Delegates.notNull()
     init {
         hourArray = arrayOf("18-19:00","19-20:00","20-21:00","21-22:00","22-23:00",
@@ -37,65 +38,170 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int, 
         return colnames
     }
 
-    override fun data2Json() : String {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
     override fun createRow(iRow : Int, context: Context) : TableRow {
+
         var row = TableRow(context)
         var thisRow = this.dataArray.get(iRow) as HLCDataEntry
         var hourView = AssociativeTextView(context, HLCDataEntry::HOUR)
         hourView.setText(thisRow.HOUR)
-        hourView.tag = "HOUR"
         row.addView(hourView)
-        var gambiaeView = EditText(context)
+
+        var gambiaeView = AssociativeEditText(context, HLCDataEntry::GAMBIAE)
         gambiaeView.inputType = InputType.TYPE_CLASS_NUMBER
         gambiaeView.setText(thisRow.GAMBIAE.toString())
-        gambiaeView.tag = "GAMBIAE"
+        gambiaeView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                setGambiae(s.toString().toInt(), iRow)
+            }
+        })
         row.addView(gambiaeView)
-        var culexView = EditText(context)
+
+        var culexView = AssociativeEditText(context, HLCDataEntry::CULEX)
         culexView.inputType = InputType.TYPE_CLASS_NUMBER
         culexView.setText(thisRow.CULEX.toString())
-        culexView.tag = "CULEX"
+        culexView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                setCulex(s.toString().toInt(), iRow)
+            }
+        })
         row.addView(culexView)
-        var funestusView = EditText(context)
+
+        var funestusView = AssociativeEditText(context, HLCDataEntry::FUNESTUS)
         funestusView.inputType = InputType.TYPE_CLASS_NUMBER
         funestusView.setText(thisRow.FUNESTUS.toString())
-        funestusView.tag = "FUNESTUS"
+        funestusView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                setFunestus(s.toString().toInt(), iRow)
+            }
+        })
         row.addView(funestusView)
-        var coustaniView = EditText(context)
+        var coustaniView = AssociativeEditText(context, HLCDataEntry::COUSTANI)
         coustaniView.inputType = InputType.TYPE_CLASS_NUMBER
         coustaniView.setText(thisRow.COUSTANI.toString())
-        coustaniView.tag = "COUSTANI"
+        coustaniView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                setCoustani(s.toString().toInt(), iRow)
+            }
+        })
         row.addView(coustaniView)
-        var mansoniaView = EditText(context)
+
+        var mansoniaView = AssociativeEditText(context, HLCDataEntry::MANSONIA)
         mansoniaView.inputType = InputType.TYPE_CLASS_NUMBER
         mansoniaView.setText(thisRow.MANSONIA.toString())
-        mansoniaView.tag = "MANSONIA"
+        mansoniaView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                setMansonia(s.toString().toInt(), iRow)
+            }
+        })
         row.addView(mansoniaView)
-        var aedesView = EditText(context)
+
+        var aedesView = AssociativeEditText(context, HLCDataEntry::AEDES)
         aedesView.inputType = InputType.TYPE_CLASS_NUMBER
         aedesView.setText(thisRow.AEDES.toString())
-        aedesView.tag = "AEDES"
+        aedesView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                setAedes(s.toString().toInt(), iRow)
+            }
+        })
         row.addView(aedesView)
-        var coquilettidiaView = EditText(context)
+
+        var coquilettidiaView = AssociativeEditText(context, HLCDataEntry::COQUILETTIDIA)
         coquilettidiaView.inputType = InputType.TYPE_CLASS_NUMBER
         coquilettidiaView.setText(thisRow.COQUILETTIDIA.toString())
-        coquilettidiaView.tag = "COQUILETTIDIA"
+        coquilettidiaView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                setCoquilettidia(s.toString().toInt(), iRow)
+            }
+        })
         row.addView(coquilettidiaView)
-        var otherView = EditText(context)
+
+        var otherView = AssociativeEditText(context, HLCDataEntry::OTHER)
         otherView.inputType = InputType.TYPE_CLASS_NUMBER
         otherView.setText(thisRow.OTHER.toString())
-        otherView.tag = "OTHER"
+        otherView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                setOther(s.toString().toInt(), iRow)
+            }
+        })
         row.addView(otherView)
         return row
     }
 
-    fun getPropertyRowMap() : Array<KProperty<*>> {
-        return arrayOf(HLCDataEntry::HOUR, HLCDataEntry::GAMBIAE, HLCDataEntry::CULEX, HLCDataEntry::FUNESTUS)
+    fun setGambiae(number : Int, iRow : Int)  {
+        (this.dataArray[iRow] as HLCDataEntry).GAMBIAE = number
     }
 
-    override fun updateRowOfData(iRow : Int, row: TableRow, missingDataError : String) : Boolean {
+    fun setCulex(number : Int, iRow : Int)  {
+        (this.dataArray[iRow] as HLCDataEntry).CULEX = number
+    }
+
+    fun setFunestus(number : Int, iRow : Int)  {
+        (this.dataArray[iRow] as HLCDataEntry).FUNESTUS = number
+    }
+
+    fun setCoustani(number : Int, iRow : Int)  {
+        (this.dataArray[iRow] as HLCDataEntry).COUSTANI = number
+    }
+
+    fun setMansonia(number : Int, iRow : Int)  {
+        (this.dataArray[iRow] as HLCDataEntry).MANSONIA = number
+    }
+
+    fun setAedes(number : Int, iRow : Int)  {
+        (this.dataArray[iRow] as HLCDataEntry).AEDES = number
+    }
+
+    fun setCoquilettidia(number : Int, iRow : Int)  {
+        (this.dataArray[iRow] as HLCDataEntry).COQUILETTIDIA = number
+    }
+
+    fun setOther(number : Int, iRow : Int)  {
+        (this.dataArray[iRow] as HLCDataEntry).OTHER = number
+    }
+
+
+    override fun checkMissingData(iRow : Int, row: TableRow, missingDataError : String) : Boolean {
 
         val nElements = row.childCount;
         var castedArray = dataArray as ArrayList<HLCDataEntry>
@@ -104,6 +210,14 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int, 
         {
             var thisTableCell = row.getChildAt(iCol)
             var thisTableCellTag = thisTableCell.getTag().toString()
+            if (row.getChildAt(iCol) is AssociativeTextView)
+            {
+
+            } else if (row.getChildAt(iCol) is AssociativeEditText) {
+                thisTableCell = thisTableCell as AssociativeEditText
+                //if (castedArray[iRow].get(thisTableCell.propertyRepresented))
+            }
+
             if (thisTableCellTag == "HOUR") {
                 castedArray[iRow].HOUR = (row.getChildAt(iCol) as TextView).getText().toString()
             } else if (thisTableCellTag == "GAMBIAE") {
@@ -117,7 +231,7 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int, 
                 castedArray[iRow].FUNESTUS = (row.getChildAt(iCol) as EditText).getText().toString().toIntOrNull()
                 if (castedArray[iRow].FUNESTUS == null)
                 {
-                    (row.getChildAt(iCol) as EditText).setError(this.context.getString(R.string.missing_data))
+                    (row.getChildAt(iCol) as EditText).setError(missingDataError)
                     missingData = true
                 }
             } else if (thisTableCellTag == "COUSTANI") {
@@ -160,5 +274,18 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int, 
             }
         }
         return missingData
+    }
+
+    override fun buildInfoRow(context: Context) : TableRow
+    {
+        var tr = TableRow(context)
+        return tr
+
+    }
+
+    override fun buildInfoHeader(context: Context) : TableRow
+    {
+        var tr = TableRow(context)
+        return tr
     }
 }
