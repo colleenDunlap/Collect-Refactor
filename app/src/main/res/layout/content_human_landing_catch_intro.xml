@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".HumanLandingCatchIntro"
+    tools:context=".HumanLandingCatch.HumanLandingCatchIntro"
     tools:showIn="@layout/activity_human_landing_catch_intro">
     <ScrollView
         android:layout_width="match_parent"

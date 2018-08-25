@@ -9,6 +9,7 @@ import kotlinx.android.synthetic.main.content_main.*
 import java.util.*
 import android.preference.PreferenceManager
 import android.content.res.Configuration
+import com.example.kaftand.entomologydatacollect.Util.ContextWrapper
 
 
 open class LanguagePreservingActivity : AppCompatActivity() {

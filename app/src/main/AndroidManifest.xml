@@ -27,23 +27,23 @@
         </activity>
         <activity
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
-            android:name=".HumanLandingCatch"
+            android:name=".HumanLandingCatch.HumanLandingCatch"
             android:label="HumanLandingCatch"
             android:launchMode="singleInstance"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
-            android:name=".HumanLandingCatchIntro"
+            android:name=".HumanLandingCatch.HumanLandingCatchIntro"
             android:screenOrientation="portrait"
             android:label="@string/title_activity_human_landing_catch_intro"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".UploadFile"
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="landscape"/>
         <activity android:name=".DataEditMenu"
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

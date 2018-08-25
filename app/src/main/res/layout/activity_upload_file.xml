@@ -17,30 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <TableRow>
-                <TextView
-                    android:id="@+id/uploadedHeader"
-                    android:text="@string/sent" />
-                <TextView
-                    android:id="@+id/formTypeHeader"
-                    android:text="@string/form_type"
-                    android:layout_height="100dp"
-                    android:layout_width="60dp"
-                    android:padding="10dp"/>
-                <TextView
-                    android:id="@+id/projectCodeHeader"
-                    android:text="@string/project_code"
-                    android:layout_height="60dp"
-                    android:layout_width="100dp"
-                    android:padding="10dp"/>
-                <TextView
-                    android:id="@+id/dateModifiedHeader"
-                    android:text="@string/date_modified"
-                    android:layout_height="60dp"
-                    android:layout_width="100dp"
-                    android:padding="10dp"/>
-            </TableRow>
         </TableLayout>
     </ScrollView>
     <Button

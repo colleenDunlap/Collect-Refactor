@@ -11,11 +11,11 @@ import android.view.Gravity
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.widget.*
-import com.google.gson.Gson
+import com.example.kaftand.entomologydatacollect.FormInterfaces.TabularData
 import java.lang.Math.min
 import java.lang.Math.round
 
-class TableEntryView(context : Context,var tableData : TabularData) : TableLayout(context) {
+class TableEntryView<TableEntryType>(context : Context,var tableData : TabularData <TableEntryType>) : TableLayout(context) {
 
 
     init {

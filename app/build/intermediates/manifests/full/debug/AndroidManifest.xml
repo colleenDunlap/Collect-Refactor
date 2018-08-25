@@ -34,14 +34,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.kaftand.entomologydatacollect.HumanLandingCatch"
+            android:name="com.example.kaftand.entomologydatacollect.HumanLandingCatch.HumanLandingCatch"
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
             android:label="HumanLandingCatch"
             android:launchMode="singleInstance"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name="com.example.kaftand.entomologydatacollect.HumanLandingCatchIntro"
+            android:name="com.example.kaftand.entomologydatacollect.HumanLandingCatch.HumanLandingCatchIntro"
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
             android:label="@string/title_activity_human_landing_catch_intro"
             android:screenOrientation="portrait"
@@ -49,11 +49,11 @@
         <activity
             android:name="com.example.kaftand.entomologydatacollect.UploadFile"
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="landscape" />
         <activity
             android:name="com.example.kaftand.entomologydatacollect.DataEditMenu"
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>

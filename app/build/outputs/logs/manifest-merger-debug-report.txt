@@ -85,7 +85,7 @@ category#android.intent.category.LAUNCHER
 ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:25:17-77
 	android:name
 		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:25:27-74
-activity#com.example.kaftand.entomologydatacollect.HumanLandingCatch
+activity#com.example.kaftand.entomologydatacollect.HumanLandingCatch.HumanLandingCatch
 ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:28:9-34:59
 	android:screenOrientation
 		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:33:13-50
@@ -98,8 +98,8 @@ ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/A
 	android:theme
 		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:34:13-56
 	android:name
-		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:30:13-46
-activity#com.example.kaftand.entomologydatacollect.HumanLandingCatchIntro
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:30:13-64
+activity#com.example.kaftand.entomologydatacollect.HumanLandingCatch.HumanLandingCatchIntro
 ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:35:9-40:59
 	android:screenOrientation
 		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:38:13-49
@@ -110,19 +110,19 @@ ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/A
 	android:theme
 		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:40:13-56
 	android:name
-		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:37:13-51
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:37:13-69
 activity#com.example.kaftand.entomologydatacollect.UploadFile
-ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:41:9-43:51
+ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:41:9-43:52
 	android:screenOrientation
-		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:43:13-49
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:43:13-50
 	android:configChanges
 		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:42:13-81
 	android:name
 		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:41:19-45
 activity#com.example.kaftand.entomologydatacollect.DataEditMenu
-ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:44:9-46:51
+ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:44:9-46:52
 	android:screenOrientation
-		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:46:13-49
+		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:46:13-50
 	android:configChanges
 		ADDED from /Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/src/main/AndroidManifest.xml:45:13-81
 	android:name

@@ -5,20 +5,17 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 
 import kotlinx.android.synthetic.main.content_main.*
 import java.util.*
 import android.content.DialogInterface
-import android.content.res.Configuration
 import android.support.v7.app.AlertDialog
 import android.net.ConnectivityManager
-import android.preference.PreferenceManager
 import android.widget.ArrayAdapter
 import android.widget.Spinner
-import com.example.kaftand.entomologydatacollect.R.id.englishRadio
-import com.example.kaftand.entomologydatacollect.R.id.kiswahiliRadio
+import com.example.kaftand.entomologydatacollect.HumanLandingCatch.HumanLandingCatch
+import com.example.kaftand.entomologydatacollect.HumanLandingCatch.HumanLandingCatchIntro
 
 
 class MainActivity : LanguagePreservingActivity() {
@@ -53,21 +50,33 @@ class MainActivity : LanguagePreservingActivity() {
     }
 
     fun fillOutFormButtonClick(view: View) {
-        startActivity( Intent(this, HumanLandingCatchIntro::class.java))
+        if (spinner2.selectedItem.toString() == getString(R.string.human_landing_catch)) {
+            startActivity(Intent(this, HumanLandingCatchIntro::class.java))
+        } else if (spinner2.selectedItem.toString() == getString(R.string.hut_study)) {
+            startActivity(Intent(this, HumanLandingCatchIntro::class.java))
+        }
     }
 
 
     fun uploadFormButtonClick(view: View) {
         if (this.checkForConnection())
         {
-            startActivity( Intent(this, UploadFile::class.java))
+            var intent = Intent(this, UploadFile::class.java)
+            var bundle = Bundle()
+            bundle.putString("formString", spinner2.selectedItem.toString())
+            intent.putExtra("FormType", bundle)
+            startActivity(intent)
         } else {
             this.alertNoInternet()
         }
     }
 
     fun editFormButtonClick (view: View) {
-        startActivity(Intent(this, DataEditMenu::class.java))
+        var intent = Intent(this, DataEditMenu::class.java)
+        var bundle = Bundle()
+        bundle.putString("formString", spinner2.selectedItem.toString())
+        intent.putExtra("FormType", bundle)
+        startActivity(intent)
     }
 
 
