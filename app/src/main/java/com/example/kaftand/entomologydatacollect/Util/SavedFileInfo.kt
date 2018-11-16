@@ -12,7 +12,6 @@ class SavedFileInfo {
         val parsedFile = file.name.split("---")
         this.sent = parsedFile[FileStoreUtil.sentCol]
         this.formType = parsedFile[FileStoreUtil.formTypeCol]
-        this.studyCode = parsedFile[FileStoreUtil.projectCodeCol]
         this.file = file
     }
 

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/TableHeaderContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:descendantFocusability="beforeDescendants"
+            android:focusableInTouchMode="true">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TableRow android:layout_width="match_parent">
+                    <TextView
+                        android:layout_height="50sp"
+                        android:layout_width="100sp"
+                        android:background="@drawable/border2"
+                        android:padding="2sp"
+                        android:text="@string/test"/>
+                    <TextView
+                        android:layout_height="50sp"
+                        android:layout_width="100sp"
+                        android:background="@drawable/border2"
+                        android:padding="2sp"
+                        android:text="@string/performed_by"/>
+                    <TextView
+                        android:layout_height="50sp"
+                        android:layout_width="100sp"
+                        android:background="@drawable/border2"
+                        android:padding="2sp"
+                        android:text="@string/scored_by"/>
+                    <TextView
+                        android:layout_height="50sp"
+                        android:layout_width="100sp"
+                        android:background="@drawable/border2"
+                        android:padding="2sp"
+                        android:text="@string/data_entered_by"/>
+                </TableRow>
+            </TableLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="20sp"
+                        android:id="@+id/section_a_table">
+                        <TableRow>
+                            <TextView style="@style/CellStyle1"
+                                android:text="@string/exposure"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle2"
+                                android:text="@string/kd60"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle1"
+                                android:text="@string/H24_mortality"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle2"
+                                android:text="@string/H48_mortality"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle1"
+                                android:text="@string/H72_mortality"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle2"
+                                android:text="@string/H96_mortality"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle1"
+                                android:text="@string/H120_mortality"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TableRow android:layout_width="match_parent">
+                    <TextView
+                        android:layout_height="50sp"
+                        android:layout_width="100sp"
+                        android:background="@drawable/border2"
+                        android:padding="2sp"
+                        android:text="@string/test"/>
+                    <TextView
+                        android:layout_height="50sp"
+                        android:layout_width="100sp"
+                        android:background="@drawable/border2"
+                        android:padding="2sp"
+                        android:text="@string/start_time_hh_mm"/>
+                    <TextView
+                        android:layout_height="50sp"
+                        android:layout_width="100sp"
+                        android:background="@drawable/border2"
+                        android:padding="2sp"
+                        android:text="@string/end_time_hh_mm"/>
+                    <TextView
+                        android:layout_height="50sp"
+                        android:layout_width="100sp"
+                        android:background="@drawable/border2"
+                        android:padding="2sp"
+                        android:text="@string/temperature"/>
+                    <TextView
+                        android:layout_height="50sp"
+                        android:layout_width="100sp"
+                        android:background="@drawable/border2"
+                        android:padding="2sp"
+                        android:text="@string/humidity"/>
+                </TableRow>
+            </TableLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="20sp"
+                        android:id="@+id/section_b_table">
+                        <TableRow>
+                            <EditText style="@style/CellStyle1"
+                                android:text="@string/acclimatization"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle2"
+                                android:text="@string/exposure"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle1"
+                                android:text="@string/kd60"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle2"
+                                android:text="@string/H24_mortality"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle1"
+                                android:text="@string/H48_mortality"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle2"
+                                android:text="@string/H72_mortality"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                            <EditText style="@style/CellStyle2"/>
+                        </TableRow>
+                        <TableRow>
+                            <EditText style="@style/CellStyle1"
+                                android:text="@string/H96_mortality"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                        </TableRow>
+
+                        <TableRow>
+                            <EditText style="@style/CellStyle1"
+                                android:text="@string/H120_mortality"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                            <EditText style="@style/CellStyle1"/>
+                        </TableRow>
+                    </TableLayout>
+                </LinearLayout>
+            </ScrollView>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TableRow
+                    android:layout_width="match_parent">
+                    <TableLayout android:layout_width="wrap_content"
+                         android:layout_height="wrap_content">
+                        <TableRow
+                            android:id="@+id/VerticalHeader1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView
+                                android:layout_height="180sp"
+                                android:layout_width="36sp"
+                                android:background="@drawable/border2"
+                                android:padding="2sp"
+                                android:textSize="6pt"
+                                android:text="@string/replicate"/>
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView
+                                android:layout_height="180sp"
+                                android:layout_width="36sp"
+                                android:background="@drawable/border2"
+                                android:padding="2sp"
+                                android:textSize="6pt"
+
+                                android:text="@string/exposure_start_hh_mm"/>
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView
+                                android:layout_height="180sp"
+                                android:layout_width="36sp"
+                                android:background="@drawable/border2"
+                                android:padding="2sp"
+                                android:textSize="6pt"
+
+                                android:text="@string/exposure_end_hh_mm"/>
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView
+                                android:layout_height="180sp"
+                                android:layout_width="36sp"
+                                android:background="@drawable/border2"
+                                android:padding="2sp"
+                                android:textSize="6pt"
+
+                                android:text="@string/n_mosquitoes_exposed"/>
+                        </TableRow>
+
+                    </TableLayout>
+                    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <TableRow>
+                            <TextView
+                                android:layout_span="2"
+                                android:text="@string/after_1HR"
+                                android:padding="3dip"
+                                android:layout_gravity="center_horizontal" />
+                            <TextView
+                                android:layout_span="2"
+                                android:text="@string/after_24HR"
+                                android:padding="3dip"
+                                android:layout_gravity="center_horizontal" />
+                            <TextView
+                                android:layout_span="2"
+                                android:text="@string/after_48HR"
+                                android:padding="3dip"
+                                android:layout_gravity="center_horizontal" />
+                            <TextView
+                                android:layout_span="2"
+                                android:text="@string/after_72HR"
+                                android:padding="3dip"
+                                android:textSize="12sp"
+                                android:layout_gravity="center_horizontal" />
+                            <TextView
+                                android:layout_span="2"
+                                android:text="@string/after_96HR"
+                                android:padding="3dip"
+                                android:layout_gravity="center_horizontal" />
+                            <TextView
+                                android:layout_span="2"
+                                android:text="@string/after_120HR"
+                                android:padding="3dip"
+                                android:textSize="12sp"
+                                android:layout_gravity="center_horizontal" />
+                        </TableRow>
+                        <TableRow
+                            android:id="@+id/VerticalHeader2"
+                            >
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/alive"
+                                style="@style/hut_trial_vertical_cell"/>
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/dead"
+                                style="@style/hut_trial_vertical_cell"/>
+
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/alive"
+                                style="@style/hut_trial_vertical_cell2"/>
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/dead"
+                                style="@style/hut_trial_vertical_cell2"/>
+
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/alive"
+                                style="@style/hut_trial_vertical_cell"/>
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/dead"
+                                style="@style/hut_trial_vertical_cell"/>
+
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/alive"
+                                style="@style/hut_trial_vertical_cell2"/>
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/dead"
+                                style="@style/hut_trial_vertical_cell2"/>
+
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/alive"
+                                style="@style/hut_trial_vertical_cell"/>
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/dead"
+                                style="@style/hut_trial_vertical_cell"/>
+
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/alive"
+                                style="@style/hut_trial_vertical_cell2"/>
+                            <com.example.kaftand.entomologydatacollect.Util.VerticalTextView android:text="@string/dead"
+                                style="@style/hut_trial_vertical_cell2"/>
+
+                        </TableRow>
+                    </TableLayout>
+
+                </TableRow>
+            </TableLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:id="@+id/MainTableContainer">
+                    <Button
+                        android:id="@+id/completeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="completeForm"
+                        android:text="@string/complete_form"
+                        tools:layout_editor_absoluteX="25dp"
+                        tools:layout_editor_absoluteY="511dp" />
+                    <Button
+                        android:id="@+id/collectDataButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="saveFormForTomorrow"
+                        android:text="@string/save_for_tomorrow"
+                        tools:layout_editor_absoluteX="25dp"
+                        tools:layout_editor_absoluteY="511dp" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -19,19 +19,21 @@
     </style>
 
     <style name="CellStyle1">
-        <item name="android:layout_width">90dp</item>
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">100sp</item>
+        <item name="android:layout_height">55sp</item>
         <item name="android:background">@drawable/border</item>
         <item name="android:gravity">center</item>
+        <item name="android:textSize">6pt</item>
         <item name="android:hint">@string/tap_to_enter</item>
         <item name="android:imeOptions">flagNoExtractUi</item>
     </style>
 
     <style name="CellStyle2">
-        <item name="android:layout_width">90dp</item>
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_width">100sp</item>
+        <item name="android:layout_height">55sp</item>
         <item name="android:background">@drawable/border2</item>
         <item name="android:gravity">center</item>
+        <item name="android:textSize">6pt</item>
         <item name="android:hint">@string/tap_to_enter</item>
         <item name="android:imeOptions">flagNoExtractUi</item>
     </style>
@@ -40,6 +42,33 @@
         <item name="android:layout_width">90dp</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="hut_trial_vertical_cell">
+        <item name="android:layout_width">36sp</item>
+        <item name="android:layout_height">130sp</item>
+        <item name="android:background">@drawable/border</item>
+        <item name="android:padding">2sp</item>
+    </style>
+
+    <style name="hut_trial_vertical_cell2">
+        <item name="android:layout_width">36sp</item>
+        <item name="android:layout_height">130sp</item>
+        <item name="android:background">@drawable/border2</item>
+        <item name="android:padding">2sp</item>
+    </style>
+
+    <style name="hut_trial_morning_cell">
+        <item name="android:padding">2sp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name = "android:layout_height">25sp</item>
+    </style>
+
+
+    <style name="hut_trial_species_cell">
+        <item name="android:padding">2sp</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name = "android:layout_height">25sp</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

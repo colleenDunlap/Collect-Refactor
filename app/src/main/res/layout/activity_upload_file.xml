@@ -12,19 +12,26 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <TableLayout
-            android:id="@+id/FileNameTable"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-        </TableLayout>
+            <TableLayout
+                android:id="@+id/FileNameTable"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            </TableLayout>
+            <Button
+                android:id="@+id/uploadButtonId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/upload"
+                android:onClick="uploadForms"/>
+        </LinearLayout>
     </ScrollView>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/upload"
-        android:onClick="uploadForms"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

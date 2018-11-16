@@ -70,6 +70,7 @@ class HumanLandingCatch : LanguagePreservingActivity() {
             var dataTable = this.DataTableView.tableData as HLCDataTable
             this.writeData2Json(dataTable)
         } catch(e : Exception) {
+            Log.v("BrokenSave", "It didnt save")
             return
         }
 
@@ -95,10 +96,7 @@ class HumanLandingCatch : LanguagePreservingActivity() {
         val gson = Gson()
         val jsonString: String = gson.toJson(data)
         val fsu = FileStoreUtil()
-        val filename : String =
-                fsu.CreateHLCFilename("UNSENT", this.hLCMeta.PROJECT_CODE,
-                this.hLCMeta.DATE, this.hLCMeta.CLUSTER_NUMBER.toString(),
-                this.hLCMeta.HOUSE_NUMBER.toString(), this.hLCMeta.IN_OR_OUT)
+        val filename = this.hLCMeta.getFilename()
         writeToFile(jsonString, filename, getApplicationContext())
         println(this.getFilesDir().getAbsolutePath().toString())
     }

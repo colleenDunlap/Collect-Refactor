@@ -30,11 +30,70 @@
     <string name="title_activity_human_landing_catch_intro">HumanLandingCatchIntro</string>
     <string name="human_landing_catch">Human Landing Catch</string>
     <string name="hut_study">Hut Study</string>
+    <string name="hut_number">NAMBA YA NYUMBA</string>
+    <string name="trap_id">TRAP_ID</string>
+    <string name="net_serial_number">Chandarua namba</string>
+    <string name="volunteer_number">Aliyelala (Kifupi)</string>
+    <string name="morning">asubuhi</string>
+    <string name="after_24_hours">masaa24</string>
+    <string name="unfed_alive">hajala wazima</string>
+    <string name="unfed_dead">hajala amekufa</string>
+    <string name="fed_alive">amekula wazima</string>
+    <string name="fed_dead">amekula amekufa</string>
+    <string name="how_many_huts">Nyumba ngapi?</string>
+    <string name="complete_form">Complete Form</string>
+    <string name="save_for_tomorrow">Save for tomorrow</string>
+    <string name="total_female">Jumla Jike</string>
+    <string name="CDC_HDT">CDC_HDT</string>
+    <string name="week">Weeki</string>
+    <string name="month">Miezi</string>
+    <string name="mortality">Mortality</string>
+    <string name="alive">Wazima</string>
+    <string name="dead">Amekufa</string>
+    <string name="indoor_resting_collection">Indoor Resting Collection</string>
+
+    <string name="irs_code">codi ya dawa</string>
+    <string name="temperature">joto</string>
+    <string name="humidity">mgandamizo wa hewa</string>
+    <string name="test_mosquito_colony_string">aina ya mbu</string>
+    <string name="age_of_mosquito">umri wa mbu (siku)</string>
+    <string name="acclimatization">kuweka mbu wazoee mazingira</string>
+    <string name="exposure">muda kuanza kwenye koni</string>
+    <string name="kd60">baada ya dakika 60</string>
+    <string name="H24_mortality">muda wa kufa baada ya saa 24</string>
+    <string name="H48_mortality">muda wa kufa baada ya saa 48</string>
+    <string name="H72_mortality">muda wa kufa baada ya saa 72</string>
+    <string name="H96_mortality">muda wa kufa baada ya saa 96</string>
+    <string name="H120_mortality">muda wa kufa baada ya saa 120</string>
+    <string name="start_time_hh_mm">kuanza ss:dd</string>
+    <string name="end_time_hh_mm">kuamaliza ss:dd</string>
+    <string name="replicate">namba ya majaribio</string>
+    <string name="exposure_start_hh_mm">muda wa kuanza kuweka koni ss:dd</string>
+    <string name="exposure_end_hh_mm">muda ya kumalizia kuweka koni ss:dd</string>
+    <string name="n_mosquitoes_exposed">idadi ya mbu</string>
+    <string name="test">jaribio</string>
+    <string name="performed_by">imefanya na nani</string>
+    <string name="scored_by">kuhakisha</string>
+    <string name="data_entered_by">mwandishi</string>
+    <string name="cone_bioassay">Cone Bioassay</string>
+
+    <string name="after_1HR">baada ya dakika 60</string>
+    <string name="after_24HR">Siku ya 1 masaa 24</string>
+    <string name="after_48HR">Siku ya 2 masaa 48</string>
+    <string name="after_72HR">Siku ya 3 masaa 72</string>
+    <string name="after_96HR">Siku ya 4 masaa 96</string>
+    <string name="after_120HR">Siku ya 5 masaa 120</string>
+
+
+
 
 
     <string-array name="form_type_drop_down">
         <item>@string/human_landing_catch</item>
         <item>@string/hut_study</item>
+        <item>@string/CDC_HDT</item>
+        <item>@string/indoor_resting_collection</item>
+        <item>@string/cone_bioassay</item>
     </string-array>
 
 

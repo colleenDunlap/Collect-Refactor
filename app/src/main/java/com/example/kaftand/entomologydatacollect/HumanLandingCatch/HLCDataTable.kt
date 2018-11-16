@@ -14,6 +14,7 @@ import android.view.WindowManager
 import android.widget.ImageView
 import com.example.kaftand.entomologydatacollect.*
 import com.example.kaftand.entomologydatacollect.FormInterfaces.TabularData
+import org.w3c.dom.Text
 import java.lang.Math.round
 
 
@@ -62,7 +63,7 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
             }
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                setGambiae(s.toString().toInt(), iRow)
+                setGambiae(s.toString().toIntOrNull(), iRow)
             }
         })
         row.addView(gambiaeView)
@@ -77,7 +78,7 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
             }
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                setCulex(s.toString().toInt(), iRow)
+                setCulex(s.toString().toIntOrNull(), iRow)
             }
         })
         row.addView(culexView)
@@ -92,7 +93,7 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
             }
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                setFunestus(s.toString().toInt(), iRow)
+                setFunestus(s.toString().toIntOrNull(), iRow)
             }
         })
         row.addView(funestusView)
@@ -106,7 +107,7 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
             }
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                setCoustani(s.toString().toInt(), iRow)
+                setCoustani(s.toString().toIntOrNull(), iRow)
             }
         })
         row.addView(coustaniView)
@@ -121,7 +122,7 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
             }
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                setMansonia(s.toString().toInt(), iRow)
+                setMansonia(s.toString().toIntOrNull(), iRow)
             }
         })
         row.addView(mansoniaView)
@@ -136,7 +137,7 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
             }
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                setAedes(s.toString().toInt(), iRow)
+                setAedes(s.toString().toIntOrNull(), iRow)
             }
         })
         row.addView(aedesView)
@@ -151,7 +152,7 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
             }
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                setCoquilettidia(s.toString().toInt(), iRow)
+                setCoquilettidia(s.toString().toIntOrNull(), iRow)
             }
         })
         row.addView(coquilettidiaView)
@@ -166,42 +167,42 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
             }
             override fun onTextChanged(s: CharSequence, start: Int,
                                        before: Int, count: Int) {
-                setOther(s.toString().toInt(), iRow)
+                setOther(s.toString().toIntOrNull(), iRow)
             }
         })
         row.addView(otherView)
         return row
     }
 
-    fun setGambiae(number : Int, iRow : Int)  {
+    fun setGambiae(number : Int?, iRow : Int)  {
         (this.dataArray[iRow] as HLCDataEntry).GAMBIAE = number
     }
 
-    fun setCulex(number : Int, iRow : Int)  {
+    fun setCulex(number : Int?, iRow : Int)  {
         (this.dataArray[iRow] as HLCDataEntry).CULEX = number
     }
 
-    fun setFunestus(number : Int, iRow : Int)  {
+    fun setFunestus(number : Int?, iRow : Int)  {
         (this.dataArray[iRow] as HLCDataEntry).FUNESTUS = number
     }
 
-    fun setCoustani(number : Int, iRow : Int)  {
+    fun setCoustani(number : Int?, iRow : Int)  {
         (this.dataArray[iRow] as HLCDataEntry).COUSTANI = number
     }
 
-    fun setMansonia(number : Int, iRow : Int)  {
+    fun setMansonia(number : Int?, iRow : Int)  {
         (this.dataArray[iRow] as HLCDataEntry).MANSONIA = number
     }
 
-    fun setAedes(number : Int, iRow : Int)  {
+    fun setAedes(number : Int?, iRow : Int)  {
         (this.dataArray[iRow] as HLCDataEntry).AEDES = number
     }
 
-    fun setCoquilettidia(number : Int, iRow : Int)  {
+    fun setCoquilettidia(number : Int?, iRow : Int)  {
         (this.dataArray[iRow] as HLCDataEntry).COQUILETTIDIA = number
     }
 
-    fun setOther(number : Int, iRow : Int)  {
+    fun setOther(number : Int?, iRow : Int)  {
         (this.dataArray[iRow] as HLCDataEntry).OTHER = number
     }
 
@@ -279,11 +280,11 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
         return missingData
     }
 
-    override fun buildInfoRow(context: Context, completeResource: Int) : TableRow
+    override fun buildInfoRow(context: Context, sentResource: Int, completeResource: Int) : TableRow
     {
         var row = TableRow(context)
         var sentView = ImageView(context)
-        sentView.setImageResource(completeResource);
+        sentView.setImageResource(sentResource);
         var formTypeView = TextView(context)
 
         formTypeView.setText(context.resources.getString(R.string.human_landing_catch))
@@ -291,36 +292,19 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
         projectCodeView.setText(this.metaData.PROJECT_CODE)
         var dateCodeView = TextView(context)
         dateCodeView.setText(this.metaData.DATE)
+        val indoorOutdoor = TextView(context)
+        indoorOutdoor.setText(if(this.metaData.IN_OR_OUT == "in") {R.string.indoor} else {R.string.outdoor})
+        var completeView = ImageView(context)
+        completeView.setImageResource(completeResource)
 
         row.addView(sentView)
         row.addView(formTypeView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
+        row.addView(indoorOutdoor)
+        row.addView(completeView)
         return row
 
-    }
-
-    fun getTextSize(cell : TextView, cellSize : Float, context: Context) : Float {
-        val originalTextSize = cell.textSize
-        val bounds = Rect()
-        cell.paint.getTextBounds(cell.text.toString(), 0, cell.text.toString().length, bounds);
-        val width = bounds.width().toFloat() * context.resources.getDisplayMetrics().scaledDensity
-        return (0.8*(cellSize*originalTextSize)/width).toFloat()
-    }
-
-    fun getColWidth(context: Context) : MutableList<Int> {
-        var size = 4
-        val displayMetrics = DisplayMetrics()
-        val wm : WindowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        wm.getDefaultDisplay().getMetrics(displayMetrics)
-        val measuredWidth = displayMetrics.widthPixels * 0.9
-        var colWidths = mutableListOf<Int>();
-        for(iCol in 0 until size)
-        {
-            var thisWidth = round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, ((measuredWidth)/(size.toDouble())).toFloat(), context.resources.displayMetrics))
-            colWidths.add(thisWidth)
-        }
-        return colWidths
     }
 
 
@@ -335,11 +319,17 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
         projectCodeView.setText(context.getString(R.string.project_code))
         val dateCodeView = TextView(context)
         dateCodeView.setText(R.string.day_month_year)
+        val indoorOutdoor = TextView(context)
+        indoorOutdoor.setText(R.string.indoor)
+        val completeView = TextView(context)
+        completeView.setText(R.string.complete_form)
 
         row.addView(sentView)
         row.addView(formTypeView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
+        row.addView(indoorOutdoor)
+        row.addView(completeView)
         return row
     }
 }

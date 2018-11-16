@@ -9,14 +9,14 @@ class HLCDataEntry (metaData: HLCMetaData) {
     public var CLUSTER_NUMBER: Int? = null
     public var VOLUNTEER_NUMBER: Int? = null
     public var IN_OR_OUT: String? = null
-    public var GAMBIAE: Int? = 0
-    public var FUNESTUS: Int? = 0
-    public var COUSTANI: Int? = 0
-    public var CULEX: Int? = 0
-    public var MANSONIA: Int? = 0
-    public var AEDES: Int? = 0
-    public var COQUILETTIDIA: Int? = 0
-    public var OTHER: Int? = 0
+    public var GAMBIAE: Int? = null
+    public var FUNESTUS: Int? = null
+    public var COUSTANI: Int? = null
+    public var CULEX: Int? = null
+    public var MANSONIA: Int? = null
+    public var AEDES: Int? = null
+    public var COQUILETTIDIA: Int? = null
+    public var OTHER: Int? = null
     public var HOUR: String? = null
 
     init {

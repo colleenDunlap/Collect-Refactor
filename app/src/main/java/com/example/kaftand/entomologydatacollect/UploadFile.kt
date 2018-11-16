@@ -1,11 +1,14 @@
 package com.example.kaftand.entomologydatacollect
 
+import android.app.ProgressDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.os.Bundle
 import android.support.v4.content.res.ResourcesCompat
+import android.support.v7.app.AlertDialog
 import android.util.DisplayMetrics
 import android.util.Log
 import android.util.TypedValue
@@ -21,10 +24,16 @@ import com.android.volley.toolbox.StringRequest
 import java.io.UnsupportedEncodingException
 import com.android.volley.VolleyLog
 import com.android.volley.AuthFailureError
+import com.example.kaftand.entomologydatacollect.CdcHdt.CdcHdtDataTable
+import com.example.kaftand.entomologydatacollect.ConeBioassay.ConeBioassayDataTable
 import com.example.kaftand.entomologydatacollect.FormInterfaces.TabularData
 import com.example.kaftand.entomologydatacollect.HumanLandingCatch.HLCDataTable
+import com.example.kaftand.entomologydatacollect.HutTrial.HutTrialDataTable
+import com.example.kaftand.entomologydatacollect.IndoorRestingCollection.IndoorRestingCollectionDataTable
+import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 import com.example.kaftand.entomologydatacollect.Util.SavedFileInfo
 import com.google.gson.Gson
+import java.io.OutputStreamWriter
 import kotlin.properties.Delegates
 
 
@@ -32,26 +41,36 @@ open class UploadFile : LanguagePreservingActivity() {
 
     var unsentFilesWithMeta: ArrayList<SavedFileInfo> = ArrayList()
     var sentFilesWithMeta: ArrayList<SavedFileInfo> = ArrayList()
+    var uploadableFiles: ArrayList<SavedFileInfo> = ArrayList()
     var formTypeString: String by Delegates.notNull()
     var formTypeClass: Class<*> by Delegates.notNull()
-    val IP_PORT: String = "https://85523dcb.ngrok.io"//"http://192.168.9.87:8080"//"https://ihientodatacollection.appspot.com"
+    var uploadedForms: Int by Delegates.notNull()
+    val IP_PORT: String = "https://e0551fdf.ngrok.io"//"https://ihientodatacollection.appspot.com"//"http://192.168.9.87:8080"ngrok
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload_file)
+        this.uploadedForms = 0
         val bundle = intent.getBundleExtra("FormType")
         this.formTypeString  = bundle.getString("formString")
         this.formTypeClass = this.getTypeClass(this.formTypeString)
         this.setFileList()
+        this.findSendableFiles()
         this.addTableRows()
 
     }
 
     fun getTypeClass(formTypeString: String) : Class<*>{
-        if (formTypeString == getString(R.string.human_landing_catch))
+        if (formTypeString == FormTypeKeys.HLC)
         {
             return HLCDataTable::class.java
-        } else if (formTypeString == getString(R.string.hut_study)) {
-            return  HLCDataTable::class.java
+        } else if (formTypeString == FormTypeKeys.HutTrial) {
+            return  HutTrialDataTable::class.java
+        } else if (formTypeString == FormTypeKeys.CdcHdt) {
+            return CdcHdtDataTable::class.java
+        } else if (formTypeString == FormTypeKeys.IndoorRestingCollection) {
+            return IndoorRestingCollectionDataTable::class.java
+        }  else if (formTypeString == FormTypeKeys.ConeBioassay) {
+            return ConeBioassayDataTable::class.java
         }
         return  HLCDataTable::class.java
     }
@@ -80,34 +99,59 @@ open class UploadFile : LanguagePreservingActivity() {
         this.unsentFilesWithMeta.sortBy({ it.file.lastModified() })
     }
 
+    fun findSendableFiles() {
+        val gson = Gson()
+        for (iUnsentFile in unsentFilesWithMeta) {
+            var thisDataTable = gson.fromJson(iUnsentFile.file.readText(), this.formTypeClass) as TabularData <Any>
+            if((thisDataTable.metaData.formType == this.formTypeString) and (thisDataTable.metaData.completed)){
+                this.uploadableFiles.add(iUnsentFile)
+            }
+        }
+    }
+
     fun addTableRows()
     {
         val ll = findViewById(R.id.FileNameTable) as TableLayout
         val gson = Gson()
         var iFile = 0
+        var firstRow = true
         for (iUnsentFile in unsentFilesWithMeta) {
             var thisDataTable = gson.fromJson(iUnsentFile.file.readText(), this.formTypeClass) as TabularData <Any>
-            if (iFile == 0) {
+            if (firstRow) {
+                firstRow = false
                 ll.addView(formatRow(iFile, thisDataTable.buildInfoHeader(this), true))
             }
-            val row = thisDataTable.buildInfoRow(this, R.drawable.ic_close_black_24dp)
+            val completeResource = if(thisDataTable.metaData.completed) {R.drawable.ic_check_black_24dp}
+                else {R.drawable.ic_close_black_24dp}
+
+            val row = thisDataTable.buildInfoRow(this, R.drawable.ic_close_black_24dp, completeResource)
             row.setOnClickListener{
                 this.fileClicked(iUnsentFile)
             }
-            ll.addView(formatRow(iFile, row, true))
-            iFile += 1
+            if(thisDataTable.metaData.formType == this.formTypeString) {
+                ll.addView(formatRow(iFile, row, true))
+                iFile += 1
+            }
         }
 
         for (iSentFile in sentFilesWithMeta) {
 
             var thisDataTable = gson.fromJson(iSentFile.file.readText(), this.formTypeClass) as TabularData <Any>
-            val row = thisDataTable.buildInfoRow(this, R.drawable.ic_check_black_24dp)
+            if (firstRow) {
+                firstRow = false
+                ll.addView(formatRow(iFile, thisDataTable.buildInfoHeader(this), true))
+            }
+            val completeResource = if(thisDataTable.metaData.completed) {R.drawable.ic_check_black_24dp}
+                else {R.drawable.ic_close_black_24dp}
+            val row = thisDataTable.buildInfoRow(this, R.drawable.ic_check_black_24dp, completeResource)
             row.setOnClickListener{
                 this.fileClicked(iSentFile)
             }
 
-            ll.addView(formatRow(iFile, row, true))
-            iFile += 1
+            if (thisDataTable.metaData.formType == this.formTypeString) {
+                ll.addView(formatRow(iFile, row, true))
+                iFile += 1
+            }
         }
     }
 
@@ -123,7 +167,7 @@ open class UploadFile : LanguagePreservingActivity() {
     fun uploadForms(view: View)
     {
         var iUploaded = 0
-        for (iUnsentFilesWithMeta in unsentFilesWithMeta)
+        for (iUnsentFilesWithMeta in uploadableFiles)
         {
             iUploaded
             uploadEachForm(iUnsentFilesWithMeta)
@@ -132,24 +176,34 @@ open class UploadFile : LanguagePreservingActivity() {
 
     open fun fileClicked(file : SavedFileInfo)
     {
-        Log.i("file clicked",file.studyCode)
     }
 
     fun uploadEachForm(iUnsentFilesWithMeta: SavedFileInfo)
     {
+        val context = this
+        val gson = Gson()
+        var thisDataTable = gson.fromJson(iUnsentFilesWithMeta.file.readText(), this.formTypeClass) as TabularData <Any>
         val requestBody = iUnsentFilesWithMeta.file.readText()
         val requestQueue = Volley.newRequestQueue(this)
-        val uRL = "$IP_PORT/HLC"
+        val uRL = "$IP_PORT/${this.formTypeString}"
+
         val stringRequest = object : StringRequest(Request.Method.POST, uRL, object : Response.Listener<String> {
             override fun onResponse(response: String) {
                 Log.i("VOLLEY", response)
+                thisDataTable.metaData.sent = true
+                val dataString = gson.toJson(thisDataTable)
+                writeToFile(dataString, thisDataTable.metaData.getFilename(), context)
                 iUnsentFilesWithMeta.reNameFileAfterSent()
-                finish();
-                startActivity(getIntent());
+                increaseUploadedForms()
+                if (checkIfFinishedUploading()) {
+                    finish();
+                    startActivity(getIntent());
+                }
             }
         }, object : Response.ErrorListener {
             override fun onErrorResponse(error: VolleyError) {
                 Log.e("VOLLEY", error.toString())
+                alertNoInternet()
             }
         }) {
             override fun getBodyContentType(): String {
@@ -176,6 +230,7 @@ open class UploadFile : LanguagePreservingActivity() {
                 return Response.success(responseString, HttpHeaderParser.parseCacheHeaders(response))
             }
         }
+        stringRequest.retryPolicy = DefaultRetryPolicy(50000,5,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT)
         requestQueue.add(stringRequest);
     }
 
@@ -188,31 +243,53 @@ open class UploadFile : LanguagePreservingActivity() {
             border = ResourcesCompat.getDrawable(resources, R.drawable.border2, null)
         }
         var minTextSize = Float.POSITIVE_INFINITY
-        for (iChild in 1 until row.childCount) {
-            var cell = row.getChildAt(iChild) as TextView
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                cell.background = border
-            } else {
-                cell.setBackgroundDrawable(border)
+        for (iChild in 0 until row.childCount) {
+            if (row.getChildAt(iChild) is TextView) {
+                var cell = row.getChildAt(iChild) as TextView
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    cell.background = border
+                } else {
+                    cell.setBackgroundDrawable(border)
+                }
+                var cellLp = cell.layoutParams
+                cellLp.height = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50f, resources.displayMetrics));
+                var thisWidth = colWidths[iChild]
+                cellLp.width = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, thisWidth, resources.displayMetrics));
+                cell.imeOptions = EditorInfo.IME_FLAG_NO_EXTRACT_UI
+                cell.setSelectAllOnFocus(true)
+                cell.gravity = Gravity.CENTER
+                minTextSize = Math.min(getTextSize(cell, thisWidth), minTextSize)
             }
-            var cellLp = cell.layoutParams
-            cellLp.height = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50f, resources.displayMetrics));
-            var thisWidth = colWidths[iChild]
-            cellLp.width = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, thisWidth, resources.displayMetrics));
-            cell.imeOptions = EditorInfo.IME_FLAG_NO_EXTRACT_UI
-            cell.setSelectAllOnFocus(true)
-            cell.gravity = Gravity.CENTER
-            minTextSize = Math.min(getTextSize(cell, thisWidth), minTextSize)
         }
 
-        for (iChild in 1 until row.childCount) {
-            var cell = row.getChildAt(iChild) as TextView
-            if (isHeader) {
-                cell.setTextSize(TypedValue.COMPLEX_UNIT_SP, minTextSize)
+        for (iChild in 0 until row.childCount) {
+            if (row.getChildAt(iChild) is TextView) {
+                var cell = row.getChildAt(iChild) as TextView
+                if (isHeader) {
+                    cell.setTextSize(TypedValue.COMPLEX_UNIT_SP, minTextSize)
+                }
             }
         }
 
         return row
+    }
+
+    private fun alertNoInternet()
+    {
+        val alertDialog = AlertDialog.Builder(this@UploadFile).create()
+        alertDialog.setTitle(getString(R.string.alert))
+        alertDialog.setMessage(getString(R.string.no_internet))
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                DialogInterface.OnClickListener { dialog, which -> dialog.dismiss() })
+        alertDialog.show()
+    }
+
+    fun checkIfFinishedUploading() : Boolean {
+        return (this.uploadableFiles.size == this.uploadedForms)
+    }
+
+    fun increaseUploadedForms() {
+        this.uploadedForms += 1
     }
 
     fun getColWidth(row : TableRow) : MutableList<Float> {
@@ -237,6 +314,15 @@ open class UploadFile : LanguagePreservingActivity() {
         return (0.8*(cellSize*originalTextSize)/width).toFloat()
     }
 
+    fun writeToFile(data: String, filename: String, context: Context) {
+        try {
+            val outputStreamWriter = OutputStreamWriter(context.openFileOutput(filename, Context.MODE_PRIVATE))
+            outputStreamWriter.write(data)
+            outputStreamWriter.close()
+        } catch (e: Exception) {
+            Log.e("Exception", "File write failed: " + e.toString())
+        }
 
+    }
 
 }

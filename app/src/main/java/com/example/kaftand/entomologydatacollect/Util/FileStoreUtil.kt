@@ -19,8 +19,17 @@ class FileStoreUtil {
 
     fun CreateHLCFilename(sent: String?, projectCode: String?, date: String?,
                           clusterNumber:String?, houseNumber: String?, inOrOut: String?) : String {
-        return (sent + "---" + projectCode + "---" + "HLC" + "---" + date + "---" +
+        return (sent + "---" + projectCode + "---" + FormTypeKeys.HLC + "---" + date + "---" +
                 clusterNumber + "---" + houseNumber + "---" + inOrOut)
+    }
+
+    fun createHutTrialFilename(sent: String?, date: String?) : String {
+        return (sent + "---" + "null" + "---" + FormTypeKeys.HutTrial + "---" + date)
+
+    }
+
+    fun createGenericFilename(sent: String?, date: String?, formType: String?) : String {
+        return (sent + "---" + "null" + "---" + formType + "---" + date)
     }
 
     fun ParseHLCFileName(filename: String) : List<String> {

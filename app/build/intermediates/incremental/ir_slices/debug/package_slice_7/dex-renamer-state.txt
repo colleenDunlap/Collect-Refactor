@@ -1,4 +1,4 @@
-#Tue Aug 21 16:50:13 EAT 2018
-base.0=/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/transforms/dexMerger/debug/228
+#Mon Sep 24 15:16:35 EAT 2018
+base.0=/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/transforms/dexMerger/debug/296
 path.0=classes.dex
 renamed.0=classes.dex

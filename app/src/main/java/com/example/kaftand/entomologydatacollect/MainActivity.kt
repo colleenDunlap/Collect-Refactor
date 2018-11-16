@@ -12,14 +12,26 @@ import java.util.*
 import android.content.DialogInterface
 import android.support.v7.app.AlertDialog
 import android.net.ConnectivityManager
+import android.util.Log
+import android.view.ViewParent
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import com.example.kaftand.entomologydatacollect.CdcHdt.CdcHdt
+import com.example.kaftand.entomologydatacollect.CdcHdt.CdcHdtIntro
+import com.example.kaftand.entomologydatacollect.ConeBioassay.ConeBioassayIntro
 import com.example.kaftand.entomologydatacollect.HumanLandingCatch.HumanLandingCatch
 import com.example.kaftand.entomologydatacollect.HumanLandingCatch.HumanLandingCatchIntro
+import com.example.kaftand.entomologydatacollect.HutTrial.HutTrial
+import com.example.kaftand.entomologydatacollect.HutTrial.HutTrialIntro
+import com.example.kaftand.entomologydatacollect.IndoorRestingCollection.IndoorRestingCollectionIntro
+import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
+import java.text.FieldPosition
 
 
 class MainActivity : LanguagePreservingActivity() {
     var HLC : HumanLandingCatch? = null
+    var selectedForm = FormTypeKeys.HLC
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,8 +50,31 @@ class MainActivity : LanguagePreservingActivity() {
                 R.array.form_type_drop_down, android.R.layout.simple_spinner_item)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner.setAdapter(adapter)
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                updateSelectedView(parent as Spinner)
+            }
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+        }
     }
 
+
+    fun updateSelectedView(spinner: Spinner) {
+
+        if (spinner.selectedItem.toString() == getString(R.string.human_landing_catch)) {
+            this.selectedForm = FormTypeKeys.HLC
+        } else if (spinner.selectedItem.toString() == getString(R.string.hut_study)) {
+            this.selectedForm = FormTypeKeys.HutTrial
+        } else if (spinner.selectedItem.toString() == getString(R.string.CDC_HDT)){
+            this.selectedForm = FormTypeKeys.CdcHdt
+        } else if (spinner.selectedItem.toString() == getString(R.string.indoor_resting_collection)){
+            this.selectedForm = FormTypeKeys.IndoorRestingCollection
+        } else if (spinner2.selectedItem.toString() == getString(R.string.cone_bioassay)) {
+            this.selectedForm = FormTypeKeys.ConeBioassay
+        }
+
+    }
 
     fun swahiliSelected(view: View) {
         updateViews(languageCode = "sw")
@@ -53,7 +88,13 @@ class MainActivity : LanguagePreservingActivity() {
         if (spinner2.selectedItem.toString() == getString(R.string.human_landing_catch)) {
             startActivity(Intent(this, HumanLandingCatchIntro::class.java))
         } else if (spinner2.selectedItem.toString() == getString(R.string.hut_study)) {
-            startActivity(Intent(this, HumanLandingCatchIntro::class.java))
+            startActivity(Intent(this, HutTrialIntro::class.java))
+        } else if (spinner2.selectedItem.toString() == getString(R.string.CDC_HDT)) {
+            startActivity(Intent(this, CdcHdtIntro::class.java))
+        } else if (spinner2.selectedItem.toString() == getString(R.string.indoor_resting_collection)) {
+            startActivity(Intent(this, IndoorRestingCollectionIntro::class.java))
+        } else if (spinner2.selectedItem.toString() == getString(R.string.cone_bioassay)) {
+            startActivity(Intent(this, ConeBioassayIntro::class.java))
         }
     }
 
@@ -63,7 +104,7 @@ class MainActivity : LanguagePreservingActivity() {
         {
             var intent = Intent(this, UploadFile::class.java)
             var bundle = Bundle()
-            bundle.putString("formString", spinner2.selectedItem.toString())
+            bundle.putString("formString", this.selectedForm)
             intent.putExtra("FormType", bundle)
             startActivity(intent)
         } else {
@@ -74,7 +115,7 @@ class MainActivity : LanguagePreservingActivity() {
     fun editFormButtonClick (view: View) {
         var intent = Intent(this, DataEditMenu::class.java)
         var bundle = Bundle()
-        bundle.putString("formString", spinner2.selectedItem.toString())
+        bundle.putString("formString", this.selectedForm)
         intent.putExtra("FormType", bundle)
         startActivity(intent)
     }

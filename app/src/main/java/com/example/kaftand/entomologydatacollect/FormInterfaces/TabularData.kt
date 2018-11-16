@@ -10,7 +10,7 @@ interface TabularData <T> {
 
     fun getColNames() : ArrayList<String>
     fun createRow(iRow : Int, context: Context) : TableRow
-    fun buildInfoRow (context: Context, completeResource: Int) : TableRow
+    fun buildInfoRow (context: Context, sentResource: Int, completeResource: Int) : TableRow
     fun buildInfoHeader(context: Context) : TableRow
     fun checkMissingData(iRow : Int, row: TableRow, missingDataError : String) : Boolean
 }
