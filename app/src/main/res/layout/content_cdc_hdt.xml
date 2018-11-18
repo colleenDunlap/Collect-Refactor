@@ -114,19 +114,19 @@
                 android:orientation="vertical"
                 android:id="@+id/MainTableContainer">
                 <Button
-                    android:id="@+id/completeButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="completeForm"
-                    android:text="@string/complete_form"
-                    tools:layout_editor_absoluteX="25dp"
-                    tools:layout_editor_absoluteY="511dp" />
-                <Button
                     android:id="@+id/collectDataButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="saveFormForTomorrow"
                     android:text="@string/save_for_tomorrow"
+                    tools:layout_editor_absoluteX="25dp"
+                    tools:layout_editor_absoluteY="511dp" />
+                <Button
+                    android:id="@+id/completeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="completeForm"
+                    android:text="@string/complete_form"
                     tools:layout_editor_absoluteX="25dp"
                     tools:layout_editor_absoluteY="511dp" />
             </LinearLayout>

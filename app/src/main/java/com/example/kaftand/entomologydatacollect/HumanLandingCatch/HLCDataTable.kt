@@ -15,24 +15,29 @@ import android.widget.ImageView
 import com.example.kaftand.entomologydatacollect.*
 import com.example.kaftand.entomologydatacollect.FormInterfaces.TabularData
 import org.w3c.dom.Text
+import java.lang.Math.floor
 import java.lang.Math.round
 
 
-class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) : TabularData <HLCDataEntry> {
+class HLCDataTable(override var metaData: HLCMetaData, override val nRows: Int) : TabularData <HLCDataEntry> {
     override var dataArray  = ArrayList<HLCDataEntry>()
     init {
         val hourArray = arrayOf("18-19:00","19-20:00","20-21:00","21-22:00","22-23:00",
         "23-24:00", "24-01:00", "01-02:00", "02-03:00", "03-04:00", "04-05:00", "05-06:00", "total")
+        val inOutArray = arrayOf("in","out")
         for (iRow in 0 until this.nRows) {
             var thisEntry = HLCDataEntry(metaData);
-            thisEntry.HOUR = hourArray[iRow]
+            thisEntry.HOUR = hourArray[iRow%hourArray.size]
+            val inOrOut = if(iRow < hourArray.size) {0} else {1}
+            thisEntry.IN_OR_OUT = inOutArray[inOrOut]
             dataArray.add(thisEntry)
         }
     }
 
-    override fun getColNames(): ArrayList<String> {
+    override fun getColNames(context: Context): ArrayList<String> {
         var colnames = ArrayList<String>()
         colnames.add("Hour")
+        colnames.add(context.getString(R.string.outdoor) + "-" + context.getString(R.string.indoor))
         colnames.add("Gambiae")
         colnames.add("Culex")
         colnames.add("Funestus")
@@ -52,6 +57,10 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
         var hourView = TextView(context)
         hourView.setText(thisRow.HOUR)
         row.addView(hourView)
+
+        var inOutView = TextView(context)
+        inOutView.setText(if(thisRow.IN_OR_OUT == "in") {context.getString(R.string.indoor)} else {context.getString(R.string.outdoor)})
+        row.addView(inOutView)
 
         var gambiaeView = EditText(context)
         gambiaeView.inputType = InputType.TYPE_CLASS_NUMBER
@@ -292,8 +301,6 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
         projectCodeView.setText(this.metaData.PROJECT_CODE)
         var dateCodeView = TextView(context)
         dateCodeView.setText(this.metaData.DATE)
-        val indoorOutdoor = TextView(context)
-        indoorOutdoor.setText(if(this.metaData.IN_OR_OUT == "in") {R.string.indoor} else {R.string.outdoor})
         var completeView = ImageView(context)
         completeView.setImageResource(completeResource)
 
@@ -301,7 +308,6 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
         row.addView(formTypeView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
-        row.addView(indoorOutdoor)
         row.addView(completeView)
         return row
 
@@ -319,16 +325,13 @@ class HLCDataTable(override val metaData: HLCMetaData, override val nRows: Int) 
         projectCodeView.setText(context.getString(R.string.project_code))
         val dateCodeView = TextView(context)
         dateCodeView.setText(R.string.day_month_year)
-        val indoorOutdoor = TextView(context)
-        indoorOutdoor.setText(R.string.indoor)
-        val completeView = TextView(context)
+         val completeView = TextView(context)
         completeView.setText(R.string.complete_form)
 
         row.addView(sentView)
         row.addView(formTypeView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
-        row.addView(indoorOutdoor)
         row.addView(completeView)
         return row
     }

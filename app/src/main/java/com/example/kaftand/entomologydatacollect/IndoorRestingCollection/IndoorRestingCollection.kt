@@ -1,5 +1,6 @@
 package com.example.kaftand.entomologydatacollect.IndoorRestingCollection
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -46,13 +47,27 @@ class IndoorRestingCollection : LanguagePreservingActivity() {
     }
 
     fun completeForm(view: View) {
-        this.DataTableView.tableData.metaData.completed = true
-        this.DataTableView.tableData.metaData.sent = false
-        writeData2Json(this.DataTableView.tableData as IndoorRestingCollectionDataTable)
-        var intent = Intent(this, MainActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+        if (this.DataTableView.ensureNoNull(this.DataTableView)) {
+            this.DataTableView.tableData.metaData.completed = true
+            this.DataTableView.tableData.metaData.sent = false
+            writeData2Json(this.DataTableView.tableData as IndoorRestingCollectionDataTable)
+            var intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            finish()
+            startActivity(intent)
+        } else {
+            this.DataTableView.alertMissingData()
+        }
+    }
+
+    override fun onBackPressed() {
+        val gson = Gson()
+        var returnIntent = Intent()
+
+        returnIntent.putExtra("result", gson.toJson(this.DataTableView.tableData as IndoorRestingCollectionDataTable))
+        setResult(Activity.RESULT_OK, returnIntent)
         finish()
-        startActivity(intent)
     }
 
     fun saveFormForTomorrow(view: View) {

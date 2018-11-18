@@ -3,7 +3,7 @@
     <string name="hour">Hour</string>
     <string name="total">Jumla</string>
     <string name="fill_out_form">JAZA FOMU HAPA</string>
-    <string name="upload_form">CHAPISHA FOMU</string>
+    <string name="upload_form">SEND FINALIZED FORM</string>
     <string name="indoor">ndani</string>
     <string name="outdoor">nje</string>
     <string name="tap_to_enter">bofya</string>
@@ -11,7 +11,7 @@
     <string name="day_month_year">IKU.MWEZI.MWAKA</string>
     <string name="project_code">UTAMBULISHO WA MRADI</string>
     <string name="house_number">Nambari ya nyumba</string>
-    <string name="cluster_number">Nambari ya kikundi</string>
+    <string name="cluster_number">Nambari ya Cluster</string>
     <string name="volunteer_number_inside">Kujitolea ndani</string>
     <string name="volunteer_number_outside">Kujitolea nje</string>
     <string name="missing_data">Takwimu iliyo kosekana</string>
@@ -41,7 +41,7 @@
     <string name="fed_alive">amekula wazima</string>
     <string name="fed_dead">amekula amekufa</string>
     <string name="how_many_huts">Nyumba ngapi?</string>
-    <string name="complete_form">Complete Form</string>
+    <string name="complete_form">Tuma Fomu</string>
     <string name="save_for_tomorrow">Save for tomorrow</string>
     <string name="total_female">Jumla Jike</string>
     <string name="CDC_HDT">CDC_HDT</string>
@@ -76,6 +76,8 @@
     <string name="scored_by">kuhakisha</string>
     <string name="data_entered_by">mwandishi</string>
     <string name="cone_bioassay">Cone Bioassay</string>
+    <string name="volunteer">Kujitolea</string>
+
 
     <string name="after_1HR">baada ya dakika 60</string>
     <string name="after_24HR">Siku ya 1 masaa 24</string>
@@ -94,6 +96,24 @@
         <item>@string/CDC_HDT</item>
         <item>@string/indoor_resting_collection</item>
         <item>@string/cone_bioassay</item>
+    </string-array>
+
+    <string-array name="villages_drop_down">
+        <item>@string/tap_to_enter</item>
+        <item>Euga</item>
+        <item>Eubuyu</item>
+        <item>Nkongo</item>
+        <item>Nanunga</item>
+        <item>Ikangao</item>
+        <item>Mzelezi</item>
+        <item>Mbaranga</item>
+        <item>Umme</item>
+        <item>Liberanga</item>
+        <item>Nakafulu</item>
+        <item>Chukuti</item>
+        <item>Idunda</item>
+        <item>Ikungua</item>
+        <item>Nalukoo</item>
     </string-array>
 
 

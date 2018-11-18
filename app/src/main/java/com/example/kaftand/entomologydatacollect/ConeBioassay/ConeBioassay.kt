@@ -1,5 +1,6 @@
 package com.example.kaftand.entomologydatacollect.ConeBioassay
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -152,7 +153,7 @@ class ConeBioassay : LanguagePreservingActivity() {
         val kd60StartEdit = ((sectionBTable.getChildAt(B_KD_ROW) as TableRow).getChildAt(B_START_COL) as EditText)
         kd60StartEdit.setText(this.formatText(psuedoData.KD60_START_TIME))
         val kd60EndEdit = ((sectionBTable.getChildAt(B_KD_ROW) as TableRow).getChildAt(B_END_COL) as EditText)
-        kd60EndEdit.setText(this.formatText(psuedoData.KD60_START_TIME))
+        kd60EndEdit.setText(this.formatText(psuedoData.KD60_END_TIME))
         val kd60TempEdit = ((sectionBTable.getChildAt(B_KD_ROW) as TableRow).getChildAt(B_TEMP_COL) as EditText)
         kd60TempEdit.setText(this.formatText(psuedoData.KD60_TEMP.toString()))
         val kd60HumEdit = ((sectionBTable.getChildAt(B_KD_ROW) as TableRow).getChildAt(B_HUM_COL) as EditText)
@@ -284,13 +285,30 @@ class ConeBioassay : LanguagePreservingActivity() {
 
 
     fun completeForm(view: View) {
-        this.DataTableView.tableData.metaData.completed = true
-        this.DataTableView.tableData.metaData.sent = false
-        writeData2Json(this.DataTableView.tableData as ConeBioassayDataTable)
-        var intent = Intent(this, MainActivity::class.java)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        val sectionATable = findViewById<TableLayout>(R.id.section_a_table)
+        val sectionBTable = findViewById<TableLayout>(R.id.section_b_table)
+        if (this.DataTableView.ensureNoNull(this.DataTableView) and
+                this.DataTableView.ensureNoNull(sectionATable) and
+                this.DataTableView.ensureNoNull(sectionBTable)) {
+            this.DataTableView.tableData.metaData.completed = true
+            this.DataTableView.tableData.metaData.sent = false
+            writeData2Json(this.DataTableView.tableData as ConeBioassayDataTable)
+            var intent = Intent(this, MainActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            finish()
+            startActivity(intent)
+        }  else {
+            this.DataTableView.alertMissingData()
+        }
+    }
+
+    override fun onBackPressed() {
+        val gson = Gson()
+        var returnIntent = Intent()
+
+        returnIntent.putExtra("result", gson.toJson(this.DataTableView.tableData as ConeBioassayDataTable))
+        setResult(Activity.RESULT_OK, returnIntent)
         finish()
-        startActivity(intent)
     }
 
     fun saveFormForTomorrow(view: View) {

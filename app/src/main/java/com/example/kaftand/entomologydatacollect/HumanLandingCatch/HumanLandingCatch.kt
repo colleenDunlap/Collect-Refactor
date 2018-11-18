@@ -1,5 +1,6 @@
 package com.example.kaftand.entomologydatacollect.HumanLandingCatch
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -21,15 +22,13 @@ class HumanLandingCatch : LanguagePreservingActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_human_landing_catch)
-        var tvInOut : TextView
         var buttonNextOrFinish : Button
-        tvInOut = findViewById(R.id.IndoorOutdoor) as TextView
         buttonNextOrFinish = findViewById(R.id.collectDataButton) as Button
 
         val metaDataBundle = intent.getBundleExtra("HLCMeta")
         val dataTableBundle = intent.getBundleExtra("DataTableBundle")
-
-        var dataTable = HLCDataTable(this.hLCMeta, 13)
+        val nRows = 13*2
+        var dataTable = HLCDataTable(this.hLCMeta, nRows)
 
         if(dataTableBundle != null) {
             val gson = Gson()
@@ -38,20 +37,11 @@ class HumanLandingCatch : LanguagePreservingActivity() {
             this.hLCMeta = dataTable.metaData
         } else if (metaDataBundle != null) {
             this.hLCMeta  = metaDataBundle.getParcelable<HLCMetaData>("MetaBundle") as HLCMetaData
-            dataTable = HLCDataTable(this.hLCMeta, 13)
+            dataTable = HLCDataTable(this.hLCMeta, nRows)
         } else {
             error("No bundle passed in")
         }
 
-        if (this.hLCMeta.IN_OR_OUT == "in")
-        {
-            tvInOut.setText(getString(R.string.indoor).toUpperCase())
-            buttonNextOrFinish.setText(getString(R.string.next))
-        } else
-        {
-            tvInOut.setText(getString(R.string.outdoor).toUpperCase())
-            buttonNextOrFinish.setText(getString(R.string.finish))
-        }
         this.DataTableView = TableEntryView<HLCDataEntry>(this, dataTable)
         var lp = TableLayout.LayoutParams()
         lp.width = TableLayout.LayoutParams.MATCH_PARENT
@@ -60,35 +50,33 @@ class HumanLandingCatch : LanguagePreservingActivity() {
         var dataView : LinearLayout = findViewById(R.id.MainTableContainer)
         var headerTableContainer : LinearLayout = findViewById(R.id.TableHeaderContainer)
         dataView.addView(this.DataTableView,0)
-        headerTableContainer.addView(this.DataTableView.createHeaderTable(), 1)
+        headerTableContainer.addView(this.DataTableView.createHeaderTable(), 0)
 
     }
 
 
     fun collectGoToNextPage(view: View) {
-        try {
-            var dataTable = this.DataTableView.tableData as HLCDataTable
+        var dataTable = this.DataTableView.tableData as HLCDataTable
+        if (this.DataTableView.ensureNoNull(this.DataTableView)) {
             this.writeData2Json(dataTable)
-        } catch(e : Exception) {
-            Log.v("BrokenSave", "It didnt save")
-            return
-        }
-
-        if (this.hLCMeta.IN_OR_OUT == "in")
-        {
-            this.hLCMeta.IN_OR_OUT = "out"
-            var intent = Intent(this, HumanLandingCatch::class.java)
-            var bundle: Bundle = Bundle()
-            bundle.putParcelable("MetaBundle", this.hLCMeta)
-            intent.putExtra("HLCMeta", bundle)
-            finish()
-            startActivity(intent)
-        } else {
             var intent = Intent(this, MainActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             finish()
             startActivity(intent)
+        } else {
+            this.DataTableView.alertMissingData()
         }
+
+    }
+
+    override fun onBackPressed() {
+        val gson = Gson()
+        var returnIntent = Intent()
+
+        returnIntent.putExtra("result", gson.toJson(this.DataTableView.tableData as HLCDataTable))
+        returnIntent.putExtra("metaData", this.hLCMeta)
+        setResult(Activity.RESULT_OK, returnIntent)
+        finish()
     }
 
     fun writeData2Json(data: HLCDataTable)

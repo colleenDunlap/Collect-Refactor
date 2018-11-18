@@ -15,7 +15,7 @@ import com.example.kaftand.entomologydatacollect.R
 import com.example.kaftand.entomologydatacollect.Util.TableConstants
 import kotlin.reflect.KMutableProperty0
 
-class CdcHdtDataTable(override val metaData: CdcHdtMetaData, override val nRows: Int) : TabularData<CdcHdtDataEntry> {
+class CdcHdtDataTable(override var metaData: CdcHdtMetaData, override val nRows: Int) : TabularData<CdcHdtDataEntry> {
     override var dataArray = ArrayList<CdcHdtDataEntry>()
 
     init {
@@ -27,7 +27,7 @@ class CdcHdtDataTable(override val metaData: CdcHdtMetaData, override val nRows:
         }
     }
 
-    override fun getColNames(): ArrayList<String> {
+    override fun getColNames(context: Context): ArrayList<String> {
         var colnames = ArrayList<String>()
         colnames.add(R.string.house_number.toString())
         colnames.add(R.string.trap_id.toString())
@@ -106,6 +106,7 @@ class CdcHdtDataTable(override val metaData: CdcHdtMetaData, override val nRows:
 
         var otherSpecies = EditText(context)
         otherSpecies.setText(dataRow.OTHER_FEMALE.toString())
+        otherSpecies.inputType = InputType.TYPE_CLASS_TEXT
         otherSpecies.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.dataArray[iRow]::OTHER_SPECIES)))
         row.addView(otherSpecies)
 

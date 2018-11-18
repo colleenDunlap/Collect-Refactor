@@ -12,8 +12,27 @@ class CdcHdtMetaData() : MetaDataInterface {
     var PROJECT_CODE: String? = null
     var HOUSE_NUMBER: Int? = null
     var CLUSTER_NUMBER: Int? = null
-    var VOLUNTEER_NUMBER: Int? = null
-    var DATA_ENTRY_NAME: String? = null
+        set(value) {
+            if ((value == null) or (this.count == null)) {
+                field = value
+            } else
+            {
+                field = value
+                this.serial = (field!!*1000) + this.count!!
+            }
+        }
+    override var count: Int? = null
+        set(value) {
+            if ((value == null) or (this.CLUSTER_NUMBER == null)) {
+                field = value
+            } else
+            {
+                field = value
+                this.serial = (this.CLUSTER_NUMBER!!*1000) + field!!
+            }
+        }
+    var VILLAGE: String? = null
+    var VOLUNTEER: String? = null
     var WEEK: Int? = null
     var MONTH: Int? = null
     var DIRECTOR : String? = "Sarah Moore"
@@ -27,9 +46,8 @@ class CdcHdtMetaData() : MetaDataInterface {
         DATE = parcel.readString()
         PROJECT_CODE = parcel.readString()
         HOUSE_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
-        CLUSTER_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
-        VOLUNTEER_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
-        DATA_ENTRY_NAME = parcel.readString()
+        VILLAGE = parcel.readString()
+        VOLUNTEER = parcel.readString()
         WEEK = parcel.readValue(Int::class.java.classLoader) as? Int
         MONTH = parcel.readValue(Int::class.java.classLoader) as? Int
         DIRECTOR = parcel.readString()
@@ -50,9 +68,8 @@ class CdcHdtMetaData() : MetaDataInterface {
         parcel.writeString(DATE)
         parcel.writeString(PROJECT_CODE)
         parcel.writeValue(HOUSE_NUMBER)
-        parcel.writeValue(CLUSTER_NUMBER)
-        parcel.writeValue(VOLUNTEER_NUMBER)
-        parcel.writeString(DATA_ENTRY_NAME)
+        parcel.writeString(VILLAGE)
+        parcel.writeString(VOLUNTEER)
         parcel.writeValue(WEEK)
         parcel.writeValue(MONTH)
         parcel.writeString(DIRECTOR)
@@ -75,4 +92,6 @@ class CdcHdtMetaData() : MetaDataInterface {
             return arrayOfNulls(size)
         }
     }
+
+
 }

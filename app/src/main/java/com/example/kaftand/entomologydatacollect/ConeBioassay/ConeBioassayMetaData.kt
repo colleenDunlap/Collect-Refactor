@@ -15,27 +15,6 @@ class ConeBioassayMetaData() : MetaDataInterface {
     }
 
     override var serial = 1
-    var EXPOSURE_PERFORMED_BY: String? = null
-    var EXPOSURE_SCORED_BY: String? = null
-    var EXPOSURE_DATA_ENTERED_BY: String? = null
-    var KD60_PERFORMED_BY: String? = null
-    var KD60_SCORED_BY: String? = null
-    var KD60_DATA_ENTERED_BY: String? = null
-    var M24_PERFORMED_BY: String? = null
-    var M24_SCORED_BY: String? = null
-    var M24_DATA_ENTERED_BY: String? = null
-    var M48_PERFORMED_BY: String? = null
-    var M48_SCORED_BY: String? = null
-    var M48_DATA_ENTERED_BY: String? = null
-    var M72_PERFORMED_BY: String? = null
-    var M72_SCORED_BY: String? = null
-    var M72_DATA_ENTERED_BY: String? = null
-    var M96_PERFORMED_BY: String? = null
-    var M96_SCORED_BY: String? = null
-    var M96_DATA_ENTERED_BY: String? = null
-    var M120_PERFORMED_BY: String? = null
-    var M120_SCORED_BY: String? = null
-    var M120_DATA_ENTERED_BY: String? = null
     var STUDY_DIRECTOR = "Sarah Moore"
     var DATE: String? = null
     var HOUSE_NUMBER: Int? = null
@@ -45,6 +24,27 @@ class ConeBioassayMetaData() : MetaDataInterface {
     var MOSQUITO_STRAIN: String? = null
     var MOSQUITO_AGE_MIN: Int? = null
     var MOSQUITO_AGE_MAX: Int? = null
+    var VILLAGE: String? = null
+    var CLUSTER_NUMBER: Int? = null
+        set(value) {
+            if ((value == null) or (this.count == null)) {
+                field = value
+            } else
+            {
+                field = value
+                this.serial = (field!!*1000) + this.count!!
+            }
+        }
+    override var count: Int? = null
+        set(value) {
+            if ((value == null) or (this.CLUSTER_NUMBER == null)) {
+                field = value
+            } else
+            {
+                field = value
+                this.serial = (this.CLUSTER_NUMBER!!*1000) + field!!
+            }
+        }
 
 
     var PROJECT_CODE: String? = "BIT031"
@@ -55,27 +55,7 @@ class ConeBioassayMetaData() : MetaDataInterface {
 
     constructor(parcel: Parcel) : this() {
         serial = parcel.readInt()
-        EXPOSURE_PERFORMED_BY = parcel.readString()
-        EXPOSURE_SCORED_BY = parcel.readString()
-        EXPOSURE_DATA_ENTERED_BY = parcel.readString()
-        KD60_PERFORMED_BY = parcel.readString()
-        KD60_SCORED_BY = parcel.readString()
-        KD60_DATA_ENTERED_BY = parcel.readString()
-        M24_PERFORMED_BY = parcel.readString()
-        M24_SCORED_BY = parcel.readString()
-        M24_DATA_ENTERED_BY = parcel.readString()
-        M48_PERFORMED_BY = parcel.readString()
-        M48_SCORED_BY = parcel.readString()
-        M48_DATA_ENTERED_BY = parcel.readString()
-        M72_PERFORMED_BY = parcel.readString()
-        M72_SCORED_BY = parcel.readString()
-        M72_DATA_ENTERED_BY = parcel.readString()
-        M96_PERFORMED_BY = parcel.readString()
-        M96_SCORED_BY = parcel.readString()
-        M96_DATA_ENTERED_BY = parcel.readString()
-        M120_PERFORMED_BY = parcel.readString()
-        M120_SCORED_BY = parcel.readString()
-        M120_DATA_ENTERED_BY = parcel.readString()
+        VILLAGE = parcel.readString()
         STUDY_DIRECTOR = parcel.readString()
         DATE = parcel.readString()
         HOUSE_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
@@ -94,27 +74,7 @@ class ConeBioassayMetaData() : MetaDataInterface {
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(serial)
-        parcel.writeString(EXPOSURE_PERFORMED_BY)
-        parcel.writeString(EXPOSURE_SCORED_BY)
-        parcel.writeString(EXPOSURE_DATA_ENTERED_BY)
-        parcel.writeString(KD60_PERFORMED_BY)
-        parcel.writeString(KD60_SCORED_BY)
-        parcel.writeString(KD60_DATA_ENTERED_BY)
-        parcel.writeString(M24_PERFORMED_BY)
-        parcel.writeString(M24_SCORED_BY)
-        parcel.writeString(M24_DATA_ENTERED_BY)
-        parcel.writeString(M48_PERFORMED_BY)
-        parcel.writeString(M48_SCORED_BY)
-        parcel.writeString(M48_DATA_ENTERED_BY)
-        parcel.writeString(M72_PERFORMED_BY)
-        parcel.writeString(M72_SCORED_BY)
-        parcel.writeString(M72_DATA_ENTERED_BY)
-        parcel.writeString(M96_PERFORMED_BY)
-        parcel.writeString(M96_SCORED_BY)
-        parcel.writeString(M96_DATA_ENTERED_BY)
-        parcel.writeString(M120_PERFORMED_BY)
-        parcel.writeString(M120_SCORED_BY)
-        parcel.writeString(M120_DATA_ENTERED_BY)
+        parcel.writeString(VILLAGE)
         parcel.writeString(STUDY_DIRECTOR)
         parcel.writeString(DATE)
         parcel.writeValue(HOUSE_NUMBER)

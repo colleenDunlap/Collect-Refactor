@@ -9,5 +9,6 @@ interface MetaDataInterface : Parcelable {
     val formType : String
     var millsCreated: Long
     var sent: Boolean
+    var count: Int?
     fun getFilename() : String
 }

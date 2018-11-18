@@ -60,52 +60,80 @@
                         android:id="@+id/section_a_table">
                         <TableRow>
                             <TextView style="@style/CellStyle1"
-                                android:text="@string/exposure"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
+                                android:text="@string/exposure"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle2"
-                                android:text="@string/kd60"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
+                                android:text="@string/kd60"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="text"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle1"
-                                android:text="@string/H24_mortality"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
+                                android:text="@string/H24_mortality"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle2"
-                                android:text="@string/H48_mortality"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
+                                android:text="@string/H48_mortality"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="text"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle1"
-                                android:text="@string/H72_mortality"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
+                                android:text="@string/H72_mortality"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle2"
-                                android:text="@string/H96_mortality"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
+                                android:text="@string/H96_mortality"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="text"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle1"
-                                android:text="@string/H120_mortality"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
+                                android:text="@string/H120_mortality"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="text"/>
                         </TableRow>
                     </TableLayout>
                 </LinearLayout>
@@ -161,68 +189,109 @@
                         android:id="@+id/section_b_table">
                         <TableRow>
                             <EditText style="@style/CellStyle1"
-                                android:text="@string/acclimatization"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
+                                android:text="@string/acclimatization"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="time"
+                                android:id="@+id/timeInputDummy"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="number"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="number"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle2"
-                                android:text="@string/exposure"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
+                                android:text="@string/exposure"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="number"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="number"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle1"
-                                android:text="@string/kd60"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
+                                android:text="@string/kd60"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="number"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="number"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle2"
-                                android:text="@string/H24_mortality"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
+                                android:text="@string/H24_mortality"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="number"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="number"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle1"
-                                android:text="@string/H48_mortality"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
+                                android:text="@string/H48_mortality"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="number"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="number"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle2"
-                                android:text="@string/H72_mortality"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
-                            <EditText style="@style/CellStyle2"/>
+                                android:text="@string/H72_mortality"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="number"/>
+                            <EditText style="@style/CellStyle2"
+                                android:inputType="number"/>
                         </TableRow>
                         <TableRow>
                             <EditText style="@style/CellStyle1"
-                                android:text="@string/H96_mortality"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
+                                android:text="@string/H96_mortality"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="number"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="number"/>
                         </TableRow>
 
                         <TableRow>
                             <EditText style="@style/CellStyle1"
-                                android:text="@string/H120_mortality"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
-                            <EditText style="@style/CellStyle1"/>
+                                android:text="@string/H120_mortality"
+                                android:enabled="false"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="time"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="number"/>
+                            <EditText style="@style/CellStyle1"
+                                android:inputType="number"/>
                         </TableRow>
                     </TableLayout>
                 </LinearLayout>
@@ -359,19 +428,19 @@
                     android:orientation="vertical"
                     android:id="@+id/MainTableContainer">
                     <Button
-                        android:id="@+id/completeButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:onClick="completeForm"
-                        android:text="@string/complete_form"
-                        tools:layout_editor_absoluteX="25dp"
-                        tools:layout_editor_absoluteY="511dp" />
-                    <Button
                         android:id="@+id/collectDataButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="saveFormForTomorrow"
                         android:text="@string/save_for_tomorrow"
+                        tools:layout_editor_absoluteX="25dp"
+                        tools:layout_editor_absoluteY="511dp" />
+                    <Button
+                        android:id="@+id/completeButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="completeForm"
+                        android:text="@string/complete_form"
                         tools:layout_editor_absoluteX="25dp"
                         tools:layout_editor_absoluteY="511dp" />
                 </LinearLayout>

@@ -6,6 +6,8 @@ class IndoorRestingCollectionDataEntry (metaData: IndoorRestingCollectionMetaDat
     public var DATA_ENTRY_NAME: String? = null
     public var HOUSE_NUMBER: Int? = null
     public var CLUSTER_NUMBER: Int? = null
+    var VOLUNTEER: String? = null
+    var VILLAGE: String? = null
     var HUT_NUMBER: Int? = null
     var TRAP_ID: String? = null
     var ARABIENSIS_ALIVE: Int? = null
@@ -34,9 +36,13 @@ class IndoorRestingCollectionDataEntry (metaData: IndoorRestingCollectionMetaDat
     public var WEEK: Int? = null
     public var MONTH: Int? = null
     public var STUDY_DIRECTOR: String? = null
-    public var SERIAL: Int? = null
+    public var serial: Int? = null
 
     init {
+        updateFromMetaData(metaData)
+    }
+
+    fun updateFromMetaData(metaData: IndoorRestingCollectionMetaData) {
         PROJECT_CODE = metaData.PROJECT_CODE
         DATE = metaData.DATE
         DATA_ENTRY_NAME = metaData.DATA_ENTRY_NAME
@@ -45,8 +51,9 @@ class IndoorRestingCollectionDataEntry (metaData: IndoorRestingCollectionMetaDat
         WEEK = metaData.WEEK
         MONTH = metaData.MONTH
         STUDY_DIRECTOR = metaData.DIRECTOR
-        SERIAL = metaData.serial
-
+        serial = metaData.serial
+        VILLAGE = metaData.VILLAGE
+        VOLUNTEER = metaData.VOLUNTEER
     }
 
 }

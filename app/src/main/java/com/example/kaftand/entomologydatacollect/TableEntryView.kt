@@ -1,11 +1,15 @@
 package com.example.kaftand.entomologydatacollect
 
 import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Rect
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.support.v4.content.res.ResourcesCompat
 import android.support.v4.widget.TextViewCompat
+import android.support.v7.app.AlertDialog
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import android.view.Gravity
@@ -26,7 +30,7 @@ open class TableEntryView<TableEntryType>(context : Context,var tableData : Tabu
     }
 
     fun createTable()  {
-        var colNames = this.tableData.getColNames()
+        var colNames = this.tableData.getColNames(this.context)
         for (iRow in 0 until this.tableData.nRows)
         {
             this.addView(this.formatRow(iRow, this.tableData.createRow(iRow, this.context), false))
@@ -45,7 +49,7 @@ open class TableEntryView<TableEntryType>(context : Context,var tableData : Tabu
 
     open fun createHeaderTable() : TableLayout {
         var table = TableLayout(this.context)
-        var colNames = this.tableData.getColNames()
+        var colNames = this.tableData.getColNames(this.context)
         var headerRow = TableRow(this.context)
         for (iCol in 0..(colNames.size-1))
         {
@@ -99,14 +103,23 @@ open class TableEntryView<TableEntryType>(context : Context,var tableData : Tabu
             }
             var thisTextSize = getTextSize(cell, thisWidth)
             minTextSize = min(thisTextSize, minTextSize)
-
-            if (!isHeader) {
-                if (thisTextSize < 20) {
-                    if (thisTextSize < 5) {
-                        thisTextSize = (thisTextSize * 2).toFloat()
-                    }
-                    cell.setTextSize(TypedValue.COMPLEX_UNIT_SP, thisTextSize)
+            cell.addTextChangedListener(object : TextWatcher {
+                override fun afterTextChanged(s: Editable) {
+                    var thisTextSize = getTextSize(cell, thisWidth)
+                    updateTextSize(cell, thisTextSize)
                 }
+                override fun beforeTextChanged(s: CharSequence, start: Int,
+                                               count: Int, after: Int) {
+                }
+
+                override fun onTextChanged(s: CharSequence, start: Int,
+                                           before: Int, count: Int) {
+                    var thisTextSize = getTextSize(cell, thisWidth)
+                    updateTextSize(cell, thisTextSize)
+                }
+            })
+            if (!isHeader) {
+                updateTextSize(cell, thisTextSize)
             }
         }
 
@@ -121,8 +134,18 @@ open class TableEntryView<TableEntryType>(context : Context,var tableData : Tabu
         return row
     }
 
+    fun updateTextSize(cell : TextView, thisTextSizeVal : Float) {
+        var thisTextSize = thisTextSizeVal
+        if (thisTextSize < 20) {
+            if (thisTextSize < 5) {
+                thisTextSize = (thisTextSize * 2).toFloat()
+            }
+            cell.setTextSize(TypedValue.COMPLEX_UNIT_SP, thisTextSize)
+        }
+    }
+
     fun getColWidth() : MutableList<Float> {
-        var size = this.tableData.getColNames().size
+        var size = this.tableData.getColNames(this.context).size
         val displayMetrics = DisplayMetrics()
         val wm : WindowManager = this.context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
         wm.getDefaultDisplay().getMetrics(displayMetrics)
@@ -153,6 +176,31 @@ open class TableEntryView<TableEntryType>(context : Context,var tableData : Tabu
             {
             }
         }
+    }
+
+    fun ensureNoNull(table : TableLayout) : Boolean {
+        var noErrors = true
+        for (iRow in 0 until table.childCount) {
+            val thisRow = table.getChildAt(iRow) as TableRow
+            for (iCol in 0 until thisRow.childCount) {
+                val thisCell = thisRow.getChildAt(iCol) as TextView
+                if ((thisCell.text == null) or (thisCell.text.toString() == "")) {
+                    thisCell.setError(table.context.getString(R.string.missing_data))
+                    noErrors = false
+                }
+            }
+        }
+        return noErrors
+    }
+
+    fun alertMissingData()
+    {
+        val alertDialog = AlertDialog.Builder(this.context).create()
+        alertDialog.setTitle(this.context.getString(R.string.alert))
+        alertDialog.setMessage(this.context.getString(R.string.missing_data))
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
+                DialogInterface.OnClickListener { dialog, which -> dialog.dismiss() })
+        alertDialog.show()
     }
 
 

@@ -8,7 +8,7 @@ interface TabularData <T> {
     var dataArray : ArrayList<T>
     val nRows: Int
 
-    fun getColNames() : ArrayList<String>
+    fun getColNames(context: Context) : ArrayList<String>
     fun createRow(iRow : Int, context: Context) : TableRow
     fun buildInfoRow (context: Context, sentResource: Int, completeResource: Int) : TableRow
     fun buildInfoHeader(context: Context) : TableRow

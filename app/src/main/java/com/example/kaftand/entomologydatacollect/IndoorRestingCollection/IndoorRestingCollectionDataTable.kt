@@ -14,7 +14,7 @@ import com.example.kaftand.entomologydatacollect.R
 import com.example.kaftand.entomologydatacollect.Util.TableConstants
 import kotlin.reflect.KMutableProperty0
 
-class IndoorRestingCollectionDataTable(override val metaData: IndoorRestingCollectionMetaData, override val nRows: Int) : TabularData<IndoorRestingCollectionDataEntry> {
+class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingCollectionMetaData, override val nRows: Int) : TabularData<IndoorRestingCollectionDataEntry> {
     override var dataArray = ArrayList<IndoorRestingCollectionDataEntry>()
 
     init {
@@ -26,7 +26,7 @@ class IndoorRestingCollectionDataTable(override val metaData: IndoorRestingColle
         }
     }
 
-    override fun getColNames(): ArrayList<String> {
+    override fun getColNames(context: Context): ArrayList<String> {
         var colnames = ArrayList<String>()
         colnames.add(R.string.hut_number.toString())
         colnames.add(R.string.trap_id.toString())
@@ -119,6 +119,7 @@ class IndoorRestingCollectionDataTable(override val metaData: IndoorRestingColle
 
         var otherSpecies = EditText(context)
         otherSpecies.setText(dataRow.OTHER_FEMALE.toString())
+        otherSpecies.inputType = InputType.TYPE_CLASS_TEXT
         otherSpecies.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.dataArray[iRow]::OTHER_SPECIES)))
         otherSpecies.setImeOptions(EditorInfo.IME_ACTION_NEXT);
         row.addView(otherSpecies)

@@ -3,7 +3,7 @@
     <string name="hour">Time</string>
     <string name="total">Total</string>
     <string name="fill_out_form">Fill Out Form</string>
-    <string name="upload_form">Upload Form</string>
+    <string name="upload_form">SEND FINALIZED FORM</string>
     <string name="indoor">indoors</string>
     <string name="outdoor">outdoors</string>
     <string name="tap_to_enter">tap</string>
@@ -11,9 +11,9 @@
     <string name="day_month_year">DAY.MONTH.YEAR</string>
     <string name="project_code">PROJECT CODE</string>
     <string name="house_number">HOUSE NUMBER</string>
-    <string name="cluster_number">CLUSTER NUMBER</string>
-    <string name="volunteer_number_inside">VOLUNTEER NUMBER INSIDE</string>
-    <string name="volunteer_number_outside">VOLUNTEER NUMBER OUTSIDE</string>
+    <string name="cluster_number">CLUSTER</string>
+    <string name="volunteer_number_inside">VOLUNTEER INSIDE</string>
+    <string name="volunteer_number_outside">VOLUNTEER OUTSIDE</string>
     <string name="missing_data">Missing Data</string>
     <string name="next">NEXT</string>
     <string name="finish">FINISH</string>
@@ -76,6 +76,7 @@
     <string name="scored_by">Scored By</string>
     <string name="data_entered_by">Data Entered By</string>
     <string name="cone_bioassay">Cone Bioassay</string>
+    <string name="volunteer">Volunteer</string>
 
     <string name="after_1HR">baada ya dakika 60</string>
     <string name="after_24HR">Siku ya 1 masaa 24</string>
@@ -94,4 +95,24 @@
         <item>@string/cone_bioassay</item>
     </string-array>
 
-</resources>
+    <string-array name="villages_drop_down">
+        <item>@string/tap_to_enter</item>
+        <item>Euga</item>
+        <item>Eubuyu</item>
+        <item>Nkongo</item>
+        <item>Nanunga</item>
+        <item>Ikangao</item>
+        <item>Mzelezi</item>
+        <item>Mbaranga</item>
+        <item>Umme</item>
+        <item>Liberanga</item>
+        <item>Nakafulu</item>
+        <item>Chukuti</item>
+        <item>Idunda</item>
+        <item>Ikungua</item>
+        <item>Nalukoo</item>
+    </string-array>
+
+
+
+    </resources>

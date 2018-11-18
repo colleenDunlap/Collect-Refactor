@@ -11,9 +11,9 @@ import com.example.kaftand.entomologydatacollect.R
 import com.example.kaftand.entomologydatacollect.Util.TableConstants
 import kotlin.reflect.KMutableProperty0
 
-class ConeBioassayDataTable(override val metaData: ConeBioassayMetaData, override val nRows: Int) : TabularData<ConeBioassayDataEntry> {
+class ConeBioassayDataTable(override var metaData: ConeBioassayMetaData, override val nRows: Int) : TabularData<ConeBioassayDataEntry> {
     override var dataArray = ArrayList<ConeBioassayDataEntry>()
-
+    val INPUT_TYPE_TIME = 36
     init {
         val replicate_array = arrayListOf<Int>(1,2,3,4,5)
         for (iRow in 0 until nRows) {
@@ -22,7 +22,7 @@ class ConeBioassayDataTable(override val metaData: ConeBioassayMetaData, overrid
         }
     }
 
-    override fun getColNames(): ArrayList<String> {
+    override fun getColNames(context: Context): ArrayList<String> {
         var colnames = ArrayList<String>()
         colnames.add(R.string.replicate.toString())
         colnames.add(R.string.exposure_start_hh_mm.toString())
@@ -55,11 +55,13 @@ class ConeBioassayDataTable(override val metaData: ConeBioassayMetaData, overrid
 
         var exposureStartTimePicker = EditText(context)
         exposureStartTimePicker.setText(dataRow.EXPOSURE_START)
+        exposureStartTimePicker.inputType = INPUT_TYPE_TIME
         exposureStartTimePicker.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.dataArray[iRow]::EXPOSURE_START)))
         row.addView(exposureStartTimePicker)
 
         var exposureEndTimePicker = EditText(context)
         exposureEndTimePicker.setText(dataRow.EXPOSURE_END)
+        exposureEndTimePicker.inputType = INPUT_TYPE_TIME
         exposureEndTimePicker.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.dataArray[iRow]::EXPOSURE_END)))
         row.addView(exposureEndTimePicker)
 

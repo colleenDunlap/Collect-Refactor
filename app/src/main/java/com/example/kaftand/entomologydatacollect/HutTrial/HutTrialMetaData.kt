@@ -12,20 +12,23 @@ class HutTrialMetaData() : MetaDataInterface {
     var PROJECT_CODE : String? = null
     var DATE : String? = null
     var N_HUTS : Int = 1
+    override var count: Int? = null
     override var completed = false
     override val formType = FormTypeKeys.HutTrial
     override var millsCreated = System.currentTimeMillis()
     override var sent = false
 
-
     constructor(parcel: Parcel) : this() {
+        serial = parcel.readInt()
         PROJECT_CODE = parcel.readString()
         DATE = parcel.readString()
         N_HUTS = parcel.readInt()
+        count = parcel.readValue(Int::class.java.classLoader) as? Int
         completed = parcel.readByte() != 0.toByte()
         millsCreated = parcel.readLong()
         sent = parcel.readByte() != 0.toByte()
     }
+
 
     override fun getFilename(): String {
         val fsu = FileStoreUtil()
@@ -33,9 +36,11 @@ class HutTrialMetaData() : MetaDataInterface {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(serial)
         parcel.writeString(PROJECT_CODE)
         parcel.writeString(DATE)
         parcel.writeInt(N_HUTS)
+        parcel.writeValue(count)
         parcel.writeByte(if (completed) 1 else 0)
         parcel.writeLong(millsCreated)
         parcel.writeByte(if (sent) 1 else 0)
@@ -54,4 +59,6 @@ class HutTrialMetaData() : MetaDataInterface {
             return arrayOfNulls(size)
         }
     }
+
+
 }

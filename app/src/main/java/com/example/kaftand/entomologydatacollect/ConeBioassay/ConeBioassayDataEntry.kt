@@ -3,7 +3,7 @@ package com.example.kaftand.entomologydatacollect.ConeBioassay
 import com.example.kaftand.entomologydatacollect.HumanLandingCatch.HLCMetaData
 
 class ConeBioassayDataEntry (metaData: ConeBioassayMetaData) {
-    var serial: String? = null
+    var serial: Int? = null
     var EXPOSURE_PERFORMED_BY: String? = null
     var EXPOSURE_SCORED_BY: String? = null
     var EXPOSURE_DATA_ENTERED_BY: String? = null
@@ -42,6 +42,7 @@ class ConeBioassayDataEntry (metaData: ConeBioassayMetaData) {
     var EXPOSURE_END_TIME: String? = null
     var EXPOSURE_TEMP: Int? = null
     var EXPOSURE_HUMIDITY: Int? = null
+    var VILLAGE: String? = null
     var KD60_START_TIME: String? = null
     var KD60_END_TIME: String? = null
     var KD60_TEMP: Int? = null
@@ -88,27 +89,10 @@ class ConeBioassayDataEntry (metaData: ConeBioassayMetaData) {
 
 
     init {
-        EXPOSURE_PERFORMED_BY = metaData.EXPOSURE_PERFORMED_BY
-        EXPOSURE_SCORED_BY = metaData.EXPOSURE_SCORED_BY
-        EXPOSURE_DATA_ENTERED_BY = metaData.EXPOSURE_DATA_ENTERED_BY
-        KD60_PERFORMED_BY = metaData.KD60_PERFORMED_BY
-        KD60_SCORED_BY = metaData.KD60_SCORED_BY
-        KD60_DATA_ENTERED_BY = metaData.KD60_DATA_ENTERED_BY
-        M24_PERFORMED_BY = metaData.M24_PERFORMED_BY
-        M24_SCORED_BY = metaData.M24_SCORED_BY
-        M24_DATA_ENTERED_BY = metaData.M24_DATA_ENTERED_BY
-        M48_PERFORMED_BY = metaData.M48_PERFORMED_BY
-        M48_SCORED_BY = metaData.M48_SCORED_BY
-        M48_DATA_ENTERED_BY = metaData.M48_DATA_ENTERED_BY
-        M72_PERFORMED_BY = metaData.M72_PERFORMED_BY
-        M72_SCORED_BY = metaData.M72_SCORED_BY
-        M72_DATA_ENTERED_BY = metaData.M72_DATA_ENTERED_BY
-        M96_PERFORMED_BY = metaData.M96_PERFORMED_BY
-        M96_SCORED_BY = metaData.M96_SCORED_BY
-        M96_DATA_ENTERED_BY = metaData.M96_DATA_ENTERED_BY
-        M120_PERFORMED_BY = metaData.M120_PERFORMED_BY
-        M120_SCORED_BY = metaData.M120_SCORED_BY
-        M120_DATA_ENTERED_BY = metaData.M120_DATA_ENTERED_BY
+        updateFromMetaData(metaData)
+    }
+
+    fun updateFromMetaData(metaData: ConeBioassayMetaData) {
         STUDY_DIRECTOR = metaData.STUDY_DIRECTOR
         DATE = metaData.DATE
         HOUSE_NUMBER = metaData.HOUSE_NUMBER
@@ -119,6 +103,9 @@ class ConeBioassayDataEntry (metaData: ConeBioassayMetaData) {
         PROJECT_CODE = metaData.PROJECT_CODE
         MOSQUITO_AGE_MAX = metaData.MOSQUITO_AGE_MAX
         MOSQUITO_AGE_MIN = metaData.MOSQUITO_AGE_MIN
+        CLUSTER_NUMBER = metaData.CLUSTER_NUMBER
+        VILLAGE = metaData.VILLAGE
+        serial = metaData.serial
     }
 
 }

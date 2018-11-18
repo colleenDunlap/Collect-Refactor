@@ -25,19 +25,26 @@ class CdcHdtDataEntry (metaData: CdcHdtMetaData) {
     public var WEEK: Int? = null
     public var MONTH: Int? = null
     public var STUDY_DIRECTOR: String? = null
-    public var SERIAL: Int? = null
+    public var serial: Int? = null
+    var VILLAGE: String? = null
+    var VOLUNTEER: String? = null
 
     init {
+        updateFromMetaData(metaData)
+    }
+
+    fun updateFromMetaData(metaData: CdcHdtMetaData) {
         PROJECT_CODE = metaData.PROJECT_CODE
         DATE = metaData.DATE
-        DATA_ENTRY_NAME = metaData.DATA_ENTRY_NAME
         HOUSE_NUMBER = metaData.HOUSE_NUMBER
         CLUSTER_NUMBER = metaData.CLUSTER_NUMBER
         WEEK = metaData.WEEK
         MONTH = metaData.MONTH
         STUDY_DIRECTOR = metaData.DIRECTOR
-        SERIAL = metaData.serial
-
+        serial = metaData.serial
+        VILLAGE = metaData.VILLAGE
+        VOLUNTEER = metaData.VOLUNTEER
     }
+
 
 }

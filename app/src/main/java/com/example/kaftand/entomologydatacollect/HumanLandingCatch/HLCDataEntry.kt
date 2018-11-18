@@ -1,13 +1,13 @@
 package com.example.kaftand.entomologydatacollect.HumanLandingCatch
 
 class HLCDataEntry (metaData: HLCMetaData) {
+    var serial = 1
     public var VILLAGE: String? = null
     public var PROJECT_CODE: String? = null
     public var DATE: String? = null
-    public var DATA_ENTRY_NAME: String? = null
     public var HOUSE_NUMBER: Int? = null
     public var CLUSTER_NUMBER: Int? = null
-    public var VOLUNTEER_NUMBER: Int? = null
+    public var VOLUNTEER: String? = null
     public var IN_OR_OUT: String? = null
     public var GAMBIAE: Int? = null
     public var FUNESTUS: Int? = null
@@ -20,20 +20,17 @@ class HLCDataEntry (metaData: HLCMetaData) {
     public var HOUR: String? = null
 
     init {
+        updateFromMetaData(metaData)
+    }
+
+    fun updateFromMetaData(metaData: HLCMetaData) {
+        serial = metaData.serial
         VILLAGE = metaData.VILLAGE
         PROJECT_CODE = metaData.PROJECT_CODE
         DATE = metaData.DATE
-        DATA_ENTRY_NAME = metaData.DATA_ENTRY_NAME
         HOUSE_NUMBER = metaData.HOUSE_NUMBER
         CLUSTER_NUMBER = metaData.CLUSTER_NUMBER
-        IN_OR_OUT = metaData.IN_OR_OUT
-        if (metaData.IN_OR_OUT == "in")
-        {
-            VOLUNTEER_NUMBER = metaData.VOLUNTEER_NUMBER_IN
-        } else
-        {
-            VOLUNTEER_NUMBER = metaData.VOLUNTEER_NUMBER_OUT
-        }
+        VOLUNTEER = if(IN_OR_OUT == "in") {metaData.VOLUNTEER_IN} else {metaData.VOLUNTEER_OUT}
     }
 
 }
