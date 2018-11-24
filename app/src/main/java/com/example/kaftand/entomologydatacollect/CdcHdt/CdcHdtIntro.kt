@@ -56,7 +56,8 @@ class CdcHdtIntro : LanguagePreservingActivity() {
         }
 
         val projectCodeTextEdit = findViewById<EditText>(R.id.project_code)
-        projectCodeTextEdit.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.metaData::PROJECT_CODE)))
+        projectCodeTextEdit.setText(this.metaData.PROJECT_CODE)
+        projectCodeTextEdit.isEnabled = false
         val clusterNumberTextEdit = findViewById<EditText>(R.id.cluster_number_cdc)
         clusterNumberTextEdit.addTextChangedListener(createTextWatcherInt(createCallBackFor<Int?>(this.metaData::CLUSTER_NUMBER)))
         val volunteerNumberTextEdit = findViewById<AutoCompleteTextView>(R.id.volunteer_number)

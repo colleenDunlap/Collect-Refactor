@@ -52,6 +52,7 @@ class ConeBioassayIntro : LanguagePreservingActivity() {
                     cal.get(Calendar.DAY_OF_MONTH)).show()
         }
 
+
         val houseNumberTextEdit = findViewById<EditText>(R.id.house_number)
         houseNumberTextEdit.addTextChangedListener(createTextWatcherInt(createCallBackFor<Int?>(this.metaData::HOUSE_NUMBER)))
 

@@ -10,7 +10,7 @@ import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 class IndoorRestingCollectionMetaData() : MetaDataInterface {
     override var serial = 1
     var DATE: String? = null
-    var PROJECT_CODE: String? = null
+    var PROJECT_CODE: String? = "BIT031"
     var HOUSE_NUMBER: Int? = null
     var CLUSTER_NUMBER: Int? = null
         set(value) {
@@ -46,6 +46,8 @@ class IndoorRestingCollectionMetaData() : MetaDataInterface {
 
     constructor(parcel: Parcel) : this() {
         serial = parcel.readInt()
+        CLUSTER_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
+        count = parcel.readValue(Int::class.java.classLoader) as? Int
         DATE = parcel.readString()
         PROJECT_CODE = parcel.readString()
         HOUSE_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
@@ -69,6 +71,8 @@ class IndoorRestingCollectionMetaData() : MetaDataInterface {
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(serial)
+        parcel.writeValue(CLUSTER_NUMBER)
+        parcel.writeValue(count)
         parcel.writeString(DATE)
         parcel.writeString(PROJECT_CODE)
         parcel.writeValue(HOUSE_NUMBER)

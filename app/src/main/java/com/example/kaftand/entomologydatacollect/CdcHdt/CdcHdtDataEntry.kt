@@ -3,7 +3,6 @@ package com.example.kaftand.entomologydatacollect.CdcHdt
 class CdcHdtDataEntry (metaData: CdcHdtMetaData) {
     public var PROJECT_CODE: String? = null
     public var DATE: String? = null
-    public var DATA_ENTRY_NAME: String? = null
     public var HOUSE_NUMBER: Int? = null
     public var CLUSTER_NUMBER: Int? = null
     var HUT_NUMBER: Int? = null

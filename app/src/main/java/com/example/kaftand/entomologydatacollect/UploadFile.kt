@@ -14,6 +14,7 @@ import android.util.Log
 import android.util.TypedValue
 import android.view.Gravity
 import android.view.View
+import android.view.ViewGroup
 import android.view.WindowManager
 import android.view.inputmethod.EditorInfo
 import android.widget.*
@@ -45,7 +46,8 @@ open class UploadFile : LanguagePreservingActivity() {
     var formTypeString: String by Delegates.notNull()
     var formTypeClass: Class<*> by Delegates.notNull()
     var uploadedForms: Int by Delegates.notNull()
-    val IP_PORT: String = "https://e0551fdf.ngrok.io"//"https://ihientodatacollection.appspot.com"//"http://192.168.9.87:8080"ngrok
+    var processDialog: AlertDialog by Delegates.notNull()
+    val IP_PORT: String = "https://ihientodatacollection.appspot.com"//"http://192.168.9.87:8080"ngrok
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload_file)
@@ -56,6 +58,7 @@ open class UploadFile : LanguagePreservingActivity() {
         this.setFileList()
         this.findSendableFiles()
         this.addTableRows()
+        this.processDialog = progressDialog()
 
     }
 
@@ -167,6 +170,7 @@ open class UploadFile : LanguagePreservingActivity() {
     fun uploadForms(view: View)
     {
         var iUploaded = 0
+        startProcess()
         for (iUnsentFilesWithMeta in uploadableFiles)
         {
             iUploaded
@@ -187,6 +191,7 @@ open class UploadFile : LanguagePreservingActivity() {
         val requestQueue = Volley.newRequestQueue(this)
         val uRL = "$IP_PORT/${this.formTypeString}"
 
+
         val stringRequest = object : StringRequest(Request.Method.POST, uRL, object : Response.Listener<String> {
             override fun onResponse(response: String) {
                 Log.i("VOLLEY", response)
@@ -196,6 +201,7 @@ open class UploadFile : LanguagePreservingActivity() {
                 iUnsentFilesWithMeta.reNameFileAfterSent()
                 increaseUploadedForms()
                 if (checkIfFinishedUploading()) {
+                    endProcess()
                     finish();
                     startActivity(getIntent());
                 }
@@ -203,6 +209,7 @@ open class UploadFile : LanguagePreservingActivity() {
         }, object : Response.ErrorListener {
             override fun onErrorResponse(error: VolleyError) {
                 Log.e("VOLLEY", error.toString())
+                endProcess()
                 alertNoInternet()
             }
         }) {
@@ -282,6 +289,26 @@ open class UploadFile : LanguagePreservingActivity() {
         alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                 DialogInterface.OnClickListener { dialog, which -> dialog.dismiss() })
         alertDialog.show()
+    }
+
+    private fun progressDialog() : AlertDialog
+    {
+        val alertDialog = AlertDialog.Builder(this@UploadFile).create()
+        val pb = ProgressBar(this)
+        pb.isIndeterminate = true
+        pb.visibility = View.VISIBLE
+        alertDialog.addContentView(pb, ViewGroup.LayoutParams(40,40))
+        alertDialog.setTitle(getString(R.string.alert))
+        alertDialog.setMessage("Uploading")
+        return alertDialog
+    }
+
+    private fun startProcess() {
+        this.processDialog.show()
+    }
+
+    private fun endProcess() {
+        this.processDialog.hide()
     }
 
     fun checkIfFinishedUploading() : Boolean {

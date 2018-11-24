@@ -74,6 +74,10 @@ class HumanLandingCatchIntro : LanguagePreservingActivity() {
         val volunteerAdapter = ArrayAdapter(this, android.R.layout.simple_dropdown_item_1line, volunteerNameTracker.readVolunteerNames(this))
         volunteerOutNumberTextEdit.setAdapter(volunteerAdapter)
         volunteerInNumberTextEdit.setAdapter(volunteerAdapter)
+
+        val projectCodeTextEdit = findViewById<EditText>(R.id.ProjectCodeEdit)
+        projectCodeTextEdit.setText(this.metaData.PROJECT_CODE)
+        projectCodeTextEdit.isEnabled = false
     }
 
 
@@ -117,7 +121,6 @@ class HumanLandingCatchIntro : LanguagePreservingActivity() {
 
     fun packHLCMetaData() : HLCMetaData {
         metaData.DATE = getEditStringFromView(R.id.DateEdit)
-        metaData.PROJECT_CODE = getEditString(R.id.ProjectCodeEdit)
         metaData.HOUSE_NUMBER = getEditInt(R.id.HouseNumberEdit)
         metaData.CLUSTER_NUMBER = getEditInt(R.id.ClusterNumberEdit)
         metaData.VOLUNTEER_IN = getEditString(R.id.VolunteerNumberInsideEdit)

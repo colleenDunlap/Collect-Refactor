@@ -17,6 +17,7 @@ import com.example.kaftand.entomologydatacollect.MainActivity
 import com.example.kaftand.entomologydatacollect.R
 import com.example.kaftand.entomologydatacollect.TableEntryView
 import com.example.kaftand.entomologydatacollect.Util.FileStoreUtil
+import com.example.kaftand.entomologydatacollect.Util.formCountTracker
 import com.google.gson.Gson
 import java.io.OutputStreamWriter
 import kotlin.properties.Delegates
@@ -97,6 +98,9 @@ class IndoorRestingCollection : LanguagePreservingActivity() {
     }
 
     fun writeData2Json(data: IndoorRestingCollectionDataTable) {
+        if (this.metaData.count == formCountTracker.readFormCount(this.metaData.formType, this)) {
+            formCountTracker.increaseFormCount(this.metaData.formType, this)
+        }
         val gson = Gson()
         val jsonString: String = gson.toJson(data)
         val fsu = FileStoreUtil()

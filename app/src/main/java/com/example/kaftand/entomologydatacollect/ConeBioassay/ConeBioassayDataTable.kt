@@ -110,7 +110,7 @@ class ConeBioassayDataTable(override var metaData: ConeBioassayMetaData, overrid
         sentView.setImageResource(sentResource);
         var formTypeView = TextView(context)
 
-        formTypeView.setText(context.resources.getString(R.string.indoor_resting_collection))
+        formTypeView.setText(context.resources.getString(R.string.cone_bioassay))
         var projectCodeView = TextView(context)
         projectCodeView.setText(this.metaData.PROJECT_CODE)
         var dateCodeView = TextView(context)

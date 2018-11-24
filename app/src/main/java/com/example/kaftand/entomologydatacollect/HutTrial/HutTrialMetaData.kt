@@ -9,7 +9,7 @@ import kotlin.properties.Delegates
 
 class HutTrialMetaData() : MetaDataInterface {
     override var serial = 1
-    var PROJECT_CODE : String? = null
+    var PROJECT_CODE : String? = "BIT031"
     var DATE : String? = null
     var N_HUTS : Int = 1
     override var count: Int? = null

@@ -26,21 +26,22 @@ class HLCDataTable(override var metaData: HLCMetaData, override val nRows: Int) 
         "23-24:00", "24-01:00", "01-02:00", "02-03:00", "03-04:00", "04-05:00", "05-06:00", "total")
         val inOutArray = arrayOf("in","out")
         for (iRow in 0 until this.nRows) {
-            var thisEntry = HLCDataEntry(metaData);
-            thisEntry.HOUR = hourArray[iRow%hourArray.size]
             val inOrOut = if(iRow < hourArray.size) {0} else {1}
-            thisEntry.IN_OR_OUT = inOutArray[inOrOut]
+            var thisEntry = HLCDataEntry(metaData, inOutArray[inOrOut]);
+            thisEntry.HOUR = hourArray[iRow%hourArray.size]
+
             dataArray.add(thisEntry)
         }
     }
 
     override fun getColNames(context: Context): ArrayList<String> {
         var colnames = ArrayList<String>()
+        colnames.add("Form Row")
         colnames.add("Hour")
-        colnames.add(context.getString(R.string.outdoor) + "-" + context.getString(R.string.indoor))
+        colnames.add(context.getString(R.string.indoor) + "/" + context.getString(R.string.outdoor))
         colnames.add("Gambiae")
-        colnames.add("Culex")
         colnames.add("Funestus")
+        colnames.add("Culex")
         colnames.add("Coustani")
         colnames.add("Mansonia")
         colnames.add("Aedes")
@@ -54,6 +55,17 @@ class HLCDataTable(override var metaData: HLCMetaData, override val nRows: Int) 
 
         var row = TableRow(context)
         var thisRow = this.dataArray.get(iRow) as HLCDataEntry
+
+        var formRowNumber = if(iRow < 13) {iRow + 1} else {iRow}
+        var formRow = TextView(context)
+        if ((iRow != 12) and (iRow != 25)) {
+            formRow.setText(formRowNumber.toString())
+        } else {
+            formRow.setText("-")
+        }
+
+        row.addView(formRow)
+
         var hourView = TextView(context)
         hourView.setText(thisRow.HOUR)
         row.addView(hourView)
@@ -77,6 +89,21 @@ class HLCDataTable(override var metaData: HLCMetaData, override val nRows: Int) 
         })
         row.addView(gambiaeView)
 
+        var funestusView = EditText(context)
+        funestusView.inputType = InputType.TYPE_CLASS_NUMBER
+        funestusView.setText(thisRow.FUNESTUS.toString())
+        funestusView.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable) {}
+            override fun beforeTextChanged(s: CharSequence, start: Int,
+                                           count: Int, after: Int) {
+            }
+            override fun onTextChanged(s: CharSequence, start: Int,
+                                       before: Int, count: Int) {
+                setFunestus(s.toString().toIntOrNull(), iRow)
+            }
+        })
+        row.addView(funestusView)
+
         var culexView = EditText(context)
         culexView.inputType = InputType.TYPE_CLASS_NUMBER
         culexView.setText(thisRow.CULEX.toString())
@@ -92,20 +119,6 @@ class HLCDataTable(override var metaData: HLCMetaData, override val nRows: Int) 
         })
         row.addView(culexView)
 
-        var funestusView = EditText(context)
-        funestusView.inputType = InputType.TYPE_CLASS_NUMBER
-        funestusView.setText(thisRow.FUNESTUS.toString())
-        funestusView.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable) {}
-            override fun beforeTextChanged(s: CharSequence, start: Int,
-                                           count: Int, after: Int) {
-            }
-            override fun onTextChanged(s: CharSequence, start: Int,
-                                       before: Int, count: Int) {
-                setFunestus(s.toString().toIntOrNull(), iRow)
-            }
-        })
-        row.addView(funestusView)
         var coustaniView = EditText(context)
         coustaniView.inputType = InputType.TYPE_CLASS_NUMBER
         coustaniView.setText(thisRow.COUSTANI.toString())

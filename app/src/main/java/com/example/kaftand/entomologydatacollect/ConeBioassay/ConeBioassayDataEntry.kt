@@ -1,6 +1,5 @@
 package com.example.kaftand.entomologydatacollect.ConeBioassay
 
-import com.example.kaftand.entomologydatacollect.HumanLandingCatch.HLCMetaData
 
 class ConeBioassayDataEntry (metaData: ConeBioassayMetaData) {
     var serial: Int? = null

@@ -18,8 +18,8 @@ class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingColle
     override var dataArray = ArrayList<IndoorRestingCollectionDataEntry>()
 
     init {
-        val trap_id_array = arrayListOf<String>("ndani hajalala",
-                "ndani amekula", "ndani hajalala", "ndani amekula")
+        val trap_id_array = arrayListOf<String>("ndani hajala",
+                "ndani amekula", "ndani hajala", "ndani amekula")
         for (iRow in 0 until nRows) {
             dataArray.add(IndoorRestingCollectionDataEntry(this.metaData))
             dataArray[iRow].TRAP_ID = trap_id_array[iRow]
@@ -69,6 +69,7 @@ class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingColle
         var trapIdEdit = EditText(context)
         trapIdEdit.setText(dataRow.TRAP_ID.toString())
         trapIdEdit.isEnabled = false
+        trapIdEdit.setTextColor(context.resources.getColor(R.color.black))
         row.addView(trapIdEdit)
 
         val propertyArray = arrayListOf(this.dataArray[iRow]::ARABIENSIS_ALIVE,

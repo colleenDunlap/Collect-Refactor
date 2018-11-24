@@ -18,6 +18,7 @@ import com.example.kaftand.entomologydatacollect.MainActivity
 import com.example.kaftand.entomologydatacollect.R
 import com.example.kaftand.entomologydatacollect.TableEntryView
 import com.example.kaftand.entomologydatacollect.Util.FileStoreUtil
+import com.example.kaftand.entomologydatacollect.Util.formCountTracker
 import com.google.gson.Gson
 import java.io.OutputStreamWriter
 import kotlin.properties.Delegates
@@ -243,7 +244,7 @@ class ConeBioassay : LanguagePreservingActivity() {
             exposureHumEdit.addTextChangedListener(createTextWatcherInt(createCallBackFor<Int?>(this.DataTableView.tableData.dataArray[iRow]::EXPOSURE_HUMIDITY)))
 
             kd60StartEdit.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.DataTableView.tableData.dataArray[iRow]::KD60_START_TIME)))
-            kd60EndEdit.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.DataTableView.tableData.dataArray[iRow]::KD60_START_TIME)))
+            kd60EndEdit.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.DataTableView.tableData.dataArray[iRow]::KD60_END_TIME)))
             kd60TempEdit.addTextChangedListener(createTextWatcherInt(createCallBackFor<Int?>(this.DataTableView.tableData.dataArray[iRow]::KD60_TEMP)))
             kd60HumEdit.addTextChangedListener(createTextWatcherInt(createCallBackFor<Int?>(this.DataTableView.tableData.dataArray[iRow]::KD60_HUMIDITY)))
 
@@ -338,6 +339,9 @@ class ConeBioassay : LanguagePreservingActivity() {
     }
 
     fun writeData2Json(data: ConeBioassayDataTable) {
+        if (this.metaData.count == formCountTracker.readFormCount(this.metaData.formType, this)) {
+            formCountTracker.increaseFormCount(this.metaData.formType, this)
+        }
         val gson = Gson()
         val jsonString: String = gson.toJson(data)
         val fsu = FileStoreUtil()

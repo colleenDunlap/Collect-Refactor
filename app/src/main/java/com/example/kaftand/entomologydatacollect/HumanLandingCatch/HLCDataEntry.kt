@@ -1,6 +1,6 @@
 package com.example.kaftand.entomologydatacollect.HumanLandingCatch
 
-class HLCDataEntry (metaData: HLCMetaData) {
+class HLCDataEntry (metaData: HLCMetaData, InOrOut: String?) {
     var serial = 1
     public var VILLAGE: String? = null
     public var PROJECT_CODE: String? = null
@@ -20,6 +20,7 @@ class HLCDataEntry (metaData: HLCMetaData) {
     public var HOUR: String? = null
 
     init {
+        this.IN_OR_OUT = InOrOut
         updateFromMetaData(metaData)
     }
 

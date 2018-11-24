@@ -98,17 +98,19 @@
     <string-array name="villages_drop_down">
         <item>@string/tap_to_enter</item>
         <item>Euga</item>
-        <item>Eubuyu</item>
+        <item>Ebuyu</item>
         <item>Nkongo</item>
-        <item>Nanunga</item>
+        <item>Nanungu</item>
         <item>Ikangao</item>
         <item>Mzelezi</item>
-        <item>Mbaranga</item>
+        <item>Mbaraganga</item>
         <item>Umme</item>
-        <item>Liberanga</item>
+        <item>Libenanga</item>
+        <item>Gombe</item>
         <item>Nakafulu</item>
-        <item>Chukuti</item>
-        <item>Idunda</item>
+        <item>Chikuti</item>
+        <item>Idunda A</item>
+        <item>Idunda B</item>
         <item>Ikungua</item>
         <item>Nalukoo</item>
     </string-array>

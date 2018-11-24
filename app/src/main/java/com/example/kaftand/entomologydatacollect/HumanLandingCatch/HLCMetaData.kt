@@ -16,7 +16,7 @@ class HLCMetaData() : MetaDataInterface {
     override var sent = false
     var VILLAGE: String? = null
     var DATE: String? = null
-    var PROJECT_CODE: String? = null
+    var PROJECT_CODE: String? = "BIT031"
     var HOUSE_NUMBER: Int? = null
     var VOLUNTEER_IN: String? = null
     var VOLUNTEER_OUT: String? = null
@@ -42,6 +42,8 @@ class HLCMetaData() : MetaDataInterface {
         }
 
     constructor(parcel: Parcel) : this() {
+        CLUSTER_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
+        count = parcel.readValue(Int::class.java.classLoader) as? Int
         serial = parcel.readInt()
         completed = parcel.readByte() != 0.toByte()
         formType = parcel.readString()
@@ -62,6 +64,8 @@ class HLCMetaData() : MetaDataInterface {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeValue(CLUSTER_NUMBER)
+        parcel.writeValue(count)
         parcel.writeInt(serial)
         parcel.writeByte(if (completed) 1 else 0)
         parcel.writeString(formType)

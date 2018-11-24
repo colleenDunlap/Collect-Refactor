@@ -24,13 +24,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
                         <com.example.kaftand.entomologydatacollect.Util.VerticalTextView
-                            android:layout_height="180sp"
+                            android:layout_height="150sp"
                             android:layout_width="36sp"
                             android:background="@drawable/border2"
                             android:padding="2sp"
                             android:text="@string/hut_number"/>
                         <com.example.kaftand.entomologydatacollect.Util.VerticalTextView
-                            android:layout_height="180sp"
+                            android:layout_height="150sp"
                             android:layout_width="36sp"
                             android:background="@drawable/border2"
                             android:padding="2sp"

@@ -54,6 +54,8 @@ class ConeBioassayMetaData() : MetaDataInterface {
     override var sent = false
 
     constructor(parcel: Parcel) : this() {
+        count = parcel.readValue(Int::class.java.classLoader) as? Int
+        CLUSTER_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
         serial = parcel.readInt()
         VILLAGE = parcel.readString()
         STUDY_DIRECTOR = parcel.readString()
@@ -73,6 +75,8 @@ class ConeBioassayMetaData() : MetaDataInterface {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeValue(count)
+        parcel.writeValue(CLUSTER_NUMBER)
         parcel.writeInt(serial)
         parcel.writeString(VILLAGE)
         parcel.writeString(STUDY_DIRECTOR)

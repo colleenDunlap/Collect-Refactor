@@ -61,7 +61,8 @@
                         <TableRow>
                             <TextView style="@style/CellStyle1"
                                 android:text="@string/exposure"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle1"
                                 android:inputType="text"/>
                             <EditText style="@style/CellStyle1"
@@ -72,7 +73,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle2"
                                 android:text="@string/kd60"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle2"
                                 android:inputType="text"/>
                             <EditText style="@style/CellStyle2"
@@ -83,7 +85,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle1"
                                 android:text="@string/H24_mortality"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle1"
                                 android:inputType="text"/>
                             <EditText style="@style/CellStyle1"
@@ -94,7 +97,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle2"
                                 android:text="@string/H48_mortality"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle2"
                                 android:inputType="text"/>
                             <EditText style="@style/CellStyle2"
@@ -105,7 +109,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle1"
                                 android:text="@string/H72_mortality"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle1"
                                 android:inputType="text"/>
                             <EditText style="@style/CellStyle1"
@@ -116,7 +121,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle2"
                                 android:text="@string/H96_mortality"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle2"
                                 android:inputType="text"/>
                             <EditText style="@style/CellStyle2"
@@ -127,7 +133,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle1"
                                 android:text="@string/H120_mortality"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle1"
                                 android:inputType="text"/>
                             <EditText style="@style/CellStyle1"
@@ -190,7 +197,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle1"
                                 android:text="@string/acclimatization"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle1"
                                 android:inputType="time"
                                 android:id="@+id/timeInputDummy"/>
@@ -204,7 +212,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle2"
                                 android:text="@string/exposure"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle2"
                                 android:inputType="time"/>
                             <EditText style="@style/CellStyle2"
@@ -217,7 +226,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle1"
                                 android:text="@string/kd60"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle1"
                                 android:inputType="time"/>
                             <EditText style="@style/CellStyle1"
@@ -230,7 +240,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle2"
                                 android:text="@string/H24_mortality"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle2"
                                 android:inputType="time"/>
                             <EditText style="@style/CellStyle2"
@@ -243,7 +254,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle1"
                                 android:text="@string/H48_mortality"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle1"
                                 android:inputType="time"/>
                             <EditText style="@style/CellStyle1"
@@ -256,7 +268,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle2"
                                 android:text="@string/H72_mortality"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle2"
                                 android:inputType="time"/>
                             <EditText style="@style/CellStyle2"
@@ -269,7 +282,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle1"
                                 android:text="@string/H96_mortality"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle1"
                                 android:inputType="time"/>
                             <EditText style="@style/CellStyle1"
@@ -283,7 +297,8 @@
                         <TableRow>
                             <EditText style="@style/CellStyle1"
                                 android:text="@string/H120_mortality"
-                                android:enabled="false"/>
+                                android:enabled="false"
+                                android:textColor="@color/black"/>
                             <EditText style="@style/CellStyle1"
                                 android:inputType="time"/>
                             <EditText style="@style/CellStyle1"

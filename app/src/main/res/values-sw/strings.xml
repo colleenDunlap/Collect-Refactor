@@ -41,7 +41,7 @@
     <string name="fed_alive">amekula wazima</string>
     <string name="fed_dead">amekula amekufa</string>
     <string name="how_many_huts">Nyumba ngapi?</string>
-    <string name="complete_form">Tuma Fomu</string>
+    <string name="complete_form">Save Fomu</string>
     <string name="save_for_tomorrow">Save for tomorrow</string>
     <string name="total_female">Jumla Jike</string>
     <string name="CDC_HDT">CDC_HDT</string>
@@ -82,7 +82,7 @@
     <string name="after_1HR">baada ya dakika 60</string>
     <string name="after_24HR">Siku ya 1 masaa 24</string>
     <string name="after_48HR">Siku ya 2 masaa 48</string>
-    <string name="after_72HR">Siku ya 3 masaa 72</string>
+    <string name="after_72HR">Siku ya 3 masaa _72</string>
     <string name="after_96HR">Siku ya 4 masaa 96</string>
     <string name="after_120HR">Siku ya 5 masaa 120</string>
 
@@ -101,17 +101,19 @@
     <string-array name="villages_drop_down">
         <item>@string/tap_to_enter</item>
         <item>Euga</item>
-        <item>Eubuyu</item>
+        <item>Ebuyu</item>
         <item>Nkongo</item>
-        <item>Nanunga</item>
+        <item>Nanungu</item>
         <item>Ikangao</item>
         <item>Mzelezi</item>
-        <item>Mbaranga</item>
+        <item>Mbaraganga</item>
         <item>Umme</item>
-        <item>Liberanga</item>
+        <item>Libenanga</item>
+        <item>Gombe</item>
         <item>Nakafulu</item>
-        <item>Chukuti</item>
-        <item>Idunda</item>
+        <item>Chikuti</item>
+        <item>Idunda A</item>
+        <item>Idunda B</item>
         <item>Ikungua</item>
         <item>Nalukoo</item>
     </string-array>

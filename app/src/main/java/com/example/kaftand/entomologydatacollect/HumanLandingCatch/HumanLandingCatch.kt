@@ -10,6 +10,7 @@ import com.google.gson.Gson
 import android.util.Log
 import com.example.kaftand.entomologydatacollect.*
 import com.example.kaftand.entomologydatacollect.Util.FileStoreUtil
+import com.example.kaftand.entomologydatacollect.Util.formCountTracker
 import java.io.OutputStreamWriter
 import kotlin.properties.Delegates
 
@@ -81,6 +82,9 @@ class HumanLandingCatch : LanguagePreservingActivity() {
 
     fun writeData2Json(data: HLCDataTable)
     {
+        if (this.hLCMeta.count == formCountTracker.readFormCount(this.hLCMeta.formType, this)) {
+            formCountTracker.increaseFormCount(this.hLCMeta.formType, this)
+        }
         val gson = Gson()
         val jsonString: String = gson.toJson(data)
         val fsu = FileStoreUtil()

@@ -47,16 +47,8 @@ class HutTrialIntro : LanguagePreservingActivity() {
         }
 
         val projectCodeTextEdit = findViewById<EditText>(R.id.project_code)
-        projectCodeTextEdit.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable) {}
-            override fun beforeTextChanged(s: CharSequence, start: Int,
-                                           count: Int, after: Int) {
-            }
-            override fun onTextChanged(s: CharSequence, start: Int,
-                                       before: Int, count: Int) {
-                updateProjectCode(s.toString())
-            }
-        })
+        projectCodeTextEdit.setText(this.metaData.PROJECT_CODE)
+        projectCodeTextEdit.isEnabled = false
 
         val numberOfHutsTextEdit = findViewById<EditText>(R.id.number_of_huts)
         numberOfHutsTextEdit.addTextChangedListener(object : TextWatcher {
