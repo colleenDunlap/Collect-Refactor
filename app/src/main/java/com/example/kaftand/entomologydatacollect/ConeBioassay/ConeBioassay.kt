@@ -9,10 +9,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
-import android.widget.EditText
-import android.widget.LinearLayout
-import android.widget.TableLayout
-import android.widget.TableRow
+import android.widget.*
 import com.example.kaftand.entomologydatacollect.LanguagePreservingActivity
 import com.example.kaftand.entomologydatacollect.MainActivity
 import com.example.kaftand.entomologydatacollect.R
@@ -49,6 +46,16 @@ class ConeBioassay : LanguagePreservingActivity() {
         this.fillPsuedoTables()
         val dataTableContainer = findViewById<LinearLayout>(R.id.MainTableContainer)
         dataTableContainer.addView(this.DataTableView, 0)
+
+        var saveButton = findViewById<Button>(R.id.collectDataButton)
+        var completeButton = findViewById<Button>(R.id.completeButton)
+        if (this.metaData.sent) {
+            saveButton.visibility = View.GONE
+            completeButton.visibility = View.GONE
+        }
+
+        var serialNumberLabel = findViewById<TextView>(R.id.serial_label)
+        serialNumberLabel.text = "serial: " + this.metaData.serial.toString()
     }
 
     fun fillPsuedoTables() {

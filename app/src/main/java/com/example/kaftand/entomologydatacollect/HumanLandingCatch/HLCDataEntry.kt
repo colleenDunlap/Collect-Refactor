@@ -2,6 +2,7 @@ package com.example.kaftand.entomologydatacollect.HumanLandingCatch
 
 class HLCDataEntry (metaData: HLCMetaData, InOrOut: String?) {
     var serial = 1
+    var formEntryRow: Int? = null
     public var VILLAGE: String? = null
     public var PROJECT_CODE: String? = null
     public var DATE: String? = null

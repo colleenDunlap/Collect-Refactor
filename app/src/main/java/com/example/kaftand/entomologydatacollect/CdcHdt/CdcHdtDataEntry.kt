@@ -5,6 +5,7 @@ class CdcHdtDataEntry (metaData: CdcHdtMetaData) {
     public var DATE: String? = null
     public var HOUSE_NUMBER: Int? = null
     public var CLUSTER_NUMBER: Int? = null
+    var formEntryRow: Int? = null
     var HUT_NUMBER: Int? = null
     var TRAP_ID: String? = null
     var ARABIENSIS_UNFED_ALIVE: Int? = null

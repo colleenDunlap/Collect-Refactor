@@ -19,6 +19,7 @@ class ConeBioassayDataTable(override var metaData: ConeBioassayMetaData, overrid
         for (iRow in 0 until nRows) {
             dataArray.add(ConeBioassayDataEntry(this.metaData))
             dataArray[iRow].REPLICATE = replicate_array[iRow]
+            dataArray[iRow].formEntryRow = iRow
         }
     }
 
@@ -80,9 +81,6 @@ class ConeBioassayDataTable(override var metaData: ConeBioassayMetaData, overrid
         for (eachProperty in propertyArray) {
 
             val countEdit = EditText(context)
-            if (first) {
-                countEdit.id = TableConstants.firstEntry(iRow)
-            }
             countEdit.inputType = InputType.TYPE_CLASS_NUMBER
             val textString = if (eachProperty.get() == null) {
                 ""
@@ -110,9 +108,11 @@ class ConeBioassayDataTable(override var metaData: ConeBioassayMetaData, overrid
         sentView.setImageResource(sentResource);
         var formTypeView = TextView(context)
 
-        formTypeView.setText(context.resources.getString(R.string.cone_bioassay))
+        formTypeView.setText(context.resources.getString(R.string.indoor_resting_collection))
         var projectCodeView = TextView(context)
         projectCodeView.setText(this.metaData.PROJECT_CODE)
+        val serialView = TextView(context)
+        serialView.setText(this.metaData.serial.toString())
         var dateCodeView = TextView(context)
         dateCodeView.setText(this.metaData.DATE)
         var completeView = ImageView(context)
@@ -120,6 +120,7 @@ class ConeBioassayDataTable(override var metaData: ConeBioassayMetaData, overrid
 
         row.addView(sentView)
         row.addView(formTypeView)
+        row.addView(serialView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
         row.addView(completeView)
@@ -132,6 +133,8 @@ class ConeBioassayDataTable(override var metaData: ConeBioassayMetaData, overrid
         sentView.setText(context.getString(R.string.sent))
         val formTypeView = TextView(context)
         formTypeView.setText(context.getString(R.string.form_type))
+        val serialView = TextView(context)
+        serialView.setText("serial")
         val projectCodeView = TextView(context)
         projectCodeView.setText(context.getString(R.string.project_code))
         val dateCodeView = TextView(context)
@@ -141,6 +144,7 @@ class ConeBioassayDataTable(override var metaData: ConeBioassayMetaData, overrid
 
         row.addView(sentView)
         row.addView(formTypeView)
+        row.addView(serialView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
         row.addView(completeView)

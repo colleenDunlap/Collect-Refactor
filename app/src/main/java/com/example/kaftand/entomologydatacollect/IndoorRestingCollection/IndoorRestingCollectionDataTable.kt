@@ -23,11 +23,13 @@ class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingColle
         for (iRow in 0 until nRows) {
             dataArray.add(IndoorRestingCollectionDataEntry(this.metaData))
             dataArray[iRow].TRAP_ID = trap_id_array[iRow]
+            dataArray[iRow].formEntryRow = iRow
         }
     }
 
     override fun getColNames(context: Context): ArrayList<String> {
         var colnames = ArrayList<String>()
+        colnames.add("FORMROW")
         colnames.add(R.string.hut_number.toString())
         colnames.add(R.string.trap_id.toString())
         colnames.add(R.string.dead.toString())
@@ -60,6 +62,12 @@ class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingColle
         val row = TableRow(context)
         var dataRow = this.dataArray.get(iRow)
 
+        var formRowNumber = iRow + 1
+        var formRow = TextView(context)
+        formRow.setText(formRowNumber.toString())
+
+        row.addView(formRow)
+
         var hutNumberEdit = EditText(context)
         hutNumberEdit.inputType = InputType.TYPE_CLASS_NUMBER
         hutNumberEdit.setText(dataRow.HUT_NUMBER.toString())
@@ -91,9 +99,6 @@ class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingColle
         for (eachProperty in propertyArray) {
 
             val countEdit = EditText(context)
-            if (first) {
-                countEdit.id = TableConstants.firstEntry(iRow)
-            }
             countEdit.inputType = InputType.TYPE_CLASS_NUMBER
             val textString = if (eachProperty.get() == null) {
                 ""
@@ -103,12 +108,7 @@ class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingColle
             countEdit.setText(textString)
             countEdit.addTextChangedListener(createTextWatcherInt(createCallBackFor<Int?>(eachProperty)))
             countEdit.setImeOptions(EditorInfo.IME_ACTION_NEXT);
-            if (!first) {
-                lastView!!.nextFocusForwardId = countEdit.id
-            }
-            lastView = countEdit
             row.addView(countEdit)
-            first = false
             iProperty++
         }
 
@@ -119,7 +119,7 @@ class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingColle
         row.addView(otherFemaleEdit)
 
         var otherSpecies = EditText(context)
-        otherSpecies.setText(dataRow.OTHER_FEMALE.toString())
+        otherSpecies.setText(dataRow.OTHER_SPECIES.toString())
         otherSpecies.inputType = InputType.TYPE_CLASS_TEXT
         otherSpecies.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.dataArray[iRow]::OTHER_SPECIES)))
         otherSpecies.setImeOptions(EditorInfo.IME_ACTION_NEXT);
@@ -137,6 +137,8 @@ class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingColle
         formTypeView.setText(context.resources.getString(R.string.indoor_resting_collection))
         var projectCodeView = TextView(context)
         projectCodeView.setText(this.metaData.PROJECT_CODE)
+        val serialView = TextView(context)
+        serialView.setText(this.metaData.serial.toString())
         var dateCodeView = TextView(context)
         dateCodeView.setText(this.metaData.DATE)
         var completeView = ImageView(context)
@@ -144,6 +146,7 @@ class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingColle
 
         row.addView(sentView)
         row.addView(formTypeView)
+        row.addView(serialView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
         row.addView(completeView)
@@ -156,6 +159,8 @@ class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingColle
         sentView.setText(context.getString(R.string.sent))
         val formTypeView = TextView(context)
         formTypeView.setText(context.getString(R.string.form_type))
+        val serialView = TextView(context)
+        serialView.setText("serial")
         val projectCodeView = TextView(context)
         projectCodeView.setText(context.getString(R.string.project_code))
         val dateCodeView = TextView(context)
@@ -165,6 +170,7 @@ class IndoorRestingCollectionDataTable(override var metaData: IndoorRestingColle
 
         row.addView(sentView)
         row.addView(formTypeView)
+        row.addView(serialView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
         row.addView(completeView)

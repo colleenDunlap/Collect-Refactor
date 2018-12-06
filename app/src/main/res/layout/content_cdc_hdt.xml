@@ -11,6 +11,12 @@
         android:orientation="vertical"
         android:descendantFocusability="beforeDescendants"
         android:focusableInTouchMode="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="6pt"
+            android:text="serial"
+            android:id="@+id/serial_label"/>
 
         <TableLayout
             android:layout_width="match_parent"
@@ -23,6 +29,12 @@
                         android:id="@+id/VerticalHeader1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content">
+                        <com.example.kaftand.entomologydatacollect.Util.VerticalTextView
+                            android:layout_height="150sp"
+                            android:layout_width="36sp"
+                            android:background="@drawable/border2"
+                            android:padding="2sp"
+                            android:text="Form Row"/>
                         <com.example.kaftand.entomologydatacollect.Util.VerticalTextView
                             android:layout_height="150sp"
                             android:layout_width="36sp"

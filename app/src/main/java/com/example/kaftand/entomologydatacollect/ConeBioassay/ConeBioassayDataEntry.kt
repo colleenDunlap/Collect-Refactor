@@ -2,6 +2,7 @@ package com.example.kaftand.entomologydatacollect.ConeBioassay
 
 
 class ConeBioassayDataEntry (metaData: ConeBioassayMetaData) {
+    var formEntryRow: Int? = null
     var serial: Int? = null
     var EXPOSURE_PERFORMED_BY: String? = null
     var EXPOSURE_SCORED_BY: String? = null

@@ -7,8 +7,10 @@ import android.os.Bundle
 import android.util.Log
 import android.util.TypedValue
 import android.view.View
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TableRow
+import android.widget.TextView
 import com.example.kaftand.entomologydatacollect.LanguagePreservingActivity
 import com.example.kaftand.entomologydatacollect.MainActivity
 import com.example.kaftand.entomologydatacollect.R
@@ -43,6 +45,15 @@ class CdcHdt() : LanguagePreservingActivity() {
         this.customHeaderTableFormat()
         val dataTableContainer = findViewById<LinearLayout>(R.id.MainTableContainer)
         dataTableContainer.addView(this.DataTableView, 0)
+
+        var saveButton = findViewById<Button>(R.id.collectDataButton)
+        var completeButton = findViewById<Button>(R.id.completeButton)
+        if (this.metaData.sent) {
+            saveButton.visibility = View.GONE
+            completeButton.visibility = View.GONE
+        }
+        var serialNumberLabel = findViewById<TextView>(R.id.serial_label)
+        serialNumberLabel.text = "serial: " + this.metaData.serial.toString()
     }
 
     fun completeForm(view: View) {

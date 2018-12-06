@@ -33,6 +33,7 @@ import com.example.kaftand.entomologydatacollect.HutTrial.HutTrialDataTable
 import com.example.kaftand.entomologydatacollect.IndoorRestingCollection.IndoorRestingCollectionDataTable
 import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 import com.example.kaftand.entomologydatacollect.Util.SavedFileInfo
+import com.example.kaftand.entomologydatacollect.Util.ServerConfig
 import com.google.gson.Gson
 import java.io.OutputStreamWriter
 import kotlin.properties.Delegates
@@ -47,7 +48,7 @@ open class UploadFile : LanguagePreservingActivity() {
     var formTypeClass: Class<*> by Delegates.notNull()
     var uploadedForms: Int by Delegates.notNull()
     var processDialog: AlertDialog by Delegates.notNull()
-    val IP_PORT: String = "https://ihientodatacollection.appspot.com"//"http://192.168.9.87:8080"ngrok
+    //"http://192.168.9.87:8080"ngrok
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload_file)
@@ -98,8 +99,8 @@ open class UploadFile : LanguagePreservingActivity() {
             }
         }
 
-        this.sentFilesWithMeta.sortBy({ it.file.lastModified() })
-        this.unsentFilesWithMeta.sortBy({ it.file.lastModified() })
+        this.sentFilesWithMeta.sortBy({ -it.file.lastModified() })
+        this.unsentFilesWithMeta.sortBy({ -it.file.lastModified() })
     }
 
     fun findSendableFiles() {
@@ -189,7 +190,7 @@ open class UploadFile : LanguagePreservingActivity() {
         var thisDataTable = gson.fromJson(iUnsentFilesWithMeta.file.readText(), this.formTypeClass) as TabularData <Any>
         val requestBody = iUnsentFilesWithMeta.file.readText()
         val requestQueue = Volley.newRequestQueue(this)
-        val uRL = "$IP_PORT/${this.formTypeString}"
+        val uRL = "${ServerConfig.IP_PORT}/${this.formTypeString}"
 
 
         val stringRequest = object : StringRequest(Request.Method.POST, uRL, object : Response.Listener<String> {
@@ -198,7 +199,7 @@ open class UploadFile : LanguagePreservingActivity() {
                 thisDataTable.metaData.sent = true
                 val dataString = gson.toJson(thisDataTable)
                 writeToFile(dataString, thisDataTable.metaData.getFilename(), context)
-                iUnsentFilesWithMeta.reNameFileAfterSent()
+                iUnsentFilesWithMeta.file.delete()
                 increaseUploadedForms()
                 if (checkIfFinishedUploading()) {
                     endProcess()

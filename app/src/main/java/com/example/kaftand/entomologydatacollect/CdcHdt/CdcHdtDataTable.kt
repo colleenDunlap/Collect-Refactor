@@ -24,11 +24,13 @@ class CdcHdtDataTable(override var metaData: CdcHdtMetaData, override val nRows:
             dataArray.add(CdcHdtDataEntry(this.metaData))
             val trap_id = if (iRow < 4) {trap_id_array[0]} else {trap_id_array[1]}
             dataArray[iRow].TRAP_ID = trap_id
+            dataArray[iRow].formEntryRow = iRow
         }
     }
 
     override fun getColNames(context: Context): ArrayList<String> {
         var colnames = ArrayList<String>()
+        colnames.add("FORMROW")
         colnames.add(R.string.house_number.toString())
         colnames.add(R.string.trap_id.toString())
         colnames.add(R.string.unfed_alive.toString())
@@ -51,6 +53,12 @@ class CdcHdtDataTable(override var metaData: CdcHdtMetaData, override val nRows:
     override fun createRow(iRow: Int, context: Context): TableRow {
         val row = TableRow(context)
         var dataRow = this.dataArray.get(iRow)
+
+        var formRowNumber = iRow + 1
+        var formRow = TextView(context)
+        formRow.setText(formRowNumber.toString())
+
+        row.addView(formRow)
 
         var hutNumberEdit = EditText(context)
         hutNumberEdit.inputType = InputType.TYPE_CLASS_NUMBER
@@ -77,17 +85,11 @@ class CdcHdtDataTable(override var metaData: CdcHdtMetaData, override val nRows:
         for (eachProperty in propertyArray) {
 
             val countEdit = EditText(context)
-            if (first) {
-                countEdit.id = TableConstants.firstEntry(iRow)
-            }
             countEdit.inputType = InputType.TYPE_CLASS_NUMBER
             val textString = if(eachProperty.get() == null) {""} else {eachProperty.get().toString()}
             countEdit.setText(textString)
             countEdit.addTextChangedListener(createTextWatcherInt(createCallBackFor<Int?>(eachProperty)))
             countEdit.setImeOptions(EditorInfo.IME_ACTION_NEXT);
-            if (!first) {
-                lastView!!.nextFocusForwardId = countEdit.id
-            }
             lastView = countEdit
             if ((iProperty.rem(4) < 2) && (iRow < 4)) {
                 countEdit.setText("0")
@@ -105,7 +107,7 @@ class CdcHdtDataTable(override var metaData: CdcHdtMetaData, override val nRows:
         row.addView(otherFemaleEdit)
 
         var otherSpecies = EditText(context)
-        otherSpecies.setText(dataRow.OTHER_FEMALE.toString())
+        otherSpecies.setText(dataRow.OTHER_SPECIES.toString())
         otherSpecies.inputType = InputType.TYPE_CLASS_TEXT
         otherSpecies.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.dataArray[iRow]::OTHER_SPECIES)))
         row.addView(otherSpecies)
@@ -119,9 +121,11 @@ class CdcHdtDataTable(override var metaData: CdcHdtMetaData, override val nRows:
         sentView.setImageResource(sentResource);
         var formTypeView = TextView(context)
 
-        formTypeView.setText(context.resources.getString(R.string.CDC_HDT))
+        formTypeView.setText(context.resources.getString(R.string.indoor_resting_collection))
         var projectCodeView = TextView(context)
         projectCodeView.setText(this.metaData.PROJECT_CODE)
+        val serialView = TextView(context)
+        serialView.setText(this.metaData.serial.toString())
         var dateCodeView = TextView(context)
         dateCodeView.setText(this.metaData.DATE)
         var completeView = ImageView(context)
@@ -129,6 +133,7 @@ class CdcHdtDataTable(override var metaData: CdcHdtMetaData, override val nRows:
 
         row.addView(sentView)
         row.addView(formTypeView)
+        row.addView(serialView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
         row.addView(completeView)
@@ -141,6 +146,8 @@ class CdcHdtDataTable(override var metaData: CdcHdtMetaData, override val nRows:
         sentView.setText(context.getString(R.string.sent))
         val formTypeView = TextView(context)
         formTypeView.setText(context.getString(R.string.form_type))
+        val serialView = TextView(context)
+        serialView.setText("serial")
         val projectCodeView = TextView(context)
         projectCodeView.setText(context.getString(R.string.project_code))
         val dateCodeView = TextView(context)
@@ -150,6 +157,7 @@ class CdcHdtDataTable(override var metaData: CdcHdtMetaData, override val nRows:
 
         row.addView(sentView)
         row.addView(formTypeView)
+        row.addView(serialView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
         row.addView(completeView)

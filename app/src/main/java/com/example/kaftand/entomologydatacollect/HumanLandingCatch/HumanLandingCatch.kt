@@ -51,8 +51,15 @@ class HumanLandingCatch : LanguagePreservingActivity() {
         var dataView : LinearLayout = findViewById(R.id.MainTableContainer)
         var headerTableContainer : LinearLayout = findViewById(R.id.TableHeaderContainer)
         dataView.addView(this.DataTableView,0)
-        headerTableContainer.addView(this.DataTableView.createHeaderTable(), 0)
+        headerTableContainer.addView(this.DataTableView.createHeaderTable(), 1)
 
+        var saveButton = findViewById<Button>(R.id.collectDataButton)
+
+        if (this.hLCMeta.sent) {
+            saveButton.visibility = View.GONE
+        }
+        var serialNumberLabel = findViewById<TextView>(R.id.serial_label)
+        serialNumberLabel.text = "serial: " + this.hLCMeta.serial.toString()
     }
 
 

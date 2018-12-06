@@ -73,6 +73,13 @@
             android:onClick="editFormButtonClick"
             android:text="@string/edit_form" />
 
+        <Button
+            android:id="@+id/viewFormButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="loadFormForView"
+            android:text="View Server Form" />
+
 
 
     </LinearLayout>

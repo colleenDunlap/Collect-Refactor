@@ -16,6 +16,13 @@
             android:descendantFocusability="beforeDescendants"
             android:focusableInTouchMode="true">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="6pt"
+                android:text="serial"
+                android:id="@+id/serial_label"/>
+
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">

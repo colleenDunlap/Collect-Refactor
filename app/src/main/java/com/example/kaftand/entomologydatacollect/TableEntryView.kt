@@ -45,6 +45,7 @@ open class TableEntryView<TableEntryType>(context : Context,var tableData : Tabu
                 }
             }
         }
+        organizeNextButtons()
     }
 
     open fun createHeaderTable() : TableLayout {
@@ -86,18 +87,6 @@ open class TableEntryView<TableEntryType>(context : Context,var tableData : Tabu
             cell.imeOptions = (EditorInfo.IME_ACTION_NEXT or EditorInfo.IME_FLAG_NO_EXTRACT_UI)
             cell.setSelectAllOnFocus(true)
             cell.gravity = Gravity.CENTER
-            if (cell.isEnabled && (iChild > 0)) {
-                var iPrevCell = 1
-                var prevCell = row.getChildAt(iChild-iPrevCell) as TextView
-                cell.id = (1000 * (iRow + 1)) + iChild
-                while((iPrevCell < iChild) && (!prevCell.isEnabled)) {
-                    iPrevCell = iPrevCell + 1
-                    prevCell = row.getChildAt(iChild-iPrevCell) as TextView
-                }
-                if(prevCell.isEnabled) {
-                    prevCell.nextFocusForwardId = cell.id
-                }
-            }
             if (cell.text.toString() == "null") {
                 cell.text = ""
             }
@@ -191,6 +180,37 @@ open class TableEntryView<TableEntryType>(context : Context,var tableData : Tabu
             }
         }
         return noErrors
+    }
+
+    fun organizeNextButtons() {
+        for (iRow in 0 until this.childCount) {
+            val row = this.getChildAt(iRow) as TableRow
+            var lastRow = if(iRow > 0) {this.getChildAt(iRow-1) as TableRow} else {row}
+            for (iCell in 0 until row.childCount) {
+                val cell = row.getChildAt(iCell) as TextView
+                cell.id = (1000 * (iRow + 1)) + iCell
+                if (cell.isEnabled && cell.isClickable) {
+                    var iPrevCell = 1
+                    var prevCell = (if(iCell == 0) {row.getChildAt(iCell)} else
+                        {row.getChildAt(iCell - iPrevCell)}) as TextView
+                    while ((iPrevCell < iCell) && (!(prevCell.isEnabled and prevCell.isClickable))) {
+                        iPrevCell = iPrevCell + 1
+                        prevCell = row.getChildAt(iCell - iPrevCell) as TextView
+                    }
+                    if ((!(iPrevCell < iCell)) && (iRow > 0)) {
+                        iPrevCell = 1
+                        while ((iPrevCell < childCount) && (!(prevCell.isEnabled and prevCell.isClickable)))
+                        {
+                            prevCell = lastRow.getChildAt(lastRow.childCount - iPrevCell) as TextView
+                            iPrevCell = iPrevCell + 1
+                        }
+                    }
+                    if ((prevCell.isEnabled and prevCell.isClickable)) {
+                        prevCell.nextFocusForwardId = cell.id
+                    }
+                }
+            }
+        }
     }
 
     fun alertMissingData()

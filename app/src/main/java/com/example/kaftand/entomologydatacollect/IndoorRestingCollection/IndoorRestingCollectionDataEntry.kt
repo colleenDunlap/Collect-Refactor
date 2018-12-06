@@ -6,6 +6,7 @@ class IndoorRestingCollectionDataEntry (metaData: IndoorRestingCollectionMetaDat
     public var DATA_ENTRY_NAME: String? = null
     public var HOUSE_NUMBER: Int? = null
     public var CLUSTER_NUMBER: Int? = null
+    var formEntryRow: Int? = null
     var VOLUNTEER: String? = null
     var VILLAGE: String? = null
     var HUT_NUMBER: Int? = null

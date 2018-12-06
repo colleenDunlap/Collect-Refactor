@@ -29,7 +29,7 @@ class HLCDataTable(override var metaData: HLCMetaData, override val nRows: Int) 
             val inOrOut = if(iRow < hourArray.size) {0} else {1}
             var thisEntry = HLCDataEntry(metaData, inOutArray[inOrOut]);
             thisEntry.HOUR = hourArray[iRow%hourArray.size]
-
+            thisEntry.formEntryRow = iRow
             dataArray.add(thisEntry)
         }
     }
@@ -302,16 +302,17 @@ class HLCDataTable(override var metaData: HLCMetaData, override val nRows: Int) 
         return missingData
     }
 
-    override fun buildInfoRow(context: Context, sentResource: Int, completeResource: Int) : TableRow
-    {
+    override fun buildInfoRow(context: Context, sentResource: Int, completeResource: Int): TableRow {
         var row = TableRow(context)
         var sentView = ImageView(context)
         sentView.setImageResource(sentResource);
         var formTypeView = TextView(context)
 
-        formTypeView.setText(context.resources.getString(R.string.human_landing_catch))
+        formTypeView.setText(context.resources.getString(R.string.indoor_resting_collection))
         var projectCodeView = TextView(context)
         projectCodeView.setText(this.metaData.PROJECT_CODE)
+        val serialView = TextView(context)
+        serialView.setText(this.metaData.serial.toString())
         var dateCodeView = TextView(context)
         dateCodeView.setText(this.metaData.DATE)
         var completeView = ImageView(context)
@@ -319,30 +320,31 @@ class HLCDataTable(override var metaData: HLCMetaData, override val nRows: Int) 
 
         row.addView(sentView)
         row.addView(formTypeView)
+        row.addView(serialView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
         row.addView(completeView)
         return row
-
     }
 
-
-    override fun buildInfoHeader(context: Context) : TableRow
-    {
+    override fun buildInfoHeader(context: Context): TableRow {
         val row = TableRow(context)
         val sentView = TextView(context)
         sentView.setText(context.getString(R.string.sent))
         val formTypeView = TextView(context)
         formTypeView.setText(context.getString(R.string.form_type))
+        val serialView = TextView(context)
+        serialView.setText("serial")
         val projectCodeView = TextView(context)
         projectCodeView.setText(context.getString(R.string.project_code))
         val dateCodeView = TextView(context)
         dateCodeView.setText(R.string.day_month_year)
-         val completeView = TextView(context)
+        val completeView = TextView(context)
         completeView.setText(R.string.complete_form)
 
         row.addView(sentView)
         row.addView(formTypeView)
+        row.addView(serialView)
         row.addView(projectCodeView)
         row.addView(dateCodeView)
         row.addView(completeView)
