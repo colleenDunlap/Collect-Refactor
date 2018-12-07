@@ -19,10 +19,7 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.ViewGroup
 import android.view.ViewParent
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
-import android.widget.ProgressBar
-import android.widget.Spinner
+import android.widget.*
 import com.android.volley.*
 import com.android.volley.toolbox.HttpHeaderParser
 import com.android.volley.toolbox.StringRequest
@@ -41,11 +38,22 @@ import java.text.FieldPosition
 import kotlin.properties.Delegates
 
 
-class MainActivity : LanguagePreservingActivity(), ViewFormFromServerDialog.Returning {
+class MainActivity : LanguagePreservingActivity(), ViewFormFromServerDialog.Returning, TabletNumberDialog.Returning {
+
 
     var alertDialog: AlertDialog by Delegates.notNull<AlertDialog>()
     val gson = Gson()
     var selectedForm = FormTypeKeys.HLC
+
+    override fun tablet_return_value(tabletNumber: Int) {
+        val tabletNumberTextView = findViewById<TextView>(R.id.tabletNumber)
+        tabletNumberTextView.text ="Tablet " + tabletNumber.toString()
+        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
+        with (preferences.edit()) {
+            putInt("TabletNumber", tabletNumber)
+            commit()
+        }
+    }
 
     override fun return_value(username: String, password: String, serial: String) {
         alertDialog.setMessage("LOADING...")
@@ -81,6 +89,13 @@ class MainActivity : LanguagePreservingActivity(), ViewFormFromServerDialog.Retu
         val preferences = PreferenceManager.getDefaultSharedPreferences(this)
         spinner.setSelection(preferences.getInt("selectedFormOnMainPage", 0))
         updateSelectedView(spinner)
+
+        val tabNumber = preferences.getInt("TabletNumber", 0)
+        if (tabNumber == 0) {
+            TabletNumberDialog.newInstance().show(supportFragmentManager, "ViewForm")
+        }
+        val tabletNumberTextView = findViewById<TextView>(R.id.tabletNumber)
+        tabletNumberTextView.text ="Tablet " + tabNumber.toString()
     }
 
 
@@ -303,8 +318,7 @@ class MainActivity : LanguagePreservingActivity(), ViewFormFromServerDialog.Retu
         var coneBioassayData = gson.fromJson<ArrayList<ConeBioassayDataEntry>>(response,object :
                 TypeToken<ArrayList<ConeBioassayDataEntry>>(){}.getType())
         coneBioassayData.sortBy { it.formEntryRow }
-        var metaData = ConeBioassayMetaData()
-        metaData.serial = if (coneBioassayData[0].serial == null) {0} else {coneBioassayData[0].serial!!}
+        var metaData = ConeBioassayMetaData(if (coneBioassayData[0].serial == null) {0} else {coneBioassayData[0].serial!!})
         metaData.sent = true
         var dataTable = ConeBioassayDataTable(metaData, coneBioassayData.size)
         dataTable.dataArray = coneBioassayData
@@ -315,8 +329,7 @@ class MainActivity : LanguagePreservingActivity(), ViewFormFromServerDialog.Retu
         var cdcData = gson.fromJson<ArrayList<CdcHdtDataEntry>>(cdcString,object :
                 TypeToken<ArrayList<CdcHdtDataEntry>>(){}.getType())
         cdcData.sortBy { it.formEntryRow }
-        var metaData = CdcHdtMetaData()
-        metaData.serial = if (cdcData[0].serial == null) {0} else {cdcData[0].serial!!}
+        var metaData = CdcHdtMetaData( if (cdcData[0].serial == null) {0} else {cdcData[0].serial!!})
         metaData.sent = true
         var dataTable = CdcHdtDataTable(metaData, cdcData.size)
         dataTable.dataArray = cdcData
@@ -336,8 +349,7 @@ class MainActivity : LanguagePreservingActivity(), ViewFormFromServerDialog.Retu
         var ircData = gson.fromJson<ArrayList<IndoorRestingCollectionDataEntry>>(ircString,object :
                 TypeToken<ArrayList<IndoorRestingCollectionDataEntry>>(){}.getType())
         ircData.sortBy { it.formEntryRow }
-        var metaData = IndoorRestingCollectionMetaData()
-        metaData.serial = if (ircData[0].serial == null) {0} else {ircData[0].serial!!}
+        var metaData = IndoorRestingCollectionMetaData(if (ircData[0].serial == null) {0} else {ircData[0].serial!!})
         metaData.sent = true
         var dataTable = IndoorRestingCollectionDataTable(metaData, ircData.size)
         dataTable.dataArray = ircData
@@ -349,23 +361,19 @@ class MainActivity : LanguagePreservingActivity(), ViewFormFromServerDialog.Retu
         var hlcData  = gson.fromJson<ArrayList<HLCDataEntry>>(hlcString,object :
                 TypeToken<ArrayList<HLCDataEntry>>(){}.getType())
         hlcData.sortBy { it.formEntryRow }
-        var metaData = HLCMetaData()
-        metaData.serial = if (hlcData[0].serial == null) {0} else {hlcData[0].serial!!}
+        var metaData = HLCMetaData(if (hlcData[0].serial == null) {0} else {hlcData[0].serial!!})
         metaData.sent = true
         var dataTable = HLCDataTable(metaData, hlcData.size)
         dataTable.dataArray = hlcData
         startActivity(gson.toJson(dataTable), HumanLandingCatch::class.java)
     }
 
-    private fun missingDataForSerialAlert(serial: String) : AlertDialog
-    {
+    private fun missingDataForSerialAlert(serial: String) : AlertDialog {
         this.alertDialog.dismiss()
         val alertDialog = AlertDialog.Builder(this@MainActivity).create()
         alertDialog.setTitle(getString(R.string.alert))
         alertDialog.setMessage("No " + this.selectedForm + " Data Found for serial " + serial)
         return alertDialog
     }
-
-
 
 }

@@ -10,6 +10,7 @@ import com.google.gson.Gson
 import android.util.Log
 import com.example.kaftand.entomologydatacollect.*
 import com.example.kaftand.entomologydatacollect.Util.FileStoreUtil
+import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 import com.example.kaftand.entomologydatacollect.Util.formCountTracker
 import java.io.OutputStreamWriter
 import kotlin.properties.Delegates
@@ -17,7 +18,7 @@ import kotlin.properties.Delegates
 
 class HumanLandingCatch : LanguagePreservingActivity() {
 
-    var hLCMeta: HLCMetaData = HLCMetaData()
+    var hLCMeta: HLCMetaData by Delegates.notNull()
     var DataTableView: TableEntryView<HLCDataEntry> by Delegates.notNull()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,19 +30,16 @@ class HumanLandingCatch : LanguagePreservingActivity() {
         val metaDataBundle = intent.getBundleExtra("HLCMeta")
         val dataTableBundle = intent.getBundleExtra("DataTableBundle")
         val nRows = 13*2
-        var dataTable = HLCDataTable(this.hLCMeta, nRows)
+        val gson = Gson()
 
-        if(dataTableBundle != null) {
-            val gson = Gson()
-            var dataTableString = dataTableBundle.getString("DataTableString")
-            dataTable = gson.fromJson<HLCDataTable>(dataTableString, HLCDataTable::class.java!!)
-            this.hLCMeta = dataTable.metaData
-        } else if (metaDataBundle != null) {
-            this.hLCMeta  = metaDataBundle.getParcelable<HLCMetaData>("MetaBundle") as HLCMetaData
-            dataTable = HLCDataTable(this.hLCMeta, nRows)
+        val dataTable = if (metaDataBundle != null) {
+            HLCDataTable(metaDataBundle.getParcelable("MetaBundle") as HLCMetaData,
+                    nRows)
         } else {
-            error("No bundle passed in")
+            gson.fromJson(dataTableBundle.getString("DataTableString"), HLCDataTable::class.java)
         }
+
+        this.hLCMeta = dataTable.metaData
 
         this.DataTableView = TableEntryView<HLCDataEntry>(this, dataTable)
         var lp = TableLayout.LayoutParams()

@@ -10,19 +10,23 @@ import android.view.View
 import android.widget.*
 import com.example.kaftand.entomologydatacollect.LanguagePreservingActivity
 import com.example.kaftand.entomologydatacollect.R
+import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 import com.example.kaftand.entomologydatacollect.Util.checkMissingDataInLayout
 import com.example.kaftand.entomologydatacollect.Util.formCountTracker
 import com.google.gson.Gson
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.properties.Delegates
 import kotlin.reflect.KMutableProperty0
 
 
 class ConeBioassayIntro : LanguagePreservingActivity() {
     var responsibleForData = false
     var dataTable: ConeBioassayDataTable? = null
-    var metaData = ConeBioassayMetaData()
+    var metaData: ConeBioassayMetaData by Delegates.notNull()
+
     override fun onCreate(savedInstanceState: Bundle?) {
+        metaData = ConeBioassayMetaData(formCountTracker.getSerialNumber(this@ConeBioassayIntro, FormTypeKeys.ConeBioassay))
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_cone_bioassay_intro)
         this.metaData.count = formCountTracker.readFormCount(metaData.formType, this)

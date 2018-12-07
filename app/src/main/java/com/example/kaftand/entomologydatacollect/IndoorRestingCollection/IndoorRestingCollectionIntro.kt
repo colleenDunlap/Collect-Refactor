@@ -10,21 +10,24 @@ import android.view.View
 import android.widget.*
 import com.example.kaftand.entomologydatacollect.LanguagePreservingActivity
 import com.example.kaftand.entomologydatacollect.R
+import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 import com.example.kaftand.entomologydatacollect.Util.checkMissingDataInLayout
 import com.example.kaftand.entomologydatacollect.Util.formCountTracker
 import com.example.kaftand.entomologydatacollect.Util.volunteerNameTracker
 import com.google.gson.Gson
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.properties.Delegates
 import kotlin.reflect.KMutableProperty0
 
 
 class IndoorRestingCollectionIntro : LanguagePreservingActivity() {
     var responsibleForData = false
-    var metaData = IndoorRestingCollectionMetaData()
+    var metaData: IndoorRestingCollectionMetaData by Delegates.notNull()
     var dataTable: IndoorRestingCollectionDataTable? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        metaData = IndoorRestingCollectionMetaData(formCountTracker.getSerialNumber(this@IndoorRestingCollectionIntro, FormTypeKeys.IndoorRestingCollection))
         setContentView(R.layout.content_indoor_resting_collection_intro)
         this.metaData.count = formCountTracker.readFormCount(metaData.formType, this)
 

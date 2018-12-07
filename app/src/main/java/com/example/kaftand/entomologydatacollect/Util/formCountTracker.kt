@@ -18,4 +18,15 @@ object formCountTracker {
             commit()
         }
     }
+
+    fun readTabletNumber(context: Context) : Int {
+        val preferences = PreferenceManager.getDefaultSharedPreferences(context)
+        return preferences.getInt("TabletNumber", 0)
+    }
+
+    fun getSerialNumber(context: Context, formId: String) : Int {
+        val count = readFormCount(formId, context)
+        val tabNumber = readTabletNumber(context)
+        return (1000*tabNumber) + count
+    }
 }

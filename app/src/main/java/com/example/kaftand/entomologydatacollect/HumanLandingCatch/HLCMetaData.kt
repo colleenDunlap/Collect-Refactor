@@ -8,8 +8,8 @@ import com.example.kaftand.entomologydatacollect.Util.FileStoreUtil
 import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 import kotlin.properties.Delegates
 
-class HLCMetaData() : MetaDataInterface {
-    override var serial = 1
+class HLCMetaData(override var serial: Int) : MetaDataInterface {
+
     override var completed = true
     override var formType = FormTypeKeys.HLC
     override var millsCreated = System.currentTimeMillis()
@@ -21,30 +21,9 @@ class HLCMetaData() : MetaDataInterface {
     var VOLUNTEER_IN: String? = null
     var VOLUNTEER_OUT: String? = null
     var CLUSTER_NUMBER: Int? = null
-        set(value) {
-            if ((value == null) or (this.count == null)) {
-                field = value
-            } else
-            {
-                field = value
-                this.serial = (field!!*1000) + this.count!!
-            }
-        }
     override var count: Int? = null
-        set(value) {
-            if ((value == null) or (this.CLUSTER_NUMBER == null)) {
-                field = value
-            } else
-            {
-                field = value
-                this.serial = (this.CLUSTER_NUMBER!!*1000) + field!!
-            }
-        }
 
-    constructor(parcel: Parcel) : this() {
-        CLUSTER_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
-        count = parcel.readValue(Int::class.java.classLoader) as? Int
-        serial = parcel.readInt()
+    constructor(parcel: Parcel) : this(parcel.readInt()) {
         completed = parcel.readByte() != 0.toByte()
         formType = parcel.readString()
         millsCreated = parcel.readLong()
@@ -55,6 +34,8 @@ class HLCMetaData() : MetaDataInterface {
         HOUSE_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
         VOLUNTEER_IN = parcel.readString()
         VOLUNTEER_OUT = parcel.readString()
+        CLUSTER_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
+        count = parcel.readValue(Int::class.java.classLoader) as? Int
     }
 
 
@@ -64,8 +45,6 @@ class HLCMetaData() : MetaDataInterface {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeValue(CLUSTER_NUMBER)
-        parcel.writeValue(count)
         parcel.writeInt(serial)
         parcel.writeByte(if (completed) 1 else 0)
         parcel.writeString(formType)
@@ -77,6 +56,8 @@ class HLCMetaData() : MetaDataInterface {
         parcel.writeValue(HOUSE_NUMBER)
         parcel.writeString(VOLUNTEER_IN)
         parcel.writeString(VOLUNTEER_OUT)
+        parcel.writeValue(CLUSTER_NUMBER)
+        parcel.writeValue(count)
     }
 
     override fun describeContents(): Int {

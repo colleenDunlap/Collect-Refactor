@@ -7,31 +7,13 @@ import com.example.kaftand.entomologydatacollect.Util.FileStoreUtil
 import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 
 
-class IndoorRestingCollectionMetaData() : MetaDataInterface {
-    override var serial = 1
+class IndoorRestingCollectionMetaData(override var serial: Int) : MetaDataInterface {
+
     var DATE: String? = null
     var PROJECT_CODE: String? = "BIT031"
     var HOUSE_NUMBER: Int? = null
     var CLUSTER_NUMBER: Int? = null
-        set(value) {
-            if ((value == null) or (this.count == null)) {
-                field = value
-            } else
-            {
-                field = value
-                this.serial = (field!!*1000) + this.count!!
-            }
-        }
     override var count: Int? = null
-        set(value) {
-            if ((value == null) or (this.CLUSTER_NUMBER == null)) {
-                field = value
-            } else
-            {
-                field = value
-                this.serial = (this.CLUSTER_NUMBER!!*1000) + field!!
-            }
-        }
     var VILLAGE: String? = null
     var VOLUNTEER: String? = null
     var DATA_ENTRY_NAME: String? = null
@@ -44,13 +26,12 @@ class IndoorRestingCollectionMetaData() : MetaDataInterface {
     override var millsCreated = System.currentTimeMillis()
     override var sent = false
 
-    constructor(parcel: Parcel) : this() {
-        serial = parcel.readInt()
-        CLUSTER_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
-        count = parcel.readValue(Int::class.java.classLoader) as? Int
+    constructor(parcel: Parcel) : this(parcel.readInt()) {
         DATE = parcel.readString()
         PROJECT_CODE = parcel.readString()
         HOUSE_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
+        CLUSTER_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
+        count = parcel.readValue(Int::class.java.classLoader) as? Int
         VILLAGE = parcel.readString()
         VOLUNTEER = parcel.readString()
         DATA_ENTRY_NAME = parcel.readString()
@@ -71,11 +52,11 @@ class IndoorRestingCollectionMetaData() : MetaDataInterface {
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(serial)
-        parcel.writeValue(CLUSTER_NUMBER)
-        parcel.writeValue(count)
         parcel.writeString(DATE)
         parcel.writeString(PROJECT_CODE)
         parcel.writeValue(HOUSE_NUMBER)
+        parcel.writeValue(CLUSTER_NUMBER)
+        parcel.writeValue(count)
         parcel.writeString(VILLAGE)
         parcel.writeString(VOLUNTEER)
         parcel.writeString(DATA_ENTRY_NAME)

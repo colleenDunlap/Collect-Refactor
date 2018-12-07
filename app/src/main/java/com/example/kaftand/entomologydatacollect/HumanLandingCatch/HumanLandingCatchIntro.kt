@@ -11,6 +11,7 @@ import com.example.kaftand.entomologydatacollect.CdcHdt.CdcHdt
 import com.example.kaftand.entomologydatacollect.CdcHdt.CdcHdtDataTable
 import com.example.kaftand.entomologydatacollect.LanguagePreservingActivity
 import com.example.kaftand.entomologydatacollect.R
+import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 import com.example.kaftand.entomologydatacollect.Util.formCountTracker
 import com.example.kaftand.entomologydatacollect.Util.volunteerNameTracker
 import com.google.gson.Gson
@@ -19,13 +20,15 @@ import kotlinx.android.synthetic.main.activity_human_landing_catch_intro.*
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
+import kotlin.properties.Delegates
 
 class HumanLandingCatchIntro : LanguagePreservingActivity() {
     var originalDrawable: Drawable? = null
-    var metaData = HLCMetaData()
+    var metaData: HLCMetaData by Delegates.notNull()
     var responsibleForData = false
     var dataTable: HLCDataTable? = null
     override fun onCreate(savedInstanceState: Bundle?) {
+        metaData = HLCMetaData(formCountTracker.getSerialNumber(this, FormTypeKeys.HLC))
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_human_landing_catch_intro)
         setSupportActionBar(toolbar)

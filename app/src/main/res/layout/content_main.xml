@@ -13,12 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tabletNumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text = "Language"
+            android:textSize="30dp"
+            android:autoSizeMaxTextSize="300dp"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:text = "Language"
             android:textSize="30dp"
             android:autoSizeMaxTextSize="300dp"/>
+
 
         <RadioGroup
             android:layout_width="match_parent"

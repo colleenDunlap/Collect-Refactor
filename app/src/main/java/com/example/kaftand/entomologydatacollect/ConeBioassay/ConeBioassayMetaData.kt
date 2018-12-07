@@ -7,14 +7,13 @@ import com.example.kaftand.entomologydatacollect.R
 import com.example.kaftand.entomologydatacollect.Util.FileStoreUtil
 import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 
-class ConeBioassayMetaData() : MetaDataInterface {
+class ConeBioassayMetaData(override var serial: Int) : MetaDataInterface {
 
     override fun getFilename(): String {
         val fsu = FileStoreUtil()
         return (fsu.createGenericFilename(if(sent) {"SENT"} else {"UNSENT"}, millsCreated.toString(), FormTypeKeys.ConeBioassay))
     }
 
-    override var serial = 1
     var STUDY_DIRECTOR = "Sarah Moore"
     var DATE: String? = null
     var HOUSE_NUMBER: Int? = null
@@ -26,38 +25,14 @@ class ConeBioassayMetaData() : MetaDataInterface {
     var MOSQUITO_AGE_MAX: Int? = null
     var VILLAGE: String? = null
     var CLUSTER_NUMBER: Int? = null
-        set(value) {
-            if ((value == null) or (this.count == null)) {
-                field = value
-            } else
-            {
-                field = value
-                this.serial = (field!!*1000) + this.count!!
-            }
-        }
     override var count: Int? = null
-        set(value) {
-            if ((value == null) or (this.CLUSTER_NUMBER == null)) {
-                field = value
-            } else
-            {
-                field = value
-                this.serial = (this.CLUSTER_NUMBER!!*1000) + field!!
-            }
-        }
-
-
     var PROJECT_CODE: String? = "BIT031"
     override var completed = true
     override var formType = FormTypeKeys.ConeBioassay
     override var millsCreated = System.currentTimeMillis()
     override var sent = false
 
-    constructor(parcel: Parcel) : this() {
-        count = parcel.readValue(Int::class.java.classLoader) as? Int
-        CLUSTER_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
-        serial = parcel.readInt()
-        VILLAGE = parcel.readString()
+    constructor(parcel: Parcel) : this(parcel.readInt()) {
         STUDY_DIRECTOR = parcel.readString()
         DATE = parcel.readString()
         HOUSE_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
@@ -67,6 +42,9 @@ class ConeBioassayMetaData() : MetaDataInterface {
         MOSQUITO_STRAIN = parcel.readString()
         MOSQUITO_AGE_MIN = parcel.readValue(Int::class.java.classLoader) as? Int
         MOSQUITO_AGE_MAX = parcel.readValue(Int::class.java.classLoader) as? Int
+        VILLAGE = parcel.readString()
+        CLUSTER_NUMBER = parcel.readValue(Int::class.java.classLoader) as? Int
+        count = parcel.readValue(Int::class.java.classLoader) as? Int
         PROJECT_CODE = parcel.readString()
         completed = parcel.readByte() != 0.toByte()
         formType = parcel.readString()
@@ -75,10 +53,7 @@ class ConeBioassayMetaData() : MetaDataInterface {
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeValue(count)
-        parcel.writeValue(CLUSTER_NUMBER)
         parcel.writeInt(serial)
-        parcel.writeString(VILLAGE)
         parcel.writeString(STUDY_DIRECTOR)
         parcel.writeString(DATE)
         parcel.writeValue(HOUSE_NUMBER)
@@ -88,6 +63,9 @@ class ConeBioassayMetaData() : MetaDataInterface {
         parcel.writeString(MOSQUITO_STRAIN)
         parcel.writeValue(MOSQUITO_AGE_MIN)
         parcel.writeValue(MOSQUITO_AGE_MAX)
+        parcel.writeString(VILLAGE)
+        parcel.writeValue(CLUSTER_NUMBER)
+        parcel.writeValue(count)
         parcel.writeString(PROJECT_CODE)
         parcel.writeByte(if (completed) 1 else 0)
         parcel.writeString(formType)

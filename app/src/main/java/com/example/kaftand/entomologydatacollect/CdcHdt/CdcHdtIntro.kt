@@ -11,22 +11,25 @@ import android.widget.*
 
 import com.example.kaftand.entomologydatacollect.LanguagePreservingActivity
 import com.example.kaftand.entomologydatacollect.R
+import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 import com.example.kaftand.entomologydatacollect.Util.checkMissingDataInLayout
 import com.example.kaftand.entomologydatacollect.Util.formCountTracker
 import com.example.kaftand.entomologydatacollect.Util.volunteerNameTracker
 import com.google.gson.Gson
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.properties.Delegates
 import kotlin.reflect.KMutableProperty0
 
 class CdcHdtIntro : LanguagePreservingActivity() {
     var dataTable: CdcHdtDataTable? = null
-    var metaData = CdcHdtMetaData()
+    var metaData:  CdcHdtMetaData by Delegates.notNull()
     var responsibleForData = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.content_cdc_hdt_intro)
+        metaData = CdcHdtMetaData(formCountTracker.getSerialNumber(this@CdcHdtIntro, FormTypeKeys.CdcHdt))
         this.metaData.count = formCountTracker.readFormCount(metaData.formType, this)
 
         val textView: TextView = findViewById(R.id.DateEdit)

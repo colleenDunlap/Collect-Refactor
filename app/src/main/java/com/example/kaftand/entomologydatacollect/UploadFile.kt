@@ -282,8 +282,8 @@ open class UploadFile : LanguagePreservingActivity() {
         return row
     }
 
-    private fun alertNoInternet()
-    {
+    private fun alertNoInternet() {
+        endProcess()
         val alertDialog = AlertDialog.Builder(this@UploadFile).create()
         alertDialog.setTitle(getString(R.string.alert))
         alertDialog.setMessage(getString(R.string.no_internet))
