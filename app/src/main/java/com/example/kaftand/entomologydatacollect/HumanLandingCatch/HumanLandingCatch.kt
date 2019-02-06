@@ -57,7 +57,7 @@ class HumanLandingCatch : LanguagePreservingActivity() {
             saveButton.visibility = View.GONE
         }
         var serialNumberLabel = findViewById<TextView>(R.id.serial_label)
-        serialNumberLabel.text = "serial: " + this.hLCMeta.serial.toString()
+        serialNumberLabel.text = "serial: " + this.hLCMeta.serial.toString() + " House Number: " + this.hLCMeta.HOUSE_NUMBER.toString()
     }
 
 

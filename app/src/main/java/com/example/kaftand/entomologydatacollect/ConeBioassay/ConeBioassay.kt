@@ -55,7 +55,7 @@ class ConeBioassay : LanguagePreservingActivity() {
         }
 
         var serialNumberLabel = findViewById<TextView>(R.id.serial_label)
-        serialNumberLabel.text = "serial: " + this.metaData.serial.toString()
+        serialNumberLabel.text = "serial: " + this.metaData.serial.toString() + " House Number: " + this.metaData.HOUSE_NUMBER.toString()
     }
 
     fun fillPsuedoTables() {
