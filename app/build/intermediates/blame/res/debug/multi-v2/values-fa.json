@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-fa/values-fa.xml",
+            "outputFile": "C:\\Users\\Colleen Duhlap\\mbu\\collect_phase1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-fa\\values-fa.xml",
             "map": [
                 {
-                    "source": "/Users/kaftand/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/5a2d9fbb53773c724f6ae075a9789d38/res/values-fa/values-fa.xml",
+                    "source": "C:\\Users\\Colleen Duhlap\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\e0d9319adc085bf4782f2bd8bf472a4b\\res\\values-fa\\values-fa.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/kaftand/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/cea67021a8f42ba5bedaa1ddaf29265b/res/values-fa/values-fa.xml",
+                    "source": "C:\\Users\\Colleen Duhlap\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e673a920e3d09473bb2f8fe59aa3635c\\res\\values-fa\\values-fa.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

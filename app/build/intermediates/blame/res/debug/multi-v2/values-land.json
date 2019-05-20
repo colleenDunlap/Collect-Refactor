@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "C:\\Users\\Colleen Duhlap\\mbu\\collect_phase1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "/Users/kaftand/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/5a2d9fbb53773c724f6ae075a9789d38/res/values-land/values-land.xml",
+                    "source": "C:\\Users\\Colleen Duhlap\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\e0d9319adc085bf4782f2bd8bf472a4b\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/kaftand/.gradle/caches/transforms-1/files-1.1/design-27.1.1.aar/75d01b61a22814d35fb838cb95ce1f58/res/values-land/values-land.xml",
+                    "source": "C:\\Users\\Colleen Duhlap\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\39d43f50db3a1ac65f348515c97b3237\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

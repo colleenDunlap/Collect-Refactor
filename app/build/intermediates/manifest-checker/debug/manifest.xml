@@ -60,6 +60,45 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="com.example.kaftand.entomologydatacollect.CdcHdt.CdcHdt"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:label="Cdc_Hdt"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.kaftand.entomologydatacollect.CdcHdt.CdcHdtIntro"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:label="HutTrial"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.kaftand.entomologydatacollect.ConeBioassay.ConeBioassay"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:label="Cdc_Hdt"
+            android:launchMode="singleInstance"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.kaftand.entomologydatacollect.ConeBioassay.ConeBioassayIntro"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:label="HutTrial"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.kaftand.entomologydatacollect.IndoorRestingCollection.IndoorRestingCollection"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:label="Cdc_Hdt"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.kaftand.entomologydatacollect.IndoorRestingCollection.IndoorRestingCollectionIntro"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:label="HutTrial"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="com.example.kaftand.entomologydatacollect.UploadFile"
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
             android:screenOrientation="landscape" />

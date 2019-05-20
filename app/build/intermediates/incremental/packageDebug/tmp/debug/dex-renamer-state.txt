@@ -1,4 +1,4 @@
-#Wed Feb 06 00:59:58 CET 2019
-base.0=/Users/kaftand/Documents/IHI/ODK/EntomologyDataCollect/app/build/intermediates/transforms/dexMerger/debug/305
+#Mon May 20 12:28:36 EAT 2019
+base.0=C\:\\Users\\Colleen Duhlap\\mbu\\collect_phase1\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
 path.0=classes.dex
 renamed.0=classes.dex
