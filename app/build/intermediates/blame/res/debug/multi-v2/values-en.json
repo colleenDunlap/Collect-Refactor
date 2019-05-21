@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Colleen Duhlap\\mbu\\collect_phase1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "outputFile": "C:\\Users\\Colleen Duhlap\\mbu\\collect_refactor\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Colleen Duhlap\\mbu\\collect_phase1\\app\\src\\main\\res\\values-en\\strings.xml",
+                    "source": "C:\\Users\\Colleen Duhlap\\mbu\\collect_refactor\\app\\src\\main\\res\\values-en\\strings.xml",
                     "from": {
                         "startLines": "89,97,47,66,62,63,64,65,59,85,80,81,38,82,83,84,58,25,51,28,13,44,77,76,22,10,52,27,68,60,71,70,41,42,4,18,21,2,12,43,31,56,33,32,6,53,54,61,16,49,37,50,72,35,17,23,7,74,11,69,45,75,19,67,8,55,73,57,30,29,3,46,34,39,40,20,26,5,9,78,36,14,15,48",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

@@ -27,6 +27,7 @@ import com.android.volley.toolbox.Volley
 import com.example.kaftand.entomologydatacollect.CdcHdt.*
 import com.example.kaftand.entomologydatacollect.ConeBioassay.*
 import com.example.kaftand.entomologydatacollect.HumanLandingCatch.*
+import com.example.kaftand.entomologydatacollect.Phase1.*
 import com.example.kaftand.entomologydatacollect.HutTrial.HutTrial
 import com.example.kaftand.entomologydatacollect.HutTrial.HutTrialIntro
 import com.example.kaftand.entomologydatacollect.IndoorRestingCollection.*

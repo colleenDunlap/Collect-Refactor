@@ -40,6 +40,19 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:name=".Phase1.Phase1"
+            android:label="Phase1"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:name=".Phase1.Phase1Intro"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_human_landing_catch_intro"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
             android:name=".HutTrial.HutTrial"
             android:label="HutTrial"
             android:launchMode="singleInstance"

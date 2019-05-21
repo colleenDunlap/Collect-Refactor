@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Colleen Duhlap\\mbu\\collect_phase1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-tl\\values-tl.xml",
+            "outputFile": "C:\\Users\\Colleen Duhlap\\mbu\\collect_refactor\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-tl\\values-tl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Colleen Duhlap\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\e673a920e3d09473bb2f8fe59aa3635c\\res\\values-tl\\values-tl.xml",
