@@ -9,6 +9,7 @@ import com.example.kaftand.entomologydatacollect.CdcHdt.CdcHdt
 import com.example.kaftand.entomologydatacollect.ConeBioassay.ConeBioassay
 import com.example.kaftand.entomologydatacollect.HumanLandingCatch.HumanLandingCatch
 import com.example.kaftand.entomologydatacollect.HutTrial.HutTrial
+import com.example.kaftand.entomologydatacollect.Phase1.Phase1
 import com.example.kaftand.entomologydatacollect.IndoorRestingCollection.IndoorRestingCollection
 import com.example.kaftand.entomologydatacollect.IndoorRestingCollection.IndoorRestingCollectionDataTable
 import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
@@ -48,6 +49,9 @@ class DataEditMenu : UploadFile() {
             return IndoorRestingCollection::class.java
         } else if (formTypeString == FormTypeKeys.ConeBioassay) {
             return ConeBioassay::class.java
+        }
+        else if (formTypeString == FormTypeKeys.Phase1) {
+            return Phase1::class.java
         }
 
         return HumanLandingCatch::class.java

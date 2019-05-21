@@ -116,6 +116,8 @@ class MainActivity : LanguagePreservingActivity(), ViewFormFromServerDialog.Retu
             this.selectedForm = FormTypeKeys.IndoorRestingCollection
         } else if (spinner2.selectedItem.toString() == getString(R.string.cone_bioassay)) {
             this.selectedForm = FormTypeKeys.ConeBioassay
+        } else if(spinner2.selectedItem.toString()== getString(R.string.Phase1)){
+            this.selectedForm = FormTypeKeys.Phase1
         }
 
     }
@@ -139,6 +141,9 @@ class MainActivity : LanguagePreservingActivity(), ViewFormFromServerDialog.Retu
             startActivity(Intent(this, IndoorRestingCollectionIntro::class.java))
         } else if (spinner2.selectedItem.toString() == getString(R.string.cone_bioassay)) {
             startActivity(Intent(this, ConeBioassayIntro::class.java))
+        }
+        else if (spinner2.selectedItem.toString() == getString(R.string.Phase1)) {
+            startActivity(Intent(this, Phase1Intro::class.java))
         }
     }
 
@@ -277,6 +282,9 @@ class MainActivity : LanguagePreservingActivity(), ViewFormFromServerDialog.Retu
                     } else if (selectedForm == FormTypeKeys.ConeBioassay) {
                         viewConeBioassay(response)
                     }
+                    else if (selectedForm == FormTypeKeys.Phase1) {
+                        viewPhase1(response)
+                    }
                     //getDialog().cancel()
                 } catch (err : Error) {
                     this@MainActivity.alertDialog.dismiss()
@@ -324,6 +332,16 @@ class MainActivity : LanguagePreservingActivity(), ViewFormFromServerDialog.Retu
         var dataTable = ConeBioassayDataTable(metaData, coneBioassayData.size)
         dataTable.dataArray = coneBioassayData
         startActivity(gson.toJson(dataTable), ConeBioassay::class.java)
+    }
+    private fun viewPhase1(response: String) {
+        var phase1Data = gson.fromJson<ArrayList<Phase1DataEntry>>(response,object :
+                TypeToken<ArrayList<Phase1DataEntry>>(){}.getType())
+        phase1Data.sortBy { it.formEntryRow }
+        var metaData = Phase1MetaData(if (phase1Data[0].serial == null) {0} else {phase1Data[0].serial!!})
+        metaData.sent = true
+        var dataTable = Phase1DataTable(metaData, phase1Data.size)
+        dataTable.dataArray = phase1Data
+        startActivity(gson.toJson(dataTable), Phase1::class.java)
     }
 
     fun viewCDC(cdcString: String) {

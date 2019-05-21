@@ -32,6 +32,7 @@
     <string name="H48_mortality">48-hour mortality</string>
     <string name="H72_mortality">72-hour mortality</string>
     <string name="H96_mortality">96-hour mortality</string>
+    <string name="Phase1">Phase1</string>
     <string name="acclimatization">Acclimatization</string>
     <string name="after_120HR">Siku ya 5 masaa 120</string>
     <string name="after_1HR">baada ya dakika 60</string>

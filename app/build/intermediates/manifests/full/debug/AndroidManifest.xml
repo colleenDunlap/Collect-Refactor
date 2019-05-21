@@ -47,6 +47,19 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="com.example.kaftand.entomologydatacollect.Phase1.Phase1"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:label="Phase1"
+            android:launchMode="singleInstance"
+            android:screenOrientation="landscape"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.kaftand.entomologydatacollect.Phase1.Phase1Intro"
+            android:configChanges="locale|orientation|screenSize|keyboardHidden"
+            android:label="@string/title_activity_human_landing_catch_intro"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="com.example.kaftand.entomologydatacollect.HutTrial.HutTrial"
             android:configChanges="locale|orientation|screenSize|keyboardHidden"
             android:label="HutTrial"
