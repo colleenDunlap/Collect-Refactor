@@ -96,6 +96,7 @@
         <item>@string/CDC_HDT</item>
         <item>@string/indoor_resting_collection</item>
         <item>@string/cone_bioassay</item>
+        <item>@string/Phase1</item>
     </string-array>
 
     <string-array name="villages_drop_down">
