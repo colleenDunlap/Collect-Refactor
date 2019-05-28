@@ -3,13 +3,12 @@ package com.example.kaftand.entomologydatacollect.Phase1
 import android.os.Parcel
 import android.os.Parcelable
 import com.example.kaftand.entomologydatacollect.FormInterfaces.MetaDataInterface
-import com.example.kaftand.entomologydatacollect.IndoorRestingCollection.IndoorRestingCollectionMetaData
 import com.example.kaftand.entomologydatacollect.Util.FileStoreUtil
 import com.example.kaftand.entomologydatacollect.Util.FormTypeKeys
 
 class Phase1MetaData (override var serial: Int) : MetaDataInterface {
     var DATE: String? = null
-    var PROJECT_CODE: String? = "BIT031"
+    var PROJECT_CODE: String? = "BIT032"
     var HOUSE_NUMBER: Int? = null
     var CLUSTER_NUMBER: Int? = null
     override var count: Int? = null
@@ -21,7 +20,7 @@ class Phase1MetaData (override var serial: Int) : MetaDataInterface {
     var DIRECTOR : String? = "Sarah Moore"
 
     override var completed = true
-    override var formType = FormTypeKeys.IndoorRestingCollection
+    override var formType = FormTypeKeys.Phase1
     override var millsCreated = System.currentTimeMillis()
     override var sent = false
 
@@ -72,12 +71,12 @@ class Phase1MetaData (override var serial: Int) : MetaDataInterface {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<IndoorRestingCollectionMetaData> {
-        override fun createFromParcel(parcel: Parcel): IndoorRestingCollectionMetaData {
-            return IndoorRestingCollectionMetaData(parcel)
+    companion object CREATOR : Parcelable.Creator<Phase1MetaData> {
+        override fun createFromParcel(parcel: Parcel): Phase1MetaData {
+            return Phase1MetaData(parcel)
         }
 
-        override fun newArray(size: Int): Array<IndoorRestingCollectionMetaData?> {
+        override fun newArray(size: Int): Array<Phase1MetaData?> {
             return arrayOfNulls(size)
         }
     }

@@ -25,8 +25,8 @@ class Phase1Intro : LanguagePreservingActivity(){
     var dataTable: Phase1DataTable? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        metaData = Phase1MetaData(formCountTracker.getSerialNumber(this@Phase1Intro, FormTypeKeys.IndoorRestingCollection))
-        setContentView(R.layout.content_indoor_resting_collection_intro)
+        metaData = Phase1MetaData(formCountTracker.getSerialNumber(this@Phase1Intro, FormTypeKeys.Phase1))
+        setContentView(R.layout.content_phase1_intro)
         this.metaData.count = formCountTracker.readFormCount(metaData.formType, this)
 
         val textView: TextView = findViewById(R.id.DateEdit)

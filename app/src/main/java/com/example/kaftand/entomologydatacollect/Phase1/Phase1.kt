@@ -10,9 +10,6 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TableRow
 import android.widget.TextView
-import com.example.kaftand.entomologydatacollect.CdcHdt.CdcHdtDataEntry
-import com.example.kaftand.entomologydatacollect.CdcHdt.CdcHdtDataTable
-import com.example.kaftand.entomologydatacollect.CdcHdt.CdcHdtMetaData
 import com.example.kaftand.entomologydatacollect.LanguagePreservingActivity
 import com.example.kaftand.entomologydatacollect.MainActivity
 import com.example.kaftand.entomologydatacollect.R
@@ -28,7 +25,7 @@ class Phase1 : LanguagePreservingActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.content_indoor_resting_collection)
+        setContentView(R.layout.content_phase1)
         val gson = Gson()
         val metaDataBundle = intent.getBundleExtra("MetaData")
         val tableBundle = intent.getBundleExtra("DataTableBundle")
