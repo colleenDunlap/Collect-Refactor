@@ -58,8 +58,8 @@ class Phase1Intro : LanguagePreservingActivity(){
         val projectCodeTextEdit = findViewById<EditText>(R.id.project_code)
         projectCodeTextEdit.setText(this.metaData.PROJECT_CODE)
         projectCodeTextEdit.isEnabled = false
-        val clusterNumberTextEdit = findViewById<EditText>(R.id.cluster_number_cdc)
-        clusterNumberTextEdit.addTextChangedListener(createTextWatcherInt(createCallBackFor<Int?>(this.metaData::CLUSTER_NUMBER)))
+        val studyDirectorTextEdit = findViewById<EditText>(R.id.study_director)
+        studyDirectorTextEdit.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.metaData::DIRECTOR)))
         val volunteerNumberTextEdit = findViewById<AutoCompleteTextView>(R.id.volunteer_number)
         volunteerNumberTextEdit.addTextChangedListener(createTextWatcherString(createCallBackFor<String?>(this.metaData::VOLUNTEER)))
         val monthTextEdit = findViewById<EditText>(R.id.month)

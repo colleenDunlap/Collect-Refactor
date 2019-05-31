@@ -108,6 +108,7 @@
     <string name="sent">TUMWA</string>
     <string name="start_time_hh_mm">kuanza ss:dd</string>
     <string msgid="2869576371154716097" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="study_director">Study Director</string>
     <string name="tap_to_enter">bofya</string>
     <string name="temperature">joto</string>
     <string name="test">jaribio</string>
